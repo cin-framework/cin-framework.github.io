@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIN Framework - Reporting Guidelines</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style-min.css">
+</head>
+<body>
+    <div id="loadingScreen">
+        <div class="cin-loading-spinner"></div>
+        <p class="cin-text-lead" data-translate="loading_message">Loading CIN Framework...</p>
+    </div>
+    <header class="cin-header">
+        <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40">
+        <div class="cin-language-toggle">
+            <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
+            <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
+        </div>
+    </header>
+    <main class="cin-main">
+        <div class="cin-coming-soon cin-fade-in">
+            <!-- Hero Badge Component -->
+            <div class="cin-hero-badge">
+                <span data-translate="reporting_hero_badge">📋 CIN FRAMEWORK Reporting Guidelines</span>
+            </div>
+
+            <!-- Main Heading Component -->
+            <h1 class="cin-heading-1" data-translate="reporting_title">Reporting Guidelines</h1>
+            
+            <!-- Introduction -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="reporting_intro_title">Introduction</h2>
+                <p class="cin-text-body cin-mb-4" data-translate="reporting_intro_content">
+                    This page serves as the official reference for reporting any unacceptable behavior or violations of community rules within the CIN Framework community. These guidelines are directly linked to our Code of Conduct and provide a clear pathway for addressing concerns.
+                </p>
+            </div>
+
+            <!-- Types of Issues -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="reporting_issues_title">Types of Issues You Can Report</h2>
+                <div class="cin-text-body">
+                    <p class="cin-mb-4" data-translate="reporting_issues_intro">You can report the following types of issues:</p>
+                    <ul class="cin-mb-4" style="padding-left: var(--cin-space-6); color: var(--cin-text-secondary);">
+                        <li class="cin-mb-2" data-translate="reporting_issue_1">Verbal abuse or harassment</li>
+                        <li class="cin-mb-2" data-translate="reporting_issue_2">Posting inappropriate content or content outside the community scope</li>
+                        <li class="cin-mb-2" data-translate="reporting_issue_3">Behaviors that hinder development or collaboration</li>
+                        <li class="cin-mb-2" data-translate="reporting_issue_4">Violations of security or privacy policies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Official Reporting Channels -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="reporting_channels_title">Official Reporting Channels</h2>
+                <div class="cin-text-body">
+                    <p class="cin-mb-4" data-translate="reporting_channels_intro">You can report issues through the following official channels:</p>
+                    <div class="cin-grid cin-grid-cols-2 cin-gap-4">
+                        <div class="cin-card">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="reporting_primary_email_title">Primary Email</h4>
+                            <p class="cin-text-body" data-translate="reporting_primary_email">support@cin-framework.com</p>
+                        </div>
+                        <div class="cin-card">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="reporting_sensitive_email_title">Sensitive Cases Email</h4>
+                            <p class="cin-text-body" data-translate="reporting_sensitive_email">admin@cin-framework.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Required Report Content -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="reporting_content_title">Required Report Content</h2>
+                <div class="cin-text-body">
+                    <p class="cin-mb-4" data-translate="reporting_content_intro">When submitting a report, please include the following information:</p>
+                    <ul class="cin-mb-4" style="padding-left: var(--cin-space-6); color: var(--cin-text-secondary);">
+                        <li class="cin-mb-2" data-translate="reporting_content_1">Name or identity of the person or entity (if available)</li>
+                        <li class="cin-mb-2" data-translate="reporting_content_2">Clear and detailed description of the incident</li>
+                        <li class="cin-mb-2" data-translate="reporting_content_3">Date, time, and location (or link to the incident if online)</li>
+                        <li class="cin-mb-2" data-translate="reporting_content_4">Any evidence (images, links, messages)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Confidentiality and Reporter Protection -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="reporting_confidentiality_title">Confidentiality and Reporter Protection</h2>
+                <div class="cin-text-body">
+                    <p class="cin-mb-4" data-translate="reporting_confidentiality_content">
+                        We are committed to maintaining the confidentiality of the reporter's identity. Any report is handled with complete confidentiality, and the reporter's identity will not be disclosed without their consent or unless required by law.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Processing Mechanism -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="reporting_process_title">Processing Mechanism</h2>
+                <div class="cin-text-body">
+                    <p class="cin-mb-4" data-translate="reporting_process_intro">Our report processing follows these steps:</p>
+                    <div class="cin-grid cin-grid-cols-3 cin-gap-4">
+                        <div class="cin-card">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="reporting_step_1_title">1. Acknowledgment</h4>
+                            <p class="cin-text-small" data-translate="reporting_step_1">Report receipt confirmed within 48 hours</p>
+                        </div>
+                        <div class="cin-card">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="reporting_step_2_title">2. Review</h4>
+                            <p class="cin-text-small" data-translate="reporting_step_2">Report reviewed by Governing Body</p>
+                        </div>
+                        <div class="cin-card">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="reporting_step_3_title">3. Action</h4>
+                            <p class="cin-text-small" data-translate="reporting_step_3">Appropriate action taken (warning, ban, other measures)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Retention -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="reporting_retention_title">Report Retention Period</h2>
+                <div class="cin-text-body">
+                    <p class="cin-mb-4" data-translate="reporting_retention_content">
+                        Report records are retained for 12 months before being permanently deleted, unless extended retention is required for ongoing investigations or legal requirements.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Page Updates -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="reporting_updates_title">Page Updates</h2>
+                <div class="cin-text-body">
+                    <p class="cin-mb-4" data-translate="reporting_updates_content">
+                        These guidelines may be updated at any time. We recommend reviewing this page periodically for any changes.
+                    </p>
+                    <p class="cin-text-small" data-translate="reporting_last_update">
+                        Last updated: January 2025
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="cin-alert cin-alert-info">
+                <strong data-translate="reporting_contact_title">Contact Information:</strong>
+                <span data-translate="reporting_contact_content">
+                    For any questions about these reporting guidelines, please contact us at support@cin-framework.com
+                </span>
+            </div>
+        </div>
+    </main>
+    <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
+        ↑
+    </button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="./assets/js/sidebar-min.js"></script>
+    <script src="./assets/js/script-min.js"></script>
+</body>
+</html>

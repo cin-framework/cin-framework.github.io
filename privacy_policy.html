@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIN Framework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style-min.css">
+</head>
+<body>
+    <div id="loadingScreen">
+        <div class="cin-loading-spinner"></div>
+        <p class="cin-text-lead" data-translate="loading_message">Loading CIN Framework...</p>
+    </div>
+    <header class="cin-header">
+        <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40">
+        <div class="cin-language-toggle">
+            <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
+            <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
+        </div>
+    </header>
+    <main class="cin-main">
+        <div class="cin-coming-soon cin-fade-in">
+            <!-- Hero Section -->
+            <div class="cin-hero-badge">
+                <span data-translate="privacy_hero_badge">🔐 CIN FRAMEWORK Privacy Policy</span>
+            </div>
+
+            <h1 class="cin-heading-1 cin-mb-8" data-translate="privacy_title">Privacy Policy</h1>
+            
+            <p class="cin-text-lead cin-mb-8" data-translate="privacy_intro">
+                At CIN FRAMEWORK, we attach utmost importance to respecting your privacy and protecting your personal data. We fully understand that the information you provide to us is not just data, but an extension of your digital presence, and our responsibility to you requires complete transparency regarding how this information is used, its purpose, and the parties who may view it.
+            </p>
+
+            <div class="cin-alert cin-alert-info cin-mb-8">
+                <p class="cin-text-body" data-translate="privacy_description">
+                    This page aims to clarify the privacy policy we follow, the procedures taken to protect your information, and the options available to you regarding your data. By using our website or any of our services, you implicitly agree to all practices and policies outlined below.
+                </p>
+            </div>
+
+            <!-- Accordion Section -->
+            <div class="cin-accordion cin-mb-8">
+                <div class="cin-accordion-item">
+                    <div class="cin-accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="cin-heading-4" data-translate="privacy_section_1_title">First: The Information We Collect</h3>
+                        <span class="cin-accordion-icon">+</span>
+                    </div>
+                    <div class="cin-accordion-content">
+                        <p class="cin-text-body" data-translate="privacy_section_1_content">
+                            We collect multiple types of data when you interact with our platform, which include the following:<br><br>
+                            <strong>1. Information you provide voluntarily:</strong><br>
+                            When you register on the site, subscribe to our newsletter, or contact us, we may ask for identifying information such as: full name, email address, job title, company name, country, or other details.<br><br>
+                            <strong>2. Technical information that is collected automatically:</strong><br>
+                            • Internet Protocol (IP) address<br>
+                            • Device type and operating system<br>
+                            • Browser type and version<br>
+                            • Pages you visit, duration of stay, and access dates<br>
+                            • User behavior within the site<br><br>
+                            <strong>3. Cookies:</strong><br>
+                            We use advanced tracking technologies to analyze user behavior within the platform, personalize their experience, and improve our services based on actual interaction.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cin-accordion-item">
+                    <div class="cin-accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="cin-heading-4" data-translate="privacy_section_2_title">Second: How We Use This Data?</h3>
+                        <span class="cin-accordion-icon">+</span>
+                    </div>
+                    <div class="cin-accordion-content">
+                        <p class="cin-text-body" data-translate="privacy_section_2_content">
+                            We use the data we collect within the CIN FRAMEWORK for the following purposes:<br><br>
+                            • To improve user experience and develop content that aligns with visitors' interests<br>
+                            • To provide personalized services based on user type (beginner, professional, company)<br>
+                            • To respond to inquiries and provide technical or administrative support<br>
+                            • To send updates, announcements, educational articles, or technical offers via email<br>
+                            • For internal analytical purposes, including tracking performance and evaluating the platform's strengths and weaknesses<br>
+                            • To ensure security and prevent any illegal or unauthorized activity
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cin-accordion-item">
+                    <div class="cin-accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="cin-heading-4" data-translate="privacy_section_3_title">Third: Data Protection and Security</h3>
+                        <span class="cin-accordion-icon">+</span>
+                    </div>
+                    <div class="cin-accordion-content">
+                        <p class="cin-text-body" data-translate="privacy_section_3_content">
+                            We treat information security with the utmost seriousness. We have integrated a set of strict security measures — technical and organizational — to protect user data from any unauthorized access, modification, loss, or destruction, including but not limited to:<br><br>
+                            • Using strong encryption protocols for data transfer<br>
+                            • Firewalls and anti-intrusion systems<br>
+                            • Proactive monitoring systems for abnormal behavior within the system<br>
+                            • Limited permissions within the back-end structure, so that access is only available to authorized personnel
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cin-accordion-item">
+                    <div class="cin-accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="cin-heading-4" data-translate="privacy_section_4_title">Fourth: Data Sharing with Third Parties</h3>
+                        <span class="cin-accordion-icon">+</span>
+                    </div>
+                    <div class="cin-accordion-content">
+                        <p class="cin-text-body" data-translate="privacy_section_4_content">
+                            Generally, we do not sell, rent, or share your personal information with any third party. However, we may share some data in the following cases:<br><br>
+                            • With companies or providers we work with to improve services (with a full commitment not to use it for commercial purposes)<br>
+                            • If legally required to do so based on an official request from competent authorities<br>
+                            • To protect our rights, enforce our terms of use, or to detect fraudulent activities or security threats
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cin-accordion-item">
+                    <div class="cin-accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="cin-heading-4" data-translate="privacy_section_5_title">Fifth: User Rights</h3>
+                        <span class="cin-accordion-icon">+</span>
+                    </div>
+                    <div class="cin-accordion-content">
+                        <p class="cin-text-body" data-translate="privacy_section_5_content">
+                            We give you full control over your data. You have the following rights:<br><br>
+                            • Request a copy of your personal data stored with us<br>
+                            • Request the correction of any error or modification of your data<br>
+                            • Request the permanent deletion of all your data<br>
+                            • Withdraw your consent to the use of your data at any time<br><br>
+                            You can exercise these rights by contacting us directly via the following email:<br>
+                            📧 support@cin-framework.com
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cin-accordion-item">
+                    <div class="cin-accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="cin-heading-4" data-translate="privacy_section_6_title">Sixth: Use of Cookies</h3>
+                        <span class="cin-accordion-icon">+</span>
+                    </div>
+                    <div class="cin-accordion-content">
+                        <p class="cin-text-body" data-translate="privacy_section_6_content">
+                            We use cookies to provide a better and more personalized experience, and these files include:<br><br>
+                            • Session Cookies<br>
+                            • Analytics Cookies<br>
+                            • Personalization and preference files<br><br>
+                            You can control cookies through your browser settings, but disabling them may affect some features of the site.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cin-accordion-item">
+                    <div class="cin-accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="cin-heading-4" data-translate="privacy_section_7_title">Seventh: Data Retention Period</h3>
+                        <span class="cin-accordion-icon">+</span>
+                    </div>
+                    <div class="cin-accordion-content">
+                        <p class="cin-text-body" data-translate="privacy_section_7_content">
+                            We retain your data for as long as it is necessary for the purposes for which it was collected, or for as long as your account is active, or as required by law. After that, the data is permanently deleted or made untraceable.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cin-accordion-item">
+                    <div class="cin-accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="cin-heading-4" data-translate="privacy_section_8_title">Eighth: Privacy Policy Modifications</h3>
+                        <span class="cin-accordion-icon">+</span>
+                    </div>
+                    <div class="cin-accordion-content">
+                        <p class="cin-text-body" data-translate="privacy_section_8_content">
+                            We may update this policy at any time, and your continued use of the site after the modifications constitutes implicit consent to the amended version. We recommend reviewing this page periodically.<br><br>
+                            Last updated on this policy: August 6, 2025
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cin-accordion-item">
+                    <div class="cin-accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="cin-heading-4" data-translate="privacy_section_9_title">Ninth: Contact Us</h3>
+                        <span class="cin-accordion-icon">+</span>
+                    </div>
+                    <div class="cin-accordion-content">
+                        <p class="cin-text-body" data-translate="privacy_section_9_content">
+                            For any inquiries, complaints, or requests regarding your data, you can contact us via the official email:<br>
+                            📧 privacy@cin-framework.com<br><br>
+                            Or through the general technical support email:<br>
+                            📧 contact@cin-framework.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Section -->
+            <div class="cin-alert cin-alert-warning cin-text-center">
+                <h3 class="cin-heading-4 cin-mb-4" data-translate="privacy_final_title">CIN FRAMEWORK - Digital Control</h3>
+                <p class="cin-text-body" data-translate="privacy_final_content">
+                    At CIN FRAMEWORK, we believe that knowledge is power…<br>
+                    But data — when used intelligently — is the key to control.<br>
+                    And everyone who enters our digital domain, we give them virtual security… and we control them in the shadows.
+                </p>
+            </div>
+        </div>
+    </main>
+    <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
+        ↑
+    </button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="./assets/js/sidebar-min.js"></script>
+    <script src="./assets/js/script-min.js"></script>
+    <script>
+window.onload = () => {
+    const pageName = location.pathname.split('/').pop().replace('.html', '');
+    window.parent.postMessage({ page: pageName }, '*');
+};
+</script>
+</body>
+</html>

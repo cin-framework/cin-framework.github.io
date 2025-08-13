@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIN Framework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style-min.css">
+</head>
+<body>
+    <div id="loadingScreen">
+        <div class="cin-loading-spinner"></div>
+        <p class="cin-text-lead" data-translate="loading_message">Loading CIN Framework...</p>
+    </div>
+    <header class="cin-header">
+        <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40">
+        <div class="cin-language-toggle">
+            <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
+            <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
+        </div>
+    </header>
+    <main class="cin-main">
+        <div class="cin-coming-soon cin-fade-in">
+            <!-- Hero Badge Component -->
+            <div class="cin-hero-badge">
+                <span data-translate="faq_hero_badge">❓ CIN FRAMEWORK FAQ</span>
+            </div>
+
+            <!-- Main Heading Component -->
+            <h1 class="cin-heading-1" data-translate="faq_title">Frequently Asked Questions</h1>
+            
+            <!-- Lead Text Component -->
+            <p class="cin-text-lead cin-mb-8" data-translate="faq_subtitle">
+                Find answers to the most common questions about CIN Framework
+            </p>
+
+            <!-- FAQ Content -->
+            <div class="cin-grid cin-grid-1 cin-mt-8">
+                <!-- Question 1 -->
+                <div class="cin-card cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q1">1. What is CIN Framework?</h3>
+                    <p class="cin-text-body" data-translate="faq_a1">
+                        CIN Framework is an advanced PHP-based framework designed to simplify the creation of high-performance, dynamic systems and websites, focusing on local self-sufficiency, aggressive security, and full developer flexibility.
+                    </p>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="cin-card cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q2">2. What are the main features of CIN Framework?</h3>
+                    <div class="cin-text-body" data-translate="faq_a2">
+                        <ul class="cin-list">
+                            <li data-translate="faq_feature_1">Superior performance and execution speed</li>
+                            <li data-translate="faq_feature_2">Full support for building complex systems</li>
+                            <li data-translate="faq_feature_3">Aggressive security to protect against vulnerabilities and attacks</li>
+                            <li data-translate="faq_feature_4">Integrated CLI tools for complete project control</li>
+                            <li data-translate="faq_feature_5">Easy management and installation of CIN libraries</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="cin-card cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q3">3. Can CIN Framework be used with other frameworks?</h3>
+                    <p class="cin-text-body" data-translate="faq_a3">
+                        Yes, CIN Framework can be integrated with other systems and frameworks, but its true power shines when used as a standalone platform.
+                    </p>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="cin-card cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q4">4. What is CIN CLI?</h3>
+                    <p class="cin-text-body" data-translate="faq_a4">
+                        CIN CLI is a command-line tool dedicated to managing and installing the framework, installing libraries, repairing the system, and configuring new applications. It handles all commands within the CIN environment.
+                    </p>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="cin-card cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q5">5. What is CIN Library?</h3>
+                    <p class="cin-text-body" data-translate="faq_a5">
+                        CIN Library is a collection of ready-to-use libraries specifically designed for seamless integration with CIN Framework, accelerating project development.
+                    </p>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="cin-card cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q6">6. How can I get started?</h3>
+                    <div class="cin-text-body" data-translate="faq_a6">
+                        <ol class="cin-list">
+                            <li data-translate="faq_step_1">Download CIN CLI from the <a href="https://github.com/cin-framework/cin-cli" target="_blank" class="cin-link" data-translate="releases_page">releases page</a></li>
+                            <li data-translate="faq_step_2">Install the framework using CIN CLI commands</li>
+                            <li data-translate="faq_step_3">Start building your first project</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="cin-card cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q7">7. How can I request support or report an issue?</h3>
+                    <p class="cin-text-body" data-translate="faq_a7">
+                        You can contact us via email at <a href="mailto:support@cin-framework.com" class="cin-link">support@cin-framework.com</a> or check our <a href="./reporting_guidelines.html" class="cin-link" data-translate="reporting_guidelines_link">reporting guidelines</a>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Additional Info Alert -->
+            <div class="cin-alert cin-alert-info cin-mt-8">
+                <strong data-translate="faq_info_title">Need More Help?</strong>
+                <span data-translate="faq_info_message">
+                    If you can't find the answer you're looking for, feel free to contact our support team at support@cin-framework.com
+                </span>
+            </div>
+        </div>
+    </main>
+    <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
+        ↑
+    </button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="./assets/js/sidebar-min.js"></script>
+    <script src="./assets/js/script-min.js"></script>
+</body>
+</html>
