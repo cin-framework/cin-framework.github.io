@@ -1,3 +1,5 @@
+# **CIN FRAMEWORK**
+
 <div align="center">
   <img src="https://cin-framework.github.io/.github/assets/img/repository-open-graph-template.png" alt="CIN Framework Banner" width="100%">
 </div>

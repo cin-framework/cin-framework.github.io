@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="release_notes_title">CIN Framework CLI - Release Notes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style-min.css">
+</head>
+<body>
+    <div id="loadingScreen">
+        <div class="cin-loading-spinner"></div>
+        <p class="cin-text-lead" data-translate="loading_message">Loading CIN Framework...</p>
+    </div>
+    <header class="cin-header">
+        <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40">
+        <div class="cin-language-toggle">
+            <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
+            <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
+        </div>
+    </header>
+    
+    <main class="cin-main">
+        <div class="cin-coming-soon cin-fade-in">
+            <!-- Page Header -->
+            <div class="cin-hero-badge">
+                <span data-translate="cli_badge">📋 CLI Release Notes</span>
+            </div>
+            
+            <h1 class="cin-heading-1" data-translate="release_notes_heading">CIN Framework CLI - Release Notes</h1>
+            
+            <p class="cin-text-lead cin-mb-8" data-translate="release_notes_subtitle">
+                Track the evolution of CIN Framework CLI with detailed release notes and version history.
+            </p>
+            
+            <!-- Version 2.0.1 - Latest -->
+            <div class="cin-card cin-mb-8">
+                <div class="cin-hero-badge cin-mb-4">
+                    <span data-translate="version_2_0_1_badge">🐛 Version 2.0.1 - Bug Fix Release</span>
+                </div>
+                
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="version_2_0_1_title">Version 2.0.1 - Bug Fix Release</h2>
+                
+                <div class="cin-alert cin-alert-info cin-mb-6">
+                    <strong data-translate="release_date_label">Release Date:</strong>
+                    <span data-translate="version_2_0_1_date">January 2025</span>
+                </div>
+                
+                <!-- Bug Fixes Section -->
+                <div class="cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="bug_fixes_heading">🐛 Bug Fixes</h3>
+                    
+                    <div class="cin-card cin-card-feature cin-mb-4">
+                        <h4 class="cin-heading-5 cin-mb-2" data-translate="automatic_zip_cleanup_title">Automatic ZIP Cleanup</h4>
+                        <p class="cin-text-body" data-translate="automatic_zip_cleanup_desc">Enhanced framework installation process to automatically remove downloaded ZIP files after successful extraction</p>
+                        <ul class="cin-list cin-mt-2">
+                            <li data-translate="prevents_disk_space">Prevents disk space accumulation from temporary installation files</li>
+                            <li data-translate="maintains_clean_installation">Maintains clean installation directory with only extracted framework files</li>
+                            <li data-translate="improved_installation_reliability">Improved installation reliability and cleanup procedures</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Technical Improvements Section -->
+                <div class="cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="technical_improvements_heading">🔧 Technical Improvements</h3>
+                    
+                    <div class="cin-grid cin-grid-auto cin-gap-4">
+                        <div class="cin-card cin-card-feature">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="installation_process_title">Installation Process</h4>
+                            <p class="cin-text-body" data-translate="installation_process_desc">Optimized downloadAndInstallFramework function for better resource management</p>
+                        </div>
+                        
+                        <div class="cin-card cin-card-feature">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="file_management_title">File Management</h4>
+                            <p class="cin-text-body" data-translate="file_management_desc">Enhanced temporary file handling during framework installation</p>
+                        </div>
+                        
+                        <div class="cin-card cin-card-feature">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="disk_space_title">Disk Space</h4>
+                            <p class="cin-text-body" data-translate="disk_space_desc">Reduced storage footprint by removing unnecessary temporary files</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Version 2.0.0 - Major Update -->
+            <div class="cin-card cin-mb-8">
+                <div class="cin-hero-badge cin-mb-4">
+                    <span data-translate="version_2_0_0_badge">🚀 Version 2.0.0 - Major Framework Management Update</span>
+                </div>
+                
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="version_2_0_0_title">Version 2.0.0 - Major Framework Management Update</h2>
+                
+                <div class="cin-alert cin-alert-info cin-mb-6">
+                    <strong data-translate="release_date_label">Release Date:</strong>
+                    <span data-translate="version_2_0_0_date">January 2025</span>
+                </div>
+                
+                <!-- Major New Features -->
+                <div class="cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="major_new_features_heading">🚀 Major New Features</h3>
+                    
+                    <div class="cin-card cin-card-feature cin-mb-6">
+                        <h4 class="cin-heading-5 cin-mb-4" data-translate="framework_management_system_title">Framework Management System</h4>
+                        
+                        <div class="cin-mb-4">
+                            <h5 class="cin-heading-5 cin-mb-2" data-translate="install_framework_title">NEW: install framework [version] - Download and install CIN Framework automatically</h5>
+                            <ul class="cin-list">
+                                <li data-translate="supports_latest_version">Supports latest version installation or specific version targeting</li>
+                                <li data-translate="intelligent_version_validation">Intelligent version validation and conflict detection</li>
+                                <li data-translate="automatic_dependency_resolution">Automatic dependency resolution and directory structure creation</li>
+                                <li data-translate="progress_indicators">Progress indicators and detailed installation feedback</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cin-mb-4">
+                            <h5 class="cin-heading-5 cin-mb-2" data-translate="update_framework_title">NEW: update framework - Seamless framework updates</h5>
+                            <ul class="cin-list">
+                                <li data-translate="automatic_version_checking">Automatic version checking against GitHub releases</li>
+                                <li data-translate="smart_update_detection">Smart update detection with current vs. latest comparison</li>
+                                <li data-translate="safe_update_process">Safe update process with rollback capabilities</li>
+                                <li data-translate="preserves_existing_configurations">Preserves existing configurations during updates</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cin-mb-4">
+                            <h5 class="cin-heading-5 cin-mb-2" data-translate="delete_framework_title">NEW: delete framework - Complete framework removal</h5>
+                            <ul class="cin-list">
+                                <li data-translate="interactive_confirmation_prompts">Interactive confirmation prompts for safety</li>
+                                <li data-translate="clean_removal">Clean removal of all framework files and directories</li>
+                                <li data-translate="configuration_cleanup">Configuration cleanup and state management</li>
+                                <li data-translate="graceful_error_handling">Graceful error handling for incomplete installations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical Enhancements -->
+                <div class="cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="technical_enhancements_heading">🔧 Technical Enhancements</h3>
+                    
+                    <div class="cin-accordion cin-mb-6">
+                        <div class="cin-accordion-item">
+                            <button class="cin-accordion-header" onclick="toggleAccordion(this)">
+                                <span data-translate="core_architecture_improvements_title">Core Architecture Improvements</span>
+                                <span class="cin-accordion-icon"></span>
+                            </button>
+                            <div class="cin-accordion-content">
+                                <div class="cin-grid cin-grid-auto cin-gap-4">
+                                    <div class="cin-card cin-card-feature">
+                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="enhanced_config_system_title">Enhanced Config System</h5>
+                                        <p class="cin-text-body" data-translate="enhanced_config_system_desc">Extended Config struct with framework tracking</p>
+                                        <ul class="cin-list cin-mt-2">
+                                            <li data-translate="added_framework_version_field">Added FrameworkVersion field for version management</li>
+                                            <li data-translate="added_framework_installed_flag">Added FrameworkInstalled boolean flag for state tracking</li>
+                                            <li data-translate="improved_configuration_persistence">Improved configuration persistence and validation</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="cin-card cin-card-feature">
+                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="advanced_error_handling_title">Advanced Error Handling</h5>
+                                        <p class="cin-text-body" data-translate="advanced_error_handling_desc">Comprehensive error management system</p>
+                                        <ul class="cin-list cin-mt-2">
+                                            <li data-translate="shadow_variable_conflicts_resolved">Shadow variable conflicts resolved for cleaner code</li>
+                                            <li data-translate="improved_error_messages">Improved error messages with actionable guidance</li>
+                                            <li data-translate="enhanced_diagnostic_reporting">Enhanced diagnostic reporting for troubleshooting</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="cin-card cin-card-feature">
+                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="network_operations_title">Network Operations</h5>
+                                        <p class="cin-text-body" data-translate="network_operations_desc">Robust HTTP client implementation</p>
+                                        <ul class="cin-list cin-mt-2">
+                                            <li data-translate="github_api_integration">GitHub API integration for release management</li>
+                                            <li data-translate="timeout_handling">Timeout handling and connection resilience</li>
+                                            <li data-translate="intelligent_retry_mechanisms">Intelligent retry mechanisms for network failures</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cin-accordion-item">
+                            <button class="cin-accordion-header" onclick="toggleAccordion(this)">
+                                <span data-translate="file_system_management_title">File System Management</span>
+                                <span class="cin-accordion-icon"></span>
+                            </button>
+                            <div class="cin-accordion-content">
+                                <div class="cin-grid cin-grid-auto cin-gap-4">
+                                    <div class="cin-card cin-card-feature">
+                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="zip_archive_support_title">ZIP Archive Support</h5>
+                                        <p class="cin-text-body" data-translate="zip_archive_support_desc">Native archive extraction capabilities</p>
+                                        <ul class="cin-list cin-mt-2">
+                                            <li data-translate="cross_platform_file_extraction">Cross-platform file extraction with proper permissions</li>
+                                            <li data-translate="directory_structure_preservation">Directory structure preservation during installation</li>
+                                            <li data-translate="cleanup_mechanisms">Cleanup mechanisms for failed extractions</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="cin-card cin-card-feature">
+                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="path_management_title">Path Management</h5>
+                                        <p class="cin-text-body" data-translate="path_management_desc">Enhanced file system operations</p>
+                                        <ul class="cin-list cin-mt-2">
+                                            <li data-translate="absolute_path_resolution">Absolute path resolution for cross-platform compatibility</li>
+                                            <li data-translate="safe_directory_creation">Safe directory creation and removal operations</li>
+                                            <li data-translate="intelligent_conflict_resolution">Intelligent conflict resolution for existing installations</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- User Experience Improvements -->
+                <div class="cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="user_experience_improvements_heading">🎨 User Experience Improvements</h3>
+                    
+                    <div class="cin-grid cin-grid-auto cin-gap-4">
+                        <div class="cin-card cin-card-feature">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="enhanced_cli_interface_title">Enhanced CLI Interface</h4>
+                            <ul class="cin-list">
+                                <li data-translate="priority_command_layout">Priority Command Layout: Framework commands prominently featured in help</li>
+                                <li data-translate="improved_visual_feedback">Improved Visual Feedback: Color-coded status messages and progress indicators</li>
+                                <li data-translate="interactive_confirmations">Interactive Confirmations: Safety prompts for destructive operations</li>
+                                <li data-translate="detailed_progress_reports">Detailed Progress Reports: Real-time feedback during long operations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cin-card cin-card-feature">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="command_documentation_title">Command Documentation</h4>
+                            <ul class="cin-list">
+                                <li data-translate="updated_help_system">Updated Help System: Comprehensive command descriptions and usage examples</li>
+                                <li data-translate="enhanced_commands_md">Enhanced COMMANDS.md: Detailed documentation for all new framework commands</li>
+                                <li data-translate="improved_readme_md">Improved README.md: Updated core capabilities section reflecting new features</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Security & Stability -->
+                <div class="cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="security_stability_heading">🛡️ Security & Stability</h3>
+                    
+                    <div class="cin-grid cin-grid-auto cin-gap-4">
+                        <div class="cin-card cin-card-feature">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="code_quality_improvements_title">Code Quality Improvements</h4>
+                            <ul class="cin-list">
+                                <li data-translate="psr_12_compliance">PSR-12 Compliance: All code follows strict PHP coding standards</li>
+                                <li data-translate="shadow_variable_resolution">Shadow Variable Resolution: Eliminated variable shadowing warnings</li>
+                                <li data-translate="memory_management">Memory Management: Optimized resource usage during file operations</li>
+                                <li data-translate="input_validation">Input Validation: Enhanced parameter validation and sanitization</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cin-card cin-card-feature">
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="error_prevention_title">Error Prevention</h4>
+                            <ul class="cin-list">
+                                <li data-translate="graceful_degradation">Graceful Degradation: Robust handling of network and file system errors</li>
+                                <li data-translate="state_consistency">State Consistency: Reliable configuration management across operations</li>
+                                <li data-translate="rollback_mechanisms">Rollback Mechanisms: Safe recovery from failed operations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Breaking Changes -->
+                <div class="cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="breaking_changes_heading">📋 Breaking Changes</h3>
+                    
+                    <div class="cin-alert cin-alert-warning">
+                        <ul class="cin-list">
+                            <li data-translate="version_bump">Version Bump: Updated from v0.1.0-alpha to v2.0.0</li>
+                            <li data-translate="config_schema">Config Schema: Extended configuration structure (backward compatible)</li>
+                            <li data-translate="import_dependencies">Import Dependencies: Added new Go packages for enhanced functionality</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Migration Guide -->
+                <div class="cin-mb-6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="migration_guide_heading">🔄 Migration Guide</h3>
+                    
+                    <div class="cin-alert cin-alert-success">
+                        <ul class="cin-list">
+                            <li data-translate="existing_configurations_migrated">Existing configurations will be automatically migrated</li>
+                            <li data-translate="no_manual_intervention">No manual intervention required for existing users</li>
+                            <li data-translate="new_framework_fields">New framework fields will be initialized with default values</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Additional Sections -->
+                <div class="cin-accordion">
+                    <div class="cin-accordion-item">
+                        <button class="cin-accordion-header" onclick="toggleAccordion(this)">
+                            <span data-translate="bug_fixes_2_0_0_title">🐛 Bug Fixes</span>
+                            <span class="cin-accordion-icon"></span>
+                        </button>
+                        <div class="cin-accordion-content">
+                            <ul class="cin-list">
+                                <li data-translate="fixed_shadow_variable_warnings">Fixed shadow variable warnings in error handling code</li>
+                                <li data-translate="resolved_import_conflicts">Resolved import conflicts and unused package issues</li>
+                                <li data-translate="improved_cross_platform_path">Improved cross-platform path handling</li>
+                                <li data-translate="enhanced_error_message_clarity">Enhanced error message clarity and actionability</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="cin-accordion-item">
+                        <button class="cin-accordion-header" onclick="toggleAccordion(this)">
+                            <span data-translate="dependencies_title">📦 Dependencies</span>
+                            <span class="cin-accordion-icon"></span>
+                        </button>
+                        <div class="cin-accordion-content">
+                            <ul class="cin-list">
+                                <li data-translate="new_archive_zip">New: archive/zip - For framework package extraction</li>
+                                <li data-translate="new_bufio">New: bufio - For enhanced user input handling</li>
+                                <li data-translate="enhanced_http_client">Enhanced: HTTP client with improved timeout management</li>
+                                <li data-translate="enhanced_file_system">Enhanced: File system operations with better error handling</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="cin-accordion-item">
+                        <button class="cin-accordion-header" onclick="toggleAccordion(this)">
+                            <span data-translate="performance_improvements_title">🎯 Performance Improvements</span>
+                            <span class="cin-accordion-icon"></span>
+                        </button>
+                        <div class="cin-accordion-content">
+                            <ul class="cin-list">
+                                <li data-translate="optimized_network_requests">Optimized network requests with connection pooling</li>
+                                <li data-translate="reduced_memory_footprint">Reduced memory footprint during file operations</li>
+                                <li data-translate="faster_configuration_loading">Faster configuration loading and saving</li>
+                                <li data-translate="improved_startup_time">Improved startup time with lazy initialization</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="cin-accordion-item">
+                        <button class="cin-accordion-header" onclick="toggleAccordion(this)">
+                            <span data-translate="future_roadmap_title">🔮 Future Roadmap</span>
+                            <span class="cin-accordion-icon"></span>
+                        </button>
+                        <div class="cin-accordion-content">
+                            <ul class="cin-list">
+                                <li data-translate="framework_version_rollback">Framework version rollback capabilities</li>
+                                <li data-translate="automated_framework_health">Automated framework health checking</li>
+                                <li data-translate="plugin_system">Plugin system for framework extensions</li>
+                                <li data-translate="advanced_configuration_management">Advanced configuration management tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Previous Versions -->
+            <div class="cin-card cin-mb-8">
+                <div class="cin-hero-badge cin-mb-4">
+                    <span data-translate="previous_versions_badge">📚 Previous Versions</span>
+                </div>
+                
+                <h2 class="cin-heading-3 cin-mb-6" data-translate="previous_versions_heading">Previous Versions</h2>
+                
+                <!-- Version 0.1.0-alpha -->
+                <div class="cin-card cin-card-feature">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="version_0_1_0_alpha_title">Version 0.1.0-alpha - Initial Release</h3>
+                    
+                    <div class="cin-alert cin-alert-info cin-mb-4">
+                        <strong data-translate="release_date_label">Release Date:</strong>
+                        <span data-translate="version_0_1_0_alpha_date">2024</span>
+                    </div>
+                    
+                    <h4 class="cin-heading-5 cin-mb-4" data-translate="initial_features_heading">Initial Features</h4>
+                    
+                    <ul class="cin-list">
+                        <li data-translate="basic_cli_framework">Basic CLI framework with interactive mode</li>
+                        <li data-translate="configuration_management_system">Configuration management system</li>
+                        <li data-translate="error_tracking_diagnostic">Error tracking and diagnostic reporting</li>
+                        <li data-translate="admin_mode_color_output">Admin mode and color output support</li>
+                        <li data-translate="cross_platform_windows_color">Cross-platform Windows color support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Floating Action Button -->
+    <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
+        ↑
+    </button>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="./assets/js/sidebar-min.js"></script>
+    <script src="./assets/js/script-min.js"></script>
+</body>
+</html>
