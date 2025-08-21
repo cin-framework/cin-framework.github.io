@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIN Framework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style-min.css">
+</head>
+<body>
+    <div id="loadingScreen">
+        <div class="cin-loading-spinner"></div>
+        <p class="cin-text-lead" data-translate="loading_message">Loading CIN Framework...</p>
+    </div>
+    <header class="cin-header">
+        <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40">
+        <div class="cin-language-toggle">
+            <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
+            <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
+        </div>
+    </header>
+    <main class="cin-main">
+        <div class="cin-coming-soon cin-fade-in">
+            <!-- Page Header -->
+            <div class="cin-hero-badge">
+                <span data-translate="cin_framework_1_release_notes_badge">📋 CIN Framework Release Notes</span>
+            </div>
+            
+            <h1 class="cin-heading-1" data-translate="cin_framework_1_release_notes_title">Release Notes</h1>
+            <p class="cin-text-lead cin-mb-8" data-translate="cin_framework_1_release_notes_description">
+                Stay updated with the latest changes, improvements, and features in CIN Framework.
+            </p>
+
+            <!-- Version 2.0.0 Release Notes -->
+            <div class="cin-card cin-mb-8 cin-text-center">
+                <div class="cin-hero-badge cin-mb-4">
+                    <span data-translate="cin_framework_1_v200_title">🚀 Version 2.0.0 - Initial Release</span>
+                </div>
+                
+                <p class="cin-text-body cin-mb-4 " data-translate="cin_framework_1_v200_date">
+                    Released: January 2025
+                </p>
+                
+                <div class="cin-alert cin-alert-success cin-mb-6">
+                    <strong data-translate="cin_framework_1_v200_welcome_title">🎉 Welcome to CIN Framework!</strong><br>
+                    <span data-translate="cin_framework_1_v200_welcome_message">
+                        This is the initial release of CIN Framework - Start CIN Framework.
+                    </span>
+                </div>
+                
+                <h3 class="cin-heading-3 cin-mb-4" data-translate="cin_framework_1_v200_features_title">Initial Features</h3>
+                <ul class="cin-list cin-mb-6">
+                    <li data-translate="cin_framework_1_v200_feature_1">Core framework architecture established</li>
+                    <li data-translate="cin_framework_1_v200_feature_2">Basic PHP foundation implemented</li>
+                    <li data-translate="cin_framework_1_v200_feature_3">Initial project structure created</li>
+                    <li data-translate="cin_framework_1_v200_feature_4">Foundation for future development set</li>
+                </ul>
+                
+                <div class="cin-alert cin-alert-info">
+                    <strong data-translate="cin_framework_1_v200_note_title">📝 Release Note:</strong>
+                    <span data-translate="cin_framework_1_v200_note_message">
+                        Start CIN Framework - This marks the beginning of our journey to revolutionize web development with PHP.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
+        ↑
+    </button>
+    <script>
+  window.onload = () => {
+    const pageName = location.pathname.split('/').pop().replace('.html', '');
+    window.parent.postMessage({ page: pageName }, '*');
+  };
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="./assets/js/sidebar-min.js"></script>
+    <script src="./assets/js/script-min.js"></script>
+</body>
+</html>

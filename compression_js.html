@@ -120,17 +120,16 @@
     <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
         ↑
     </button>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="./assets/js/sidebar-min.js"></script>
-    <script src="./assets/js/script-min.js"></script>
-    <script src="./assets/js/compression_js-min.js"></script>
     <script>
   window.onload = () => {
     const pageName = location.pathname.split('/').pop().replace('.html', '');
     window.parent.postMessage({ page: pageName }, '*');
   };
 </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="./assets/js/sidebar-min.js"></script>
+    <script src="./assets/js/script-min.js"></script>
+    <script src="./assets/js/compression_js-min.js"></script>
 </body>
 </html>

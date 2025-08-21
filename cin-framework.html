@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIN Framework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style-min.css">
+</head>
+<body>
+    <div id="loadingScreen">
+        <div class="cin-loading-spinner"></div>
+        <p class="cin-text-lead" data-translate="loading_message">Loading CIN Framework...</p>
+    </div>
+    <header class="cin-header">
+        <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40">
+        <div class="cin-language-toggle">
+            <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
+            <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
+        </div>
+    </header>
+    <main class="cin-main">
+        <div class="cin-coming-soon cin-fade-in">
+            <!-- Version Badge Component -->
+            <div class="cin-hero-badge">
+                <span data-translate="cin_framework_1_version_badge">🚀 CIN Framework v2.0.0 - Latest Release</span>
+            </div>
+
+            <!-- Main Heading Component -->
+            <h1 class="cin-heading-1" data-translate="cin_framework_1_title">CIN Framework</h1>
+            
+            <!-- Lead Text Component -->
+            <p class="cin-text-lead cin-mb-8" data-translate="cin_framework_1_description">
+                CIN Framework is an advanced web framework built on PHP, designed to push the boundaries of modern web development.
+            </p>
+            
+            <!-- Official Website Info Alert -->
+            <div class="cin-alert cin-alert-info cin-mb-8">
+                <strong data-translate="cin_framework_1_repo_title">📥 Download & Installation</strong><br>
+                <span data-translate="cin_framework_1_repo_description">
+                    This is the official website for the CIN Framework, providing comprehensive information about the framework.
+                </span><br><br>
+                <strong data-translate="cin_framework_1_important_note">Important:</strong>
+                <span data-translate="cin_framework_1_storage_note">
+                    To download and install the CIN Framework, you must use the official CIN CLI tool.
+                </span>
+            </div>
+
+            <!-- CLI Section -->
+            <div class="cin-card cin-mb-8">
+                <h3 class="cin-heading-3 cin-mb-4" data-translate="cin_framework_1_cli_title">Using CIN CLI</h3>
+                <p class="cin-text-body cin-mb-6" data-translate="cin_framework_1_cli_description">
+                    To download and install the CIN Framework, you must use the official CIN CLI tool.
+                </p>
+                
+                <!-- CLI Button -->
+                <div class="cin-text-center cin-mb-4">
+                    <a href="cin-cli.html" class="cin-btn cin-btn-primary cin-btn-lg">
+                        <span data-translate="cin_framework_1_get_cli_btn">Get CIN CLI</span>
+                    </a>
+                </div>
+                
+                <p class="cin-text-body" data-translate="cin_framework_1_detailed_instructions">
+                    For detailed installation instructions and CLI usage, explore the documentation on this website.
+                </p>
+            </div>
+
+            <!-- Getting Started Section -->
+            <div class="cin-card cin-mb-8">
+                <h3 class="cin-heading-3 cin-mb-4" data-translate="cin_framework_1_getting_started_title">Getting Started</h3>
+                <p class="cin-text-body cin-mb-6" data-translate="cin_framework_1_getting_started_description">
+                    Ready to start your journey with CIN Framework? Follow our comprehensive getting started guide.
+                </p>
+                
+                <!-- Getting Started Button -->
+                <div class="cin-text-center cin-mb-4">
+                    <a href="getting-started.html" class="cin-btn cin-btn-secondary cin-btn-lg">
+                        <span data-translate="cin_framework_1_getting_started_btn">Getting Started Guide</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
+        ↑
+    </button>
+    <script>
+  window.onload = () => {
+    const pageName = location.pathname.split('/').pop().replace('.html', '');
+    window.parent.postMessage({ page: pageName }, '*');
+  };
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="./assets/js/sidebar-min.js"></script>
+    <script src="./assets/js/script-min.js"></script>
+</body>
+</html>

@@ -271,6 +271,47 @@ quit</code></pre>
                 </div>
             </div>
             
+            <!-- PHP Page Management Commands -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-6" data-translate="v220_php_page_management">PHP Page Management Commands</h2>
+                
+                <!-- Create PHP Page Command -->
+                <div class="cin-mb-6">
+                    <div class="cin-code-block">
+                        <div class="cin-code-header">
+                            <span class="cin-code-title" data-translate="v220_crp_title">crp [pagename]</span>
+                            <button class="cin-code-copy" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre class="cin-code-content"><code class="language-bash">crp [pagename]</code></pre>
+                    </div>
+                    <p class="cin-text-body" data-translate="v220_crp_desc">
+                        Create a new PHP page with CIN template. The page will be created in the same directory as cin-cli.exe with the default CIN Framework structure.
+                    </p>
+                </div>
+                
+                <!-- Remove PHP Page Command -->
+                <div class="cin-mb-6">
+                    <div class="cin-code-block">
+                        <div class="cin-code-header">
+                            <span class="cin-code-title" data-translate="v220_rep_title">rep [pagename]</span>
+                            <button class="cin-code-copy" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre class="cin-code-content"><code class="language-bash">rep [pagename]</code></pre>
+                    </div>
+                    <p class="cin-text-body" data-translate="v220_rep_desc">
+                        Remove an existing PHP page from the current directory.
+                    </p>
+                </div>
+                
+                <!-- Security Note -->
+                <div class="cin-alert cin-alert-warning cin-mb-6">
+                    <h4 class="cin-heading-4" data-translate="v220_security_note_title">Security Note:</h4>
+                    <p class="cin-text-body" data-translate="v220_security_note_desc">
+                        Page names cannot contain path separators (/, \) or file extensions. All operations are restricted to the cin-cli.exe directory for security.
+                    </p>
+                </div>
+            </div>
+            
             <!-- Color Output Commands -->
             <div class="cin-card cin-mb-8">
                 <h2 class="cin-heading-3 cin-mb-6" data-translate="cli_color_output_commands">Color Output Commands</h2>
@@ -329,6 +370,12 @@ quit</code></pre>
     <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
         ↑
     </button>
+    <script>
+  window.onload = () => {
+    const pageName = location.pathname.split('/').pop().replace('.html', '');
+    window.parent.postMessage({ page: pageName }, '*');
+  };
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="./assets/js/sidebar-min.js"></script>
