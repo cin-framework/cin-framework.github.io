@@ -1,5 +1,5 @@
 {
-  "v": "2.1.5",
+  "v": "2.1.8",
   "en": {
     "main": "MAIN",
     "about_cin": "About CIN",
@@ -640,6 +640,7 @@
     "main_v2_enhanced_ui_title": "Enhanced UI",
     "main_v2_enhanced_ui_desc": "Modern, responsive user interface components with superior user experience and accessibility.",
     "main_v2_superior_seo_title": "Superior SEO",
-    "main_v2_superior_seo_desc": "Built-in SEO optimization tools and features to ensure your applications rank higher in search results."
+    "main_v2_superior_seo_desc": "Built-in SEO optimization tools and features to ensure your applications rank higher in search results.",
+    "read_more": "Read More"
   }
 }
