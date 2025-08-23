@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
+    <title>CIN Framework</title>
+=======
+    <link href="./favicon.ico" rel="icon" type="image/x-icon"/>
     <title>CIN Framework - Release Notes</title>
+>>>>>>> Stashed changes
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style-min.css">
 </head>
 <body>
     <div id="loadingScreen">
         <div class="cin-loading-spinner"></div>
-        <p class="cin-text-lead" data-translate="loading_message">Loading CIN Framework...</p>
+        <p class="cin-text-lead">CIN Framework...</p>
     </div>
     <header class="cin-header">
         <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
-        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40">
+        <a href="./main.html">
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40"></a>
         <div class="cin-language-toggle">
             <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
             <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
@@ -24,47 +30,52 @@
         <div class="cin-coming-soon cin-fade-in">
             <!-- Page Header -->
             <div class="cin-hero-badge">
-                <span data-translate="cin_framework_1_release_notes_badge">📋 CIN Framework Release Notes</span>
+                <span data-translate="📋 ملاحظات إصدار إطار CIN">📋 CIN Framework Release Notes</span>
             </div>
             
-            <h1 class="cin-heading-1" data-translate="cin_framework_1_release_notes_title">Release Notes</h1>
-            <p class="cin-text-lead cin-mb-8" data-translate="cin_framework_1_release_notes_description">
+            <h1 class="cin-heading-1" data-translate="ملاحظات الإصدار">Release Notes</h1>
+            <p class="cin-text-lead cin-mb-8" data-translate="ابق على اطلاع بأحدث التغييرات والتحسينات والميزات في إطار CIN.">
                 Stay updated with the latest changes, improvements, and features in CIN Framework.
             </p>
 
             <!-- Version 2.0.0 Release Notes -->
             <div class="cin-card cin-mb-8 cin-text-center">
                 <div class="cin-hero-badge cin-mb-4">
-                    <span data-translate="cin_framework_1_v200_title">🚀 Version 2.0.0 - Initial Release</span>
+                    <span data-translate="🚀 الإصدار 2.0.0 - الإصدار الأولي">🚀 Version 2.0.0 - Initial Release</span>
                 </div>
                 
-                <p class="cin-text-body cin-mb-4 " data-translate="cin_framework_1_v200_date">
+                <p class="cin-text-body cin-mb-4 " data-translate="تم الإصدار: يناير 2025">
                     Released: January 2025
                 </p>
                 
                 <div class="cin-alert cin-alert-success cin-mb-6">
-                    <strong data-translate="cin_framework_1_v200_welcome_title">🎉 Welcome to CIN Framework!</strong><br>
-                    <span data-translate="cin_framework_1_v200_welcome_message">
+                    <strong data-translate="🎉 مرحباً بك في إطار CIN!">🎉 Welcome to CIN Framework!</strong><br>
+                    <span data-translate="هذا هو الإصدار الأولي من إطار CIN - بداية إطار CIN.">
                         This is the initial release of CIN Framework - Start CIN Framework.
                     </span>
                 </div>
                 
-                <h3 class="cin-heading-3 cin-mb-4" data-translate="cin_framework_1_v200_features_title">Initial Features</h3>
+                <h3 class="cin-heading-3 cin-mb-4" data-translate="الميزات الأولية">Initial Features</h3>
                 <ul class="cin-list cin-mb-6">
-                    <li data-translate="cin_framework_1_v200_feature_1">Core framework architecture established</li>
-                    <li data-translate="cin_framework_1_v200_feature_2">Basic PHP foundation implemented</li>
-                    <li data-translate="cin_framework_1_v200_feature_3">Initial project structure created</li>
-                    <li data-translate="cin_framework_1_v200_feature_4">Foundation for future development set</li>
+                    <li data-translate="تم إنشاء هيكل الإطار الأساسي">Core framework architecture established</li>
+                    <li data-translate="تم تنفيذ الأساس الأساسي لـ PHP">Basic PHP foundation implemented</li>
+                    <li data-translate="تم إنشاء هيكل المشروع الأولي">Initial project structure created</li>
+                    <li data-translate="تم وضع الأساس للتطوير المستقبلي">Foundation for future development set</li>
                 </ul>
                 
                 <div class="cin-alert cin-alert-info">
-                    <strong data-translate="cin_framework_1_v200_note_title">📝 Release Note:</strong>
-                    <span data-translate="cin_framework_1_v200_note_message">
+                    <strong data-translate="📝 ملاحظة الإصدار:">📝 Release Note:</strong>
+                    <span data-translate="بداية إطار CIN - هذا يمثل بداية رحلتنا لثورة تطوير الويب باستخدام PHP.">
                         Start CIN Framework - This marks the beginning of our journey to revolutionize web development with PHP.
                     </span>
                 </div>
             </div>
         </div>
+                <!-- Footer -->
+        <footer class="cin-text-center cin-py-6 cin-border-t">
+            <div class="cin-text-muted cin-text-sm cin-mb-2" data-translate="© 2025 CIN FRAMEWORK — جميع الحقوق محفوظة">© 2025 CIN FRAMEWORK — All Rights Reserved</div>
+            <div class="cin-text-muted cin-text-sm" data-translate="ترخيص الملكية | أيوب العرجاني | ماوي مان">Proprietary License | Ayoub Alarjani | Mawi Man</div>
+        </footer>
     </main>
     <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
         ↑

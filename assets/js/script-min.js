@@ -4,4 +4,310 @@
  * @author Mawi Man
  * @license Proprietary - All rights reserved to Ayoub Alarjani
  */
-let cinTranslations={},cinCurrentLang="en";function getCachedTranslations(e){try{const t=localStorage.getItem(`cin_translations_${e}`);if(t)return JSON.parse(t)}catch(e){}return null}function cacheTranslations(e,t){try{localStorage.setItem(`cin_translations_${e}`,JSON.stringify(t))}catch(e){}}function isCacheValid(e,t){const n=getCachedTranslations(e);return n&&n.v===t}async function loadTranslations(e="en"){try{const t=await fetch(`./lang/${e}-min.json`),n=await t.json();if(isCacheValid(e,n.v)){const t=getCachedTranslations(e);return cinTranslations[e]=t[e],t}return cacheTranslations(e,n),cinTranslations[e]=n[e],n}catch(t){const n=getCachedTranslations(e);return n&&n[e]?(cinTranslations[e]=n[e],n):{}}}async function loadAllTranslations(){const e=["en","ar"].map((e=>loadTranslations(e)));try{await Promise.all(e)}catch(e){}}async function setLanguage(e){cinCurrentLang=e;const t=document.documentElement;try{localStorage.setItem("cin_preferred_language",e)}catch(e){}"ar"===e?(t.setAttribute("dir","rtl"),t.setAttribute("lang","ar")):(t.setAttribute("dir","ltr"),t.setAttribute("lang","en")),document.querySelectorAll(".cin-lang-btn").forEach((e=>{e.classList.remove("active")}));const n=document.querySelector(`[onclick="setLanguage('${e}')"]`);n&&n.classList.add("active"),cinTranslations[e]||await loadTranslations(e),updateTranslations();const a=document.querySelector(".cin-main");a&&(a.classList.add("cin-fade-in"),setTimeout((()=>{a.classList.remove("cin-fade-in")}),600))}function sanitizeHtml(e){const t=["strong","br","h1","h2","h3","h4","h5","h6"],n=document.createElement("div");n.innerHTML=e;return n.querySelectorAll("*").forEach((e=>{t.includes(e.tagName.toLowerCase())||(e.outerHTML=e.textContent)})),n.innerHTML}function updateTranslations(){cinTranslations[cinCurrentLang]&&(document.querySelectorAll("[data-translate]").forEach((e=>{const t=e.getAttribute("data-translate");if(cinTranslations[cinCurrentLang]&&cinTranslations[cinCurrentLang][t]){const n=cinTranslations[cinCurrentLang][t];e.innerHTML=sanitizeHtml(n)}})),document.querySelectorAll("[data-translate-placeholder]").forEach((e=>{const t=e.getAttribute("data-translate-placeholder");cinTranslations[cinCurrentLang]&&cinTranslations[cinCurrentLang][t]&&e.setAttribute("placeholder",cinTranslations[cinCurrentLang][t])})))}function toggleSidebar(){const e=document.getElementById("sidebar");e&&e.classList.toggle("open")}function openModal(){const e=document.getElementById("modalOverlay");e&&e.classList.add("open")}function closeModal(){const e=document.getElementById("modalOverlay");e&&e.classList.remove("open")}function handleEmailSubmit(e){e.preventDefault();const t=e.target.querySelector(".cin-input").value,n=document.getElementById("subscriptionMessage");n&&(n.textContent="ar"===cinCurrentLang?`شكراً! تم تسجيل بريدك الإلكتروني: ${t}`:`Thank you! Your email has been registered: ${t}`,n.style.display="block",setTimeout((()=>{n.style.display="none"}),5e3)),e.target.reset()}function copyCode(e){const t=e.closest(".cin-code-block").querySelector("code").textContent,n=document.createElement("textarea");n.value=t,document.body.appendChild(n),n.select();try{const t=document.execCommand("copy")?"Copied!":"Failed to copy!";e.textContent=t,setTimeout((()=>{e.textContent="Copy"}),2e3)}catch(t){e.textContent="Error!",setTimeout((()=>{e.textContent="Copy"}),2e3)}document.body.removeChild(n)}function updateQuantity(e,t){const n=e.parentNode.querySelector(".cin-cart-quantity-value");let a=parseInt(n.textContent)+t;a<0&&(a=0),n.textContent=a}function scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}function toggleAccordion(e){const t=e.closest(".cin-accordion-item").querySelector(".cin-accordion-content");e.classList.toggle("active"),t.classList.contains("open")?(t.style.maxHeight=null,t.classList.remove("open")):(t.style.maxHeight="9999px",t.classList.add("open"))}let slideIndex=1;function showSlides(e){let t;const n=document.getElementsByClassName("cin-carousel-item"),a=document.getElementsByClassName("cin-carousel-indicator");for(e>n.length&&(slideIndex=1),e<1&&(slideIndex=n.length),t=0;t<n.length;t++)n[t].style.transform=`translateX(-${100*(slideIndex-1)}%)`,n[t].classList.remove("active");for(t=0;t<a.length;t++)a[t].classList.remove("active");n[slideIndex-1]&&n[slideIndex-1].classList.add("active"),a[slideIndex-1]&&a[slideIndex-1].classList.add("active")}function nextSlide(){showSlides(slideIndex+=1)}function prevSlide(){showSlides(slideIndex-=1)}function currentSlide(e){showSlides(slideIndex=e)}function toggleCollapse(e){const t=e.nextElementSibling;t.style.maxHeight?(t.style.maxHeight=null,t.classList.remove("open")):(t.style.maxHeight="9999px",t.classList.add("open"))}function toggleDropdown(e){e.nextElementSibling.classList.toggle("show")}function getSavedLanguage(){try{const e=localStorage.getItem("cin_preferred_language");return e&&["en","ar"].includes(e)?e:"en"}catch(e){return"en"}}window.onclick=function(e){if(!e.target.matches(".cin-btn")){const e=document.getElementsByClassName("cin-dropdown-content");for(let t=0;t<e.length;t++){const n=e[t];n.classList.contains("show")&&n.classList.remove("show")}}},document.addEventListener("click",(function(e){const t=document.getElementById("sidebar"),n=document.querySelector(".cin-menu-toggle");window.innerWidth<=768&&t&&n&&!t.contains(e.target)&&!n.contains(e.target)&&t.classList.contains("open")&&t.classList.remove("open")})),window.addEventListener("resize",(function(){const e=document.getElementById("sidebar");e&&window.innerWidth>768&&e.classList.remove("open"),showSlides(slideIndex)})),document.addEventListener("DOMContentLoaded",(async function(){await loadAllTranslations();const e=getSavedLanguage();await setLanguage(e),document.querySelectorAll(".cin-card-feature").forEach(((e,t)=>{e.style.animationDelay=.1*t+"s"}));const t=document.getElementById("loadingScreen");t&&t.classList.add("hidden"),showSlides(slideIndex),"undefined"!=typeof Prism&&Prism.plugins.autoloader}));const CinFramework={theme:{setDarkMode:()=>{document.body.classList.add("cin-dark")},setLightMode:()=>{document.body.classList.remove("cin-dark")}},utils:{addClass:(e,t)=>{e.classList.add(t)},removeClass:(e,t)=>{e.classList.remove(t)},toggleClass:(e,t)=>{e.classList.toggle(t)}}};window.CinFramework=CinFramework;
+
+let cinCurrentLang = "en";
+
+function setLanguage(lang) {
+    cinCurrentLang = lang;
+    const html = document.documentElement;
+    
+    try {
+        localStorage.setItem("cin_preferred_language", lang);
+    } catch (e) {}
+    
+    if (lang === "ar") {
+        html.setAttribute("dir", "rtl");
+        html.setAttribute("lang", "ar");
+    } else {
+        html.setAttribute("dir", "ltr");
+        html.setAttribute("lang", "en");
+    }
+    
+    document.querySelectorAll(".cin-lang-btn").forEach(btn => {
+        btn.classList.remove("active");
+    });
+    
+    const activeBtn = document.querySelector(`[onclick="setLanguage('${lang}')"]`);
+    if (activeBtn) activeBtn.classList.add("active");
+    
+    updateTranslations();
+    
+    const main = document.querySelector(".cin-main");
+    if (main) {
+        main.classList.add("cin-fade-in");
+        setTimeout(() => {
+            main.classList.remove("cin-fade-in");
+        }, 600);
+    }
+}
+
+function sanitizeHtml(html) {
+    const allowedTags = ['strong', 'br', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+    
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+    
+    const allElements = temp.querySelectorAll('*');
+    allElements.forEach(element => {
+        if (!allowedTags.includes(element.tagName.toLowerCase())) {
+            element.outerHTML = element.textContent;
+        }
+    });
+    
+    return temp.innerHTML;
+}
+
+function updateTranslations() {
+    document.querySelectorAll("[data-translate]").forEach(element => {
+        const arabicText = element.getAttribute("data-translate");
+        
+        if (cinCurrentLang === "ar") {
+            element.innerHTML = sanitizeHtml(arabicText);
+        } else {
+            const englishText = element.getAttribute("data-original-text");
+            if (englishText) {
+                element.innerHTML = sanitizeHtml(englishText);
+            }
+        }
+    });
+    
+    document.querySelectorAll("[data-translate-placeholder]").forEach(element => {
+        const arabicPlaceholder = element.getAttribute("data-translate-placeholder");
+        
+        if (cinCurrentLang === "ar") {
+            element.setAttribute("placeholder", arabicPlaceholder);
+        } else {
+            const englishPlaceholder = element.getAttribute("data-original-placeholder");
+            if (englishPlaceholder) {
+                element.setAttribute("placeholder", englishPlaceholder);
+            }
+        }
+    });
+}
+
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar) sidebar.classList.toggle("open");
+}
+
+function openModal() {
+    const modal = document.getElementById("modalOverlay");
+    if (modal) modal.classList.add("open");
+}
+
+function closeModal() {
+    const modal = document.getElementById("modalOverlay");
+    if (modal) modal.classList.remove("open");
+}
+
+function handleEmailSubmit(event) {
+    event.preventDefault();
+    const email = event.target.querySelector(".cin-input").value;
+    const message = document.getElementById("subscriptionMessage");
+    
+    if (message) {
+        message.textContent = cinCurrentLang === "ar" 
+            ? `شكراً! تم تسجيل بريدك الإلكتروني: ${email}`
+            : `Thank you! Your email has been registered: ${email}`;
+        message.style.display = "block";
+        setTimeout(() => {
+            message.style.display = "none";
+        }, 5000);
+    }
+    
+    event.target.reset();
+}
+
+function copyCode(button) {
+    const code = button.closest(".cin-code-block").querySelector("code").textContent;
+    const textarea = document.createElement("textarea");
+    textarea.value = code;
+    document.body.appendChild(textarea);
+    textarea.select();
+    
+    try {
+        const success = document.execCommand("copy") ? "Copied!" : "Failed to copy!";
+        button.textContent = success;
+        setTimeout(() => {
+            button.textContent = "Copy";
+        }, 2000);
+    } catch (err) {
+        button.textContent = "Error!";
+        setTimeout(() => {
+            button.textContent = "Copy";
+        }, 2000);
+    }
+    
+    document.body.removeChild(textarea);
+}
+
+function updateQuantity(button, change) {
+    const quantityElement = button.parentNode.querySelector(".cin-cart-quantity-value");
+    let quantity = parseInt(quantityElement.textContent) + change;
+    if (quantity < 0) quantity = 0;
+    quantityElement.textContent = quantity;
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+function toggleAccordion(header) {
+    const content = header.closest(".cin-accordion-item").querySelector(".cin-accordion-content");
+    header.classList.toggle("active");
+    
+    if (content.classList.contains("open")) {
+        content.style.maxHeight = null;
+        content.classList.remove("open");
+    } else {
+        content.style.maxHeight = "9999px";
+        content.classList.add("open");
+    }
+}
+
+let slideIndex = 1;
+
+function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("cin-carousel-item");
+    const indicators = document.getElementsByClassName("cin-carousel-indicator");
+    
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.transform = `translateX(-${(slideIndex - 1) * 100}%)`;
+        slides[i].classList.remove("active");
+    }
+    
+    for (i = 0; i < indicators.length; i++) {
+        indicators[i].classList.remove("active");
+    }
+    
+    if (slides[slideIndex - 1]) slides[slideIndex - 1].classList.add("active");
+    if (indicators[slideIndex - 1]) indicators[slideIndex - 1].classList.add("active");
+}
+
+function nextSlide() {
+    showSlides(slideIndex += 1);
+}
+
+function prevSlide() {
+    showSlides(slideIndex -= 1);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function toggleCollapse(button) {
+    const content = button.nextElementSibling;
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        content.classList.remove("open");
+    } else {
+        content.style.maxHeight = "9999px";
+        content.classList.add("open");
+    }
+}
+
+function toggleDropdown(button) {
+    button.nextElementSibling.classList.toggle("show");
+}
+
+function getSavedLanguage() {
+    try {
+        const saved = localStorage.getItem("cin_preferred_language");
+        return saved && ["en", "ar"].includes(saved) ? saved : "en";
+    } catch (e) {
+        return "en";
+    }
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches(".cin-btn")) {
+        const dropdowns = document.getElementsByClassName("cin-dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+            const openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+            }
+        }
+    }
+};
+
+document.addEventListener("click", function(event) {
+    const sidebar = document.getElementById("sidebar");
+    const menuToggle = document.querySelector(".cin-menu-toggle");
+    
+    if (window.innerWidth <= 768 && sidebar && menuToggle && 
+        !sidebar.contains(event.target) && !menuToggle.contains(event.target) && 
+        sidebar.classList.contains("open")) {
+        sidebar.classList.remove("open");
+    }
+});
+
+window.addEventListener("resize", function() {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar && window.innerWidth > 768) {
+        sidebar.classList.remove("open");
+    }
+    showSlides(slideIndex);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("[data-translate]").forEach(element => {
+        const englishText = element.textContent.trim();
+        element.setAttribute("data-original-text", englishText);
+    });
+    
+    document.querySelectorAll("[data-translate-placeholder]").forEach(element => {
+        const englishPlaceholder = element.getAttribute("placeholder");
+        if (englishPlaceholder) {
+            element.setAttribute("data-original-placeholder", englishPlaceholder);
+        }
+    });
+    
+    const savedLang = getSavedLanguage();
+    setLanguage(savedLang);
+    
+    document.querySelectorAll(".cin-card-feature").forEach((card, index) => {
+        card.style.animationDelay = (index * 0.1) + "s";
+    });
+    
+    const loadingScreen = document.getElementById("loadingScreen");
+    if (loadingScreen) loadingScreen.classList.add("hidden");
+    
+    showSlides(slideIndex);
+    
+    if (typeof Prism !== "undefined") {
+        Prism.plugins.autoloader;
+    }
+});
+
+const CinFramework = {
+    theme: {
+        setDarkMode: () => {
+            document.body.classList.add("cin-dark");
+        },
+        setLightMode: () => {
+            document.body.classList.remove("cin-dark");
+        }
+    },
+    utils: {
+        addClass: (element, className) => {
+            element.classList.add(className);
+        },
+        removeClass: (element, className) => {
+            element.classList.remove(className);
+        },
+        toggleClass: (element, className) => {
+            element.classList.toggle(className);
+        }
+    }
+};
+
+window.CinFramework = CinFramework;

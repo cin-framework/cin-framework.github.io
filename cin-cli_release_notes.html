@@ -3,163 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="release_notes_title">CIN Framework CLI - Release Notes</title>
+    <link href="./favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>CIN CLI - Release Notes</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style-min.css">
 </head>
 <body>
     <div id="loadingScreen">
         <div class="cin-loading-spinner"></div>
-        <p class="cin-text-lead" data-translate="loading_message">Loading CIN Framework...</p>
+        <p class="cin-text-lead">CIN Framework...</p>
     </div>
     <header class="cin-header">
         <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
-        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40">
+        <a href="./main.html">
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40"></a>
         <div class="cin-language-toggle">
             <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
             <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
         </div>
     </header>
-    
     <main class="cin-main">
         <div class="cin-coming-soon cin-fade-in">
             <!-- Page Header -->
             <div class="cin-hero-badge">
-                <span data-translate="cli_badge">📋 CLI Release Notes</span>
+                <span data-translate="📋 ملاحظات إصدار CLI">📋 CLI Release Notes</span>
             </div>
             
-            <h1 class="cin-heading-1" data-translate="release_notes_heading">CIN Framework CLI - Release Notes</h1>
+            <h1 class="cin-heading-1" data-translate="إطار CIN CLI - ملاحظات الإصدار">CIN Framework CLI - Release Notes</h1>
             
-            <p class="cin-text-lead cin-mb-8" data-translate="release_notes_subtitle">
+            <p class="cin-text-lead cin-mb-8" data-translate="تتبع تطور إطار CIN CLI مع ملاحظات الإصدار المفصلة وتاريخ الإصدارات.">
                 Track the evolution of CIN Framework CLI with detailed release notes and version history.
             </p>
             
             <!-- Version 2.2.0 - Latest -->
             <div class="cin-card cin-mb-8">
                 <div class="cin-hero-badge cin-mb-4">
-                    <span data-translate="v220_version_badge">✨ Version 2.2.0 - PHP Page Management System</span>
+                    <span data-translate="✨ الإصدار 2.2.0 - نظام إدارة صفحات PHP">✨ Version 2.2.0 - PHP Page Management System</span>
                 </div>
                 
-                <h2 class="cin-heading-3 cin-mb-4" data-translate="v220_version_title">Version 2.2.0 - PHP Page Management System</h2>
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="الإصدار 2.2.0 - نظام إدارة صفحات PHP">Version 2.2.0 - PHP Page Management System</h2>
                 
                 <div class="cin-alert cin-alert-info cin-mb-6">
-                    <strong data-translate="release_date_label">Release Date:</strong>
-                    <span data-translate="v220_release_date">January 19, 2025</span>
+                    <strong data-translate="تاريخ الإصدار:">Release Date:</strong>
+                    <span data-translate="19 يناير 2025">January 19, 2025</span>
                 </div>
                 
                 <!-- New Features Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="v220_new_features_heading">✨ New Features</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="✨ الميزات الجديدة">✨ New Features</h3>
                     
                     <div class="cin-card cin-card-feature cin-mb-4">
-                        <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_php_page_creation_title">PHP Page Creation: Added crp [pagename] command for creating PHP pages</h4>
+                        <h4 class="cin-heading-5 cin-mb-2" data-translate="إنشاء صفحات PHP: تم إضافة أمر crp [اسم_الصفحة] لإنشاء صفحات PHP">PHP Page Creation: Added crp [pagename] command for creating PHP pages</h4>
                         <ul class="cin-list cin-mt-2">
-                            <li data-translate="v220_creates_php_files">Creates PHP files with CIN Framework template in executable directory</li>
-                            <li data-translate="v220_includes_default_boilerplate">Includes default CIN Framework boilerplate code</li>
-                            <li data-translate="v220_automatic_file_validation">Automatic file validation and error handling</li>
-                            <li data-translate="v220_prevents_path_traversal">Prevents path traversal and ensures secure file creation</li>
+                            <li data-translate="ينشئ ملفات PHP بقالب إطار CIN في مجلد التنفيذ">Creates PHP files with CIN Framework template in executable directory</li>
+                            <li data-translate="يتضمن كود إطار CIN الافتراضي">Includes default CIN Framework boilerplate code</li>
+                            <li data-translate="التحقق التلقائي من الملفات ومعالجة الأخطاء">Automatic file validation and error handling</li>
+                            <li data-translate="يمنع اجتياز المسار ويضمن إنشاء ملفات آمنة">Prevents path traversal and ensures secure file creation</li>
                         </ul>
                     </div>
                     
                     <div class="cin-card cin-card-feature cin-mb-4">
-                        <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_php_page_removal_title">PHP Page Removal: Added rep [pagename] command for removing PHP pages</h4>
+                        <h4 class="cin-heading-5 cin-mb-2" data-translate="إزالة صفحات PHP: تم إضافة أمر rep [اسم_الصفحة] لإزالة صفحات PHP">PHP Page Removal: Added rep [pagename] command for removing PHP pages</h4>
                         <ul class="cin-list cin-mt-2">
-                            <li data-translate="v220_safe_deletion">Safe deletion of PHP files from executable directory</li>
-                            <li data-translate="v220_file_existence_validation">File existence validation before removal</li>
-                            <li data-translate="v220_clear_success_error_messaging">Clear success and error messaging</li>
-                            <li data-translate="v220_protection_against_path_manipulation">Protection against path manipulation</li>
+                            <li data-translate="حذف آمن لملفات PHP من مجلد التنفيذ">Safe deletion of PHP files from executable directory</li>
+                            <li data-translate="التحقق من وجود الملف قبل الإزالة">File existence validation before removal</li>
+                            <li data-translate="رسائل نجاح وخطأ واضحة">Clear success and error messaging</li>
+                            <li data-translate="الحماية من التلاعب بالمسار">Protection against path manipulation</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Security Features Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="v220_security_features_heading">🛡️ Security Features</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="🛡️ الميزات الأمنية">🛡️ Security Features</h3>
                     
                     <div class="cin-grid cin-grid-auto cin-gap-4">
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_path_validation_title">Path Validation</h4>
-                            <p class="cin-text-body" data-translate="v220_path_validation_desc">Strict validation prevents directory traversal attacks</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="التحقق من المسار">Path Validation</h4>
+                            <p class="cin-text-body" data-translate="التحقق الصارم يمنع هجمات اجتياز الدليل">Strict validation prevents directory traversal attacks</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_file_name_sanitization_title">File Name Sanitization</h4>
-                            <p class="cin-text-body" data-translate="v220_file_name_sanitization_desc">Only simple names allowed (no paths or extensions)</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="تنظيف أسماء الملفات">File Name Sanitization</h4>
+                            <p class="cin-text-body" data-translate="يُسمح فقط بالأسماء البسيطة (بدون مسارات أو امتدادات)">Only simple names allowed (no paths or extensions)</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_secure_file_operations_title">Secure File Operations</h4>
-                            <p class="cin-text-body" data-translate="v220_secure_file_operations_desc">All file operations restricted to executable directory</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="عمليات الملفات الآمنة">Secure File Operations</h4>
+                            <p class="cin-text-body" data-translate="جميع عمليات الملفات مقيدة بمجلد التنفيذ">All file operations restricted to executable directory</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_input_validation_title">Input Validation</h4>
-                            <p class="cin-text-body" data-translate="v220_input_validation_desc">Comprehensive validation of user input parameters</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="التحقق من المدخلات">Input Validation</h4>
+                            <p class="cin-text-body" data-translate="التحقق الشامل من معاملات إدخال المستخدم">Comprehensive validation of user input parameters</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Technical Improvements Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="v220_technical_improvements_heading">🔧 Technical Improvements</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="🔧 التحسينات التقنية">🔧 Technical Improvements</h3>
                     
                     <div class="cin-grid cin-grid-auto cin-gap-4">
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_command_integration_title">Command Integration</h4>
-                            <p class="cin-text-body" data-translate="v220_command_integration_desc">Seamless integration with existing CLI command system</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="تكامل الأوامر">Command Integration</h4>
+                            <p class="cin-text-body" data-translate="تكامل سلس مع نظام أوامر CLI الحالي">Seamless integration with existing CLI command system</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_error_handling_title">Error Handling</h4>
-                            <p class="cin-text-body" data-translate="v220_error_handling_desc">Comprehensive error handling for all file operations</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="معالجة الأخطاء">Error Handling</h4>
+                            <p class="cin-text-body" data-translate="معالجة شاملة للأخطاء لجميع عمليات الملفات">Comprehensive error handling for all file operations</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_user_feedback_title">User Feedback</h4>
-                            <p class="cin-text-body" data-translate="v220_user_feedback_desc">Clear success/error messages with color coding</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="تعليقات المستخدم">User Feedback</h4>
+                            <p class="cin-text-body" data-translate="رسائل نجاح/خطأ واضحة مع ترميز الألوان">Clear success/error messages with color coding</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_file_management_title">File Management</h4>
-                            <p class="cin-text-body" data-translate="v220_file_management_desc">Intelligent file existence checking and validation</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="إدارة الملفات">File Management</h4>
+                            <p class="cin-text-body" data-translate="فحص ذكي لوجود الملفات والتحقق من صحتها">Intelligent file existence checking and validation</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- User Experience Improvements Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="v220_user_experience_heading">🎨 User Experience Improvements</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="🎨 تحسينات تجربة المستخدم">🎨 User Experience Improvements</h3>
                     
                     <div class="cin-grid cin-grid-auto cin-gap-4">
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_help_integration_title">Help Integration</h4>
-                            <p class="cin-text-body" data-translate="v220_help_integration_desc">New commands added to help system with clear descriptions</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="تكامل المساعدة">Help Integration</h4>
+                            <p class="cin-text-body" data-translate="الأوامر الجديدة مضافة إلى نظام المساعدة مع أوصاف واضحة">New commands added to help system with clear descriptions</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_color_coding_title">Color Coding</h4>
-                            <p class="cin-text-body" data-translate="v220_color_coding_desc">Consistent color scheme for success, error, and info messages</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="ترميز الألوان">Color Coding</h4>
+                            <p class="cin-text-body" data-translate="نظام ألوان متسق لرسائل النجاح والخطأ والمعلومات">Consistent color scheme for success, error, and info messages</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_usage_examples_title">Usage Examples</h4>
-                            <p class="cin-text-body" data-translate="v220_usage_examples_desc">Clear usage instructions and examples for both commands</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="أمثلة الاستخدام">Usage Examples</h4>
+                            <p class="cin-text-body" data-translate="تعليمات استخدام واضحة وأمثلة لكلا الأمرين">Clear usage instructions and examples for both commands</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_file_location_display_title">File Location Display</h4>
-                            <p class="cin-text-body" data-translate="v220_file_location_display_desc">Shows exact file paths for created/removed files</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="عرض موقع الملف">File Location Display</h4>
+                            <p class="cin-text-body" data-translate="يعرض مسارات الملفات الدقيقة للملفات المنشأة/المحذوفة">Shows exact file paths for created/removed files</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Usage Examples Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="v220_usage_examples_section_heading">📋 Usage Examples</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="📋 أمثلة الاستخدام">📋 Usage Examples</h3>
                     
                     <div class="cin-code-block cin-mb-4">
                         <div class="cin-code-header">
-                            <span class="cin-code-title" data-translate="v220_create_page_example">Create a new PHP page</span>
+                            <span class="cin-code-title" data-translate="إنشاء صفحة PHP جديدة">Create a new PHP page</span>
                             <button class="cin-code-copy" onclick="copyCode(this)">Copy</button>
                         </div>
                         <pre class="cin-code-content"><code class="language-bash">crp homepage</code></pre>
@@ -167,7 +168,7 @@
                     
                     <div class="cin-code-block cin-mb-4">
                         <div class="cin-code-header">
-                            <span class="cin-code-title" data-translate="v220_remove_page_example">Remove an existing PHP page</span>
+                            <span class="cin-code-title" data-translate="إزالة صفحة PHP موجودة">Remove an existing PHP page</span>
                             <button class="cin-code-copy" onclick="copyCode(this)">Copy</button>
                         </div>
                         <pre class="cin-code-content"><code class="language-bash">rep homepage</code></pre>
@@ -176,14 +177,25 @@
                 
                 <!-- Security Restrictions Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="v220_security_restrictions_heading">🚫 Security Restrictions</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="🚫 القيود الأمنية">🚫 Security Restrictions</h3>
                     
                     <div class="cin-alert cin-alert-warning">
-                        <ul class="cin-list">
-                            <li data-translate="v220_path_separators_not_allowed">Path separators (/ \) are not allowed in page names</li>
-                            <li data-translate="v220_file_extensions_handled">File extensions are automatically handled</li>
-                            <li data-translate="v220_operations_restricted">All operations restricted to executable directory only</li>
-                        </ul>
+                        <div class="cin-grid cin-grid-auto cin-gap-4">
+                            <div class="cin-card cin-card-feature">
+                                <h4 class="cin-heading-5 cin-mb-2" data-translate="فواصل المسار">Path Separators</h4>
+                                <p class="cin-text-body" data-translate="لا يُسمح بالشرطات المائلة (/) أو الشرطات المائلة العكسية (\) في أسماء الصفحات">No forward slashes (/) or backslashes (\) allowed in page names</p>
+                            </div>
+                            
+                            <div class="cin-card cin-card-feature">
+                                <h4 class="cin-heading-5 cin-mb-2" data-translate="امتدادات الملفات">File Extensions</h4>
+                                <p class="cin-text-body" data-translate="لا يُسمح بامتدادات الملفات في أسماء الصفحات (يضيف .php تلقائياً)">No file extensions allowed in page names (automatically adds .php)</p>
+                            </div>
+                            
+                            <div class="cin-card cin-card-feature">
+                                <h4 class="cin-heading-5 cin-mb-2" data-translate="قيود العمليات">Operation Restrictions</h4>
+                                <p class="cin-text-body" data-translate="جميع العمليات مقيدة بمجلد التنفيذ فقط">All operations are restricted to the executable directory only</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -191,93 +203,93 @@
             <!-- Version 2.1.0 -->
             <div class="cin-card cin-mb-8">
                 <div class="cin-hero-badge cin-mb-4">
-                    <span data-translate="v220_version_2_1_0_badge">🛡️ Version 2.1.0 - Security Enhancement & Framework Storage Update</span>
+                    <span data-translate="🛡️ الإصدار 2.1.0 - تحسين الأمان وتحديث تخزين الإطار">🛡️ Version 2.1.0 - Security Enhancement & Framework Storage Update</span>
                 </div>
                 
-                <h2 class="cin-heading-3 cin-mb-4" data-translate="v220_version_2_1_0_title">Version 2.1.0 - Security Enhancement & Framework Storage Update</h2>
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="الإصدار 2.1.0 - تحسين الأمان وتحديث تخزين الإطار">Version 2.1.0 - Security Enhancement & Framework Storage Update</h2>
                 
                 <div class="cin-alert cin-alert-info cin-mb-6">
-                    <strong data-translate="release_date_label">Release Date:</strong>
-                    <span data-translate="v220_version_2_1_0_release_date">January 19, 2025</span>
+                    <strong data-translate="تاريخ الإصدار:">Release Date:</strong>
+                    <span data-translate="19 يناير 2025">January 19, 2025</span>
                 </div>
                 
                 <!-- New Features Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="v220_v210_new_features_heading">✨ New Features</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="✨ الميزات الجديدة">✨ New Features</h3>
                     
                     <div class="cin-card cin-card-feature cin-mb-4">
-                        <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_enhanced_framework_storage_title">Enhanced Framework Storage: Improved framework download and storage mechanism</h4>
+                        <h4 class="cin-heading-5 cin-mb-2" data-translate="تحسين تخزين الإطار: آلية محسنة لتحميل وتخزين الإطار">Enhanced Framework Storage: Improved framework download and storage mechanism</h4>
                         <ul class="cin-list cin-mt-2">
-                            <li data-translate="v220_framework_zip_saved">Framework zip files are now saved in .cin-cli/cin_v directory for future reference</li>
-                            <li data-translate="v220_zip_files_retained">Zip files are retained after extraction for backup and rollback purposes</li>
-                            <li data-translate="v220_enhanced_download_path">Enhanced download path management and storage organization</li>
-                            <li data-translate="v220_improved_framework_version">Improved framework version tracking and management</li>
+                            <li data-translate="يتم الآن حفظ ملفات zip الخاصة بالإطار في مجلد .cin-cli/cin_v للرجوع إليها مستقبلاً">Framework zip files are now saved in .cin-cli/cin_v directory for future reference</li>
+                            <li data-translate="يتم الاحتفاظ بملفات zip بعد الاستخراج لأغراض النسخ الاحتياطي والاستعادة">Zip files are retained after extraction for backup and rollback purposes</li>
+                            <li data-translate="إدارة محسنة لمسارات التحميل وتنظيم التخزين">Enhanced download path management and storage organization</li>
+                            <li data-translate="تحسين تتبع وإدارة إصدارات الإطار">Improved framework version tracking and management</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Security & Platform Updates Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="v220_security_platform_updates_heading">🛡️ Security & Platform Updates</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="🛡️ تحديثات الأمان والمنصة">🛡️ Security & Platform Updates</h3>
                     
                     <div class="cin-card cin-card-feature cin-mb-4">
-                        <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_windows_only_security_title">Windows-Only Security Support: Enhanced security measures exclusively for Windows platform</h4>
+                        <h4 class="cin-heading-5 cin-mb-2" data-translate="دعم الأمان الحصري لويندوز: تدابير أمنية محسنة حصرياً لمنصة ويندوز">Windows-Only Security Support: Enhanced security measures exclusively for Windows platform</h4>
                         <ul class="cin-list cin-mt-2">
-                            <li data-translate="v220_advanced_security_protocols">Advanced security protocols implemented for Windows 10/11 (64-bit)</li>
-                            <li data-translate="v220_other_platforms_marked">Other platforms marked as relatively less secure due to limited security implementation</li>
-                            <li data-translate="v220_focused_security_development">Focused security development for primary Windows user base</li>
-                            <li data-translate="v220_enhanced_windows_specific">Enhanced Windows-specific security validations and protections</li>
+                            <li data-translate="تم تطبيق بروتوكولات أمنية متقدمة لويندوز 10/11 (64-بت)">Advanced security protocols implemented for Windows 10/11 (64-bit)</li>
+                            <li data-translate="المنصات الأخرى مصنفة كأقل أماناً نسبياً بسبب التطبيق المحدود للأمان">Other platforms marked as relatively less secure due to limited security implementation</li>
+                            <li data-translate="تطوير أمني مركز لقاعدة مستخدمي ويندوز الأساسية">Focused security development for primary Windows user base</li>
+                            <li data-translate="تحسين التحققات والحماية الأمنية الخاصة بويندوز">Enhanced Windows-specific security validations and protections</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Technical Improvements Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="v220_v210_technical_improvements_heading">🔧 Technical Improvements</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="🔧 التحسينات التقنية">🔧 Technical Improvements</h3>
                     
                     <div class="cin-card cin-card-feature cin-mb-4">
-                        <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_framework_download_system_title">Framework Download System: Optimized downloadAndInstallFramework function</h4>
+                        <h4 class="cin-heading-5 cin-mb-2" data-translate="نظام تحميل الإطار: تحسين دالة downloadAndInstallFramework">Framework Download System: Optimized downloadAndInstallFramework function</h4>
                         <ul class="cin-list cin-mt-2">
-                            <li data-translate="v220_creates_dedicated_cin_v">Creates dedicated cin_v storage directory automatically</li>
-                            <li data-translate="v220_improved_zip_file_management">Improved zip file management and retention policies</li>
-                            <li data-translate="v220_enhanced_extraction_process">Enhanced extraction process with better error handling</li>
-                            <li data-translate="v220_added_confirmation_messages">Added confirmation messages for storage operations</li>
+                            <li data-translate="ينشئ مجلد تخزين cin_v المخصص تلقائياً">Creates dedicated cin_v storage directory automatically</li>
+                            <li data-translate="تحسين إدارة ملفات zip وسياسات الاحتفاظ">Improved zip file management and retention policies</li>
+                            <li data-translate="تحسين عملية الاستخراج مع معالجة أفضل للأخطاء">Enhanced extraction process with better error handling</li>
+                            <li data-translate="إضافة رسائل تأكيد لعمليات التخزين">Added confirmation messages for storage operations</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- User Experience Improvements Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="v220_v210_user_experience_heading">🎨 User Experience Improvements</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="🎨 تحسينات تجربة المستخدم">🎨 User Experience Improvements</h3>
                     
                     <div class="cin-grid cin-grid-auto cin-gap-4">
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_storage_management_title">Storage Management</h4>
-                            <p class="cin-text-body" data-translate="v220_storage_management_desc">Clear feedback on framework storage locations</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="إدارة التخزين">Storage Management</h4>
+                            <p class="cin-text-body" data-translate="ملاحظات واضحة حول مواقع تخزين الإطار">Clear feedback on framework storage locations</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_download_progress_title">Download Progress</h4>
-                            <p class="cin-text-body" data-translate="v220_download_progress_desc">Enhanced progress indicators during framework operations</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="تقدم التحميل">Download Progress</h4>
+                            <p class="cin-text-body" data-translate="مؤشرات تقدم محسنة أثناء عمليات الإطار">Enhanced progress indicators during framework operations</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="v220_directory_creation_title">Directory Creation</h4>
-                            <p class="cin-text-body" data-translate="v220_directory_creation_desc">Automatic creation of storage directories with user notifications</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="إنشاء المجلدات">Directory Creation</h4>
+                            <p class="cin-text-body" data-translate="إنشاء تلقائي لمجلدات التخزين مع إشعارات المستخدم">Automatic creation of storage directories with user notifications</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- System Requirements Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="v220_system_requirements_heading">📋 System Requirements</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="📋 متطلبات النظام">📋 System Requirements</h3>
                     
                     <div class="cin-alert cin-alert-info">
                         <ul class="cin-list">
-                            <li data-translate="v220_primary_support">Primary Support: Windows 10/11 (64-bit) - Full security features</li>
-                            <li data-translate="v220_limited_support">Limited Support: Other platforms - Basic functionality only</li>
-                            <li data-translate="v220_internet_connection">Internet connection for framework downloads</li>
-                            <li data-translate="v220_write_permissions">Write permissions in program directory</li>
+                            <li data-translate="الدعم الأساسي: ويندوز 10/11 (64-بت) - ميزات أمنية كاملة">Primary Support: Windows 10/11 (64-bit) - Full security features</li>
+                            <li data-translate="دعم محدود: المنصات الأخرى - وظائف أساسية فقط">Limited Support: Other platforms - Basic functionality only</li>
+                            <li data-translate="اتصال بالإنترنت لتحميل الإطار">Internet connection for framework downloads</li>
+                            <li data-translate="أذونات الكتابة في مجلد البرنامج">Write permissions in program directory</li>
                         </ul>
                     </div>
                 </div>
@@ -286,49 +298,49 @@
             <!-- Version 2.0.1 -->
             <div class="cin-card cin-mb-8">
                 <div class="cin-hero-badge cin-mb-4">
-                    <span data-translate="version_2_0_1_badge">🐛 Version 2.0.1 - Bug Fix Release</span>
+                    <span data-translate="🐛 الإصدار 2.0.1 - إصدار إصلاح الأخطاء">🐛 Version 2.0.1 - Bug Fix Release</span>
                 </div>
                 
-                <h2 class="cin-heading-3 cin-mb-4" data-translate="version_2_0_1_title">Version 2.0.1 - Bug Fix Release</h2>
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="الإصدار 2.0.1 - إصدار إصلاح الأخطاء">Version 2.0.1 - Bug Fix Release</h2>
                 
                 <div class="cin-alert cin-alert-info cin-mb-6">
-                    <strong data-translate="release_date_label">Release Date:</strong>
-                    <span data-translate="version_2_0_1_date">January 2025</span>
+                    <strong data-translate="تاريخ الإصدار:">Release Date:</strong>
+                    <span data-translate="يناير 2025">January 2025</span>
                 </div>
                 
                 <!-- Bug Fixes Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="bug_fixes_heading">🐛 Bug Fixes</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="🐛 إصلاحات الأخطاء">🐛 Bug Fixes</h3>
                     
                     <div class="cin-card cin-card-feature cin-mb-4">
-                        <h4 class="cin-heading-5 cin-mb-2" data-translate="automatic_zip_cleanup_title">Automatic ZIP Cleanup</h4>
-                        <p class="cin-text-body" data-translate="automatic_zip_cleanup_desc">Enhanced framework installation process to automatically remove downloaded ZIP files after successful extraction</p>
+                        <h4 class="cin-heading-5 cin-mb-2" data-translate="تنظيف ZIP التلقائي">Automatic ZIP Cleanup</h4>
+                        <p class="cin-text-body" data-translate="تحسين عملية تثبيت الإطار لإزالة ملفات ZIP المحملة تلقائياً بعد الاستخراج الناجح">Enhanced framework installation process to automatically remove downloaded ZIP files after successful extraction</p>
                         <ul class="cin-list cin-mt-2">
-                            <li data-translate="prevents_disk_space">Prevents disk space accumulation from temporary installation files</li>
-                            <li data-translate="maintains_clean_installation">Maintains clean installation directory with only extracted framework files</li>
-                            <li data-translate="improved_installation_reliability">Improved installation reliability and cleanup procedures</li>
+                            <li data-translate="يمنع تراكم مساحة القرص من ملفات التثبيت المؤقتة">Prevents disk space accumulation from temporary installation files</li>
+                            <li data-translate="يحافظ على مجلد تثبيت نظيف مع ملفات الإطار المستخرجة فقط">Maintains clean installation directory with only extracted framework files</li>
+                            <li data-translate="تحسين موثوقية التثبيت وإجراءات التنظيف">Improved installation reliability and cleanup procedures</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Technical Improvements Section -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="technical_improvements_heading">🔧 Technical Improvements</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="🔧 التحسينات التقنية">🔧 Technical Improvements</h3>
                     
                     <div class="cin-grid cin-grid-auto cin-gap-4">
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="installation_process_title">Installation Process</h4>
-                            <p class="cin-text-body" data-translate="installation_process_desc">Optimized downloadAndInstallFramework function for better resource management</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="عملية التثبيت">Installation Process</h4>
+                            <p class="cin-text-body" data-translate="تحسين دالة downloadAndInstallFramework لإدارة أفضل للموارد">Optimized downloadAndInstallFramework function for better resource management</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="file_management_title">File Management</h4>
-                            <p class="cin-text-body" data-translate="file_management_desc">Enhanced temporary file handling during framework installation</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="إدارة الملفات">File Management</h4>
+                            <p class="cin-text-body" data-translate="تحسين التعامل مع الملفات المؤقتة أثناء تثبيت الإطار">Enhanced temporary file handling during framework installation</p>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="disk_space_title">Disk Space</h4>
-                            <p class="cin-text-body" data-translate="disk_space_desc">Reduced storage footprint by removing unnecessary temporary files</p>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="مساحة القرص">Disk Space</h4>
+                            <p class="cin-text-body" data-translate="تقليل البصمة التخزينية بإزالة الملفات المؤقتة غير الضرورية">Reduced storage footprint by removing unnecessary temporary files</p>
                         </div>
                     </div>
                 </div>
@@ -337,50 +349,50 @@
             <!-- Version 2.0.0 - Major Update -->
             <div class="cin-card cin-mb-8">
                 <div class="cin-hero-badge cin-mb-4">
-                    <span data-translate="version_2_0_0_badge">🚀 Version 2.0.0 - Major Framework Management Update</span>
+                    <span data-translate="🚀 الإصدار 2.0.0 - تحديث إدارة الإطار الرئيسي">🚀 Version 2.0.0 - Major Framework Management Update</span>
                 </div>
                 
-                <h2 class="cin-heading-3 cin-mb-4" data-translate="version_2_0_0_title">Version 2.0.0 - Major Framework Management Update</h2>
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="الإصدار 2.0.0 - تحديث إدارة الإطار الرئيسي">Version 2.0.0 - Major Framework Management Update</h2>
                 
                 <div class="cin-alert cin-alert-info cin-mb-6">
-                    <strong data-translate="release_date_label">Release Date:</strong>
-                    <span data-translate="version_2_0_0_date">January 2025</span>
+                    <strong data-translate="تاريخ الإصدار:">Release Date:</strong>
+                    <span data-translate="يناير 2025">January 2025</span>
                 </div>
                 
                 <!-- Major New Features -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="major_new_features_heading">🚀 Major New Features</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="🚀 الميزات الجديدة الرئيسية">🚀 Major New Features</h3>
                     
                     <div class="cin-card cin-card-feature cin-mb-6">
-                        <h4 class="cin-heading-5 cin-mb-4" data-translate="framework_management_system_title">Framework Management System</h4>
+                        <h4 class="cin-heading-5 cin-mb-4" data-translate="نظام إدارة الإطار">Framework Management System</h4>
                         
                         <div class="cin-mb-4">
-                            <h5 class="cin-heading-5 cin-mb-2" data-translate="install_framework_title">NEW: install framework [version] - Download and install CIN Framework automatically</h5>
+                            <h5 class="cin-heading-5 cin-mb-2" data-translate="جديد: install framework [version] - تحميل وتثبيت إطار CIN تلقائياً">NEW: install framework [version] - Download and install CIN Framework automatically</h5>
                             <ul class="cin-list">
-                                <li data-translate="supports_latest_version">Supports latest version installation or specific version targeting</li>
-                                <li data-translate="intelligent_version_validation">Intelligent version validation and conflict detection</li>
-                                <li data-translate="automatic_dependency_resolution">Automatic dependency resolution and directory structure creation</li>
-                                <li data-translate="progress_indicators">Progress indicators and detailed installation feedback</li>
+                                <li data-translate="يدعم تثبيت أحدث إصدار أو استهداف إصدار محدد">Supports latest version installation or specific version targeting</li>
+                                <li data-translate="التحقق الذكي من الإصدار واكتشاف التعارض">Intelligent version validation and conflict detection</li>
+                                <li data-translate="حل التبعيات التلقائي وإنشاء هيكل الدليل">Automatic dependency resolution and directory structure creation</li>
+                                <li data-translate="مؤشرات التقدم وتعليقات التثبيت المفصلة">Progress indicators and detailed installation feedback</li>
                             </ul>
                         </div>
                         
                         <div class="cin-mb-4">
-                            <h5 class="cin-heading-5 cin-mb-2" data-translate="update_framework_title">NEW: update framework - Seamless framework updates</h5>
+                            <h5 class="cin-heading-5 cin-mb-2" data-translate="جديد: update framework - تحديثات إطار سلسة">NEW: update framework - Seamless framework updates</h5>
                             <ul class="cin-list">
-                                <li data-translate="automatic_version_checking">Automatic version checking against GitHub releases</li>
-                                <li data-translate="smart_update_detection">Smart update detection with current vs. latest comparison</li>
-                                <li data-translate="safe_update_process">Safe update process with rollback capabilities</li>
-                                <li data-translate="preserves_existing_configurations">Preserves existing configurations during updates</li>
+                                <li data-translate="فحص الإصدار التلقائي مقابل إصدارات GitHub">Automatic version checking against GitHub releases</li>
+                                <li data-translate="اكتشاف التحديث الذكي مع مقارنة الحالي مقابل الأحدث">Smart update detection with current vs. latest comparison</li>
+                                <li data-translate="عملية تحديث آمنة مع قدرات التراجع">Safe update process with rollback capabilities</li>
+                                <li data-translate="يحافظ على التكوينات الموجودة أثناء التحديثات">Preserves existing configurations during updates</li>
                             </ul>
                         </div>
                         
                         <div class="cin-mb-4">
-                            <h5 class="cin-heading-5 cin-mb-2" data-translate="delete_framework_title">NEW: delete framework - Complete framework removal</h5>
+                            <h5 class="cin-heading-5 cin-mb-2" data-translate="جديد: delete framework - إزالة الإطار الكاملة">NEW: delete framework - Complete framework removal</h5>
                             <ul class="cin-list">
-                                <li data-translate="interactive_confirmation_prompts">Interactive confirmation prompts for safety</li>
-                                <li data-translate="clean_removal">Clean removal of all framework files and directories</li>
-                                <li data-translate="configuration_cleanup">Configuration cleanup and state management</li>
-                                <li data-translate="graceful_error_handling">Graceful error handling for incomplete installations</li>
+                                <li data-translate="مطالبات تأكيد تفاعلية للأمان">Interactive confirmation prompts for safety</li>
+                                <li data-translate="إزالة نظيفة لجميع ملفات ومجلدات الإطار">Clean removal of all framework files and directories</li>
+                                <li data-translate="تنظيف التكوين وإدارة الحالة">Configuration cleanup and state management</li>
+                                <li data-translate="معالجة أخطاء رشيقة للتثبيتات غير المكتملة">Graceful error handling for incomplete installations</li>
                             </ul>
                         </div>
                     </div>
@@ -388,43 +400,43 @@
                 
                 <!-- Technical Enhancements -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="technical_enhancements_heading">🔧 Technical Enhancements</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="التحسينات التقنية">🔧 Technical Enhancements</h3>
                     
                     <div class="cin-accordion cin-mb-6">
                         <div class="cin-accordion-item">
                             <button class="cin-accordion-header" onclick="toggleAccordion(this)">
-                                <span data-translate="core_architecture_improvements_title">Core Architecture Improvements</span>
+                                <span data-translate="تحسينات البنية الأساسية">Core Architecture Improvements</span>
                                 <span class="cin-accordion-icon"></span>
                             </button>
                             <div class="cin-accordion-content">
                                 <div class="cin-grid cin-grid-auto cin-gap-4">
                                     <div class="cin-card cin-card-feature">
-                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="enhanced_config_system_title">Enhanced Config System</h5>
-                                        <p class="cin-text-body" data-translate="enhanced_config_system_desc">Extended Config struct with framework tracking</p>
+                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="نظام التكوين المحسن">Enhanced Config System</h5>
+                                        <p class="cin-text-body" data-translate="هيكل التكوين الموسع مع تتبع الإطار">Extended Config struct with framework tracking</p>
                                         <ul class="cin-list cin-mt-2">
-                                            <li data-translate="added_framework_version_field">Added FrameworkVersion field for version management</li>
-                                            <li data-translate="added_framework_installed_flag">Added FrameworkInstalled boolean flag for state tracking</li>
-                                            <li data-translate="improved_configuration_persistence">Improved configuration persistence and validation</li>
+                                            <li data-translate="إضافة حقل إصدار الإطار لإدارة الإصدارات">Added FrameworkVersion field for version management</li>
+                                            <li data-translate="إضافة علامة منطقية لتتبع حالة تثبيت الإطار">Added FrameworkInstalled boolean flag for state tracking</li>
+                                            <li data-translate="تحسين استمرارية التكوين والتحقق من صحته">Improved configuration persistence and validation</li>
                                         </ul>
                                     </div>
                                     
                                     <div class="cin-card cin-card-feature">
-                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="advanced_error_handling_title">Advanced Error Handling</h5>
-                                        <p class="cin-text-body" data-translate="advanced_error_handling_desc">Comprehensive error management system</p>
+                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="معالجة الأخطاء المتقدمة">Advanced Error Handling</h5>
+                                        <p class="cin-text-body" data-translate="نظام شامل لإدارة الأخطاء">Comprehensive error management system</p>
                                         <ul class="cin-list cin-mt-2">
-                                            <li data-translate="shadow_variable_conflicts_resolved">Shadow variable conflicts resolved for cleaner code</li>
-                                            <li data-translate="improved_error_messages">Improved error messages with actionable guidance</li>
-                                            <li data-translate="enhanced_diagnostic_reporting">Enhanced diagnostic reporting for troubleshooting</li>
+                                            <li data-translate="حل تعارضات المتغيرات الظلية للحصول على كود أنظف">Shadow variable conflicts resolved for cleaner code</li>
+                                            <li data-translate="تحسين رسائل الخطأ مع إرشادات قابلة للتنفيذ">Improved error messages with actionable guidance</li>
+                                            <li data-translate="تحسين التقارير التشخيصية لاستكشاف الأخطاء وإصلاحها">Enhanced diagnostic reporting for troubleshooting</li>
                                         </ul>
                                     </div>
                                     
                                     <div class="cin-card cin-card-feature">
-                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="network_operations_title">Network Operations</h5>
-                                        <p class="cin-text-body" data-translate="network_operations_desc">Robust HTTP client implementation</p>
+                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="عمليات الشبكة">Network Operations</h5>
+                                        <p class="cin-text-body" data-translate="تنفيذ قوي لعميل HTTP">Robust HTTP client implementation</p>
                                         <ul class="cin-list cin-mt-2">
-                                            <li data-translate="github_api_integration">GitHub API integration for release management</li>
-                                            <li data-translate="timeout_handling">Timeout handling and connection resilience</li>
-                                            <li data-translate="intelligent_retry_mechanisms">Intelligent retry mechanisms for network failures</li>
+                                            <li data-translate="تكامل GitHub API لإدارة الإصدارات">GitHub API integration for release management</li>
+                                            <li data-translate="معالجة انتهاء المهلة الزمنية ومرونة الاتصال">Timeout handling and connection resilience</li>
+                                            <li data-translate="آليات إعادة المحاولة الذكية لفشل الشبكة">Intelligent retry mechanisms for network failures</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -433,28 +445,28 @@
                         
                         <div class="cin-accordion-item">
                             <button class="cin-accordion-header" onclick="toggleAccordion(this)">
-                                <span data-translate="file_system_management_title">File System Management</span>
+                                <span data-translate="إدارة نظام الملفات">File System Management</span>
                                 <span class="cin-accordion-icon"></span>
                             </button>
                             <div class="cin-accordion-content">
                                 <div class="cin-grid cin-grid-auto cin-gap-4">
                                     <div class="cin-card cin-card-feature">
-                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="zip_archive_support_title">ZIP Archive Support</h5>
-                                        <p class="cin-text-body" data-translate="zip_archive_support_desc">Native archive extraction capabilities</p>
+                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="دعم أرشيف ZIP">ZIP Archive Support</h5>
+                                        <p class="cin-text-body" data-translate="قدرات استخراج الأرشيف الأصلية">Native archive extraction capabilities</p>
                                         <ul class="cin-list cin-mt-2">
-                                            <li data-translate="cross_platform_file_extraction">Cross-platform file extraction with proper permissions</li>
-                                            <li data-translate="directory_structure_preservation">Directory structure preservation during installation</li>
-                                            <li data-translate="cleanup_mechanisms">Cleanup mechanisms for failed extractions</li>
+                                            <li data-translate="استخراج الملفات عبر المنصات مع الأذونات المناسبة">Cross-platform file extraction with proper permissions</li>
+                                            <li data-translate="الحفاظ على هيكل الدليل أثناء التثبيت">Directory structure preservation during installation</li>
+                                            <li data-translate="آليات التنظيف للاستخراجات الفاشلة">Cleanup mechanisms for failed extractions</li>
                                         </ul>
                                     </div>
                                     
                                     <div class="cin-card cin-card-feature">
-                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="path_management_title">Path Management</h5>
-                                        <p class="cin-text-body" data-translate="path_management_desc">Enhanced file system operations</p>
+                                        <h5 class="cin-heading-5 cin-mb-2" data-translate="إدارة المسارات">Path Management</h5>
+                                        <p class="cin-text-body" data-translate="عمليات نظام الملفات المحسنة">Enhanced file system operations</p>
                                         <ul class="cin-list cin-mt-2">
-                                            <li data-translate="absolute_path_resolution">Absolute path resolution for cross-platform compatibility</li>
-                                            <li data-translate="safe_directory_creation">Safe directory creation and removal operations</li>
-                                            <li data-translate="intelligent_conflict_resolution">Intelligent conflict resolution for existing installations</li>
+                                            <li data-translate="حل المسار المطلق للتوافق عبر المنصات">Absolute path resolution for cross-platform compatibility</li>
+                                            <li data-translate="عمليات إنشاء وإزالة الدليل الآمنة">Safe directory creation and removal operations</li>
+                                            <li data-translate="حل النزاعات الذكي للتثبيتات الموجودة">Intelligent conflict resolution for existing installations</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -465,25 +477,25 @@
                 
                 <!-- User Experience Improvements -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="user_experience_improvements_heading">🎨 User Experience Improvements</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="تحسينات تجربة المستخدم">🎨 User Experience Improvements</h3>
                     
                     <div class="cin-grid cin-grid-auto cin-gap-4">
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="enhanced_cli_interface_title">Enhanced CLI Interface</h4>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="واجهة سطر الأوامر المحسنة">Enhanced CLI Interface</h4>
                             <ul class="cin-list">
-                                <li data-translate="priority_command_layout">Priority Command Layout: Framework commands prominently featured in help</li>
-                                <li data-translate="improved_visual_feedback">Improved Visual Feedback: Color-coded status messages and progress indicators</li>
-                                <li data-translate="interactive_confirmations">Interactive Confirmations: Safety prompts for destructive operations</li>
-                                <li data-translate="detailed_progress_reports">Detailed Progress Reports: Real-time feedback during long operations</li>
+                                <li data-translate="تخطيط الأوامر ذات الأولوية: أوامر الإطار مميزة بشكل بارز في المساعدة">Priority Command Layout: Framework commands prominently featured in help</li>
+                                <li data-translate="تحسين التغذية الراجعة البصرية: رسائل الحالة المرمزة بالألوان ومؤشرات التقدم">Improved Visual Feedback: Color-coded status messages and progress indicators</li>
+                                <li data-translate="التأكيدات التفاعلية: مطالبات الأمان للعمليات المدمرة">Interactive Confirmations: Safety prompts for destructive operations</li>
+                                <li data-translate="تقارير التقدم المفصلة: تغذية راجعة في الوقت الفعلي أثناء العمليات الطويلة">Detailed Progress Reports: Real-time feedback during long operations</li>
                             </ul>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="command_documentation_title">Command Documentation</h4>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="توثيق الأوامر">Command Documentation</h4>
                             <ul class="cin-list">
-                                <li data-translate="updated_help_system">Updated Help System: Comprehensive command descriptions and usage examples</li>
-                                <li data-translate="enhanced_commands_md">Enhanced COMMANDS.md: Detailed documentation for all new framework commands</li>
-                                <li data-translate="improved_readme_md">Improved README.md: Updated core capabilities section reflecting new features</li>
+                                <li data-translate="نظام المساعدة المحدث: أوصاف شاملة للأوامر وأمثلة الاستخدام">Updated Help System: Comprehensive command descriptions and usage examples</li>
+                                <li data-translate="تحسين COMMANDS.md: توثيق مفصل لجميع أوامر الإطار الجديدة">Enhanced COMMANDS.md: Detailed documentation for all new framework commands</li>
+                                <li data-translate="تحسين README.md: قسم القدرات الأساسية المحدث يعكس الميزات الجديدة">Improved README.md: Updated core capabilities section reflecting new features</li>
                             </ul>
                         </div>
                     </div>
@@ -491,25 +503,25 @@
                 
                 <!-- Security & Stability -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="security_stability_heading">🛡️ Security & Stability</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="الأمان والاستقرار">🛡️ Security & Stability</h3>
                     
                     <div class="cin-grid cin-grid-auto cin-gap-4">
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="code_quality_improvements_title">Code Quality Improvements</h4>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="تحسينات جودة الكود">Code Quality Improvements</h4>
                             <ul class="cin-list">
-                                <li data-translate="psr_12_compliance">PSR-12 Compliance: All code follows strict PHP coding standards</li>
-                                <li data-translate="shadow_variable_resolution">Shadow Variable Resolution: Eliminated variable shadowing warnings</li>
-                                <li data-translate="memory_management">Memory Management: Optimized resource usage during file operations</li>
-                                <li data-translate="input_validation">Input Validation: Enhanced parameter validation and sanitization</li>
+                                <li data-translate="امتثال PSR-12: جميع الأكواد تتبع معايير ترميز PHP الصارمة">PSR-12 Compliance: All code follows strict PHP coding standards</li>
+                                <li data-translate="حل المتغيرات الظلية: إزالة تحذيرات تظليل المتغيرات">Shadow Variable Resolution: Eliminated variable shadowing warnings</li>
+                                <li data-translate="إدارة الذاكرة: تحسين استخدام الموارد أثناء عمليات الملفات">Memory Management: Optimized resource usage during file operations</li>
+                                <li data-translate="التحقق من صحة الإدخال: تحسين التحقق من المعاملات وتطهيرها">Input Validation: Enhanced parameter validation and sanitization</li>
                             </ul>
                         </div>
                         
                         <div class="cin-card cin-card-feature">
-                            <h4 class="cin-heading-5 cin-mb-2" data-translate="error_prevention_title">Error Prevention</h4>
+                            <h4 class="cin-heading-5 cin-mb-2" data-translate="منع الأخطاء">Error Prevention</h4>
                             <ul class="cin-list">
-                                <li data-translate="graceful_degradation">Graceful Degradation: Robust handling of network and file system errors</li>
-                                <li data-translate="state_consistency">State Consistency: Reliable configuration management across operations</li>
-                                <li data-translate="rollback_mechanisms">Rollback Mechanisms: Safe recovery from failed operations</li>
+                                <li data-translate="التدهور التدريجي: معالجة قوية لأخطاء الشبكة ونظام الملفات">Graceful Degradation: Robust handling of network and file system errors</li>
+                                <li data-translate="اتساق الحالة: إدارة موثوقة للتكوين عبر العمليات">State Consistency: Reliable configuration management across operations</li>
+                                <li data-translate="آليات التراجع: استرداد آمن من العمليات الفاشلة">Rollback Mechanisms: Safe recovery from failed operations</li>
                             </ul>
                         </div>
                     </div>
@@ -517,26 +529,26 @@
                 
                 <!-- Breaking Changes -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="breaking_changes_heading">📋 Breaking Changes</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="التغييرات الجذرية">📋 Breaking Changes</h3>
                     
                     <div class="cin-alert cin-alert-warning">
                         <ul class="cin-list">
-                            <li data-translate="version_bump">Version Bump: Updated from v0.1.0-alpha to v2.0.0</li>
-                            <li data-translate="config_schema">Config Schema: Extended configuration structure (backward compatible)</li>
-                            <li data-translate="import_dependencies">Import Dependencies: Added new Go packages for enhanced functionality</li>
+                            <li data-translate="ترقية الإصدار: تحديث من v0.1.0-alpha إلى v2.0.0">Version Bump: Updated from v0.1.0-alpha to v2.0.0</li>
+                            <li data-translate="مخطط التكوين: هيكل التكوين الموسع (متوافق مع الإصدارات السابقة)">Config Schema: Extended configuration structure (backward compatible)</li>
+                            <li data-translate="تبعيات الاستيراد: إضافة حزم Go جديدة لوظائف محسنة">Import Dependencies: Added new Go packages for enhanced functionality</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Migration Guide -->
                 <div class="cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="migration_guide_heading">🔄 Migration Guide</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="دليل الترحيل">🔄 Migration Guide</h3>
                     
                     <div class="cin-alert cin-alert-success">
                         <ul class="cin-list">
-                            <li data-translate="existing_configurations_migrated">Existing configurations will be automatically migrated</li>
-                            <li data-translate="no_manual_intervention">No manual intervention required for existing users</li>
-                            <li data-translate="new_framework_fields">New framework fields will be initialized with default values</li>
+                            <li data-translate="سيتم ترحيل التكوينات الموجودة تلقائياً">Existing configurations will be automatically migrated</li>
+                            <li data-translate="لا حاجة لتدخل يدوي للمستخدمين الحاليين">No manual intervention required for existing users</li>
+                            <li data-translate="سيتم تهيئة حقول الإطار الجديدة بالقيم الافتراضية">New framework fields will be initialized with default values</li>
                         </ul>
                     </div>
                 </div>
@@ -545,60 +557,60 @@
                 <div class="cin-accordion">
                     <div class="cin-accordion-item">
                         <button class="cin-accordion-header" onclick="toggleAccordion(this)">
-                            <span data-translate="bug_fixes_2_0_0_title">🐛 Bug Fixes</span>
+                            <span data-translate="إصلاح الأخطاء">🐛 Bug Fixes</span>
                             <span class="cin-accordion-icon"></span>
                         </button>
                         <div class="cin-accordion-content">
                             <ul class="cin-list">
-                                <li data-translate="fixed_shadow_variable_warnings">Fixed shadow variable warnings in error handling code</li>
-                                <li data-translate="resolved_import_conflicts">Resolved import conflicts and unused package issues</li>
-                                <li data-translate="improved_cross_platform_path">Improved cross-platform path handling</li>
-                                <li data-translate="enhanced_error_message_clarity">Enhanced error message clarity and actionability</li>
+                                <li data-translate="إصلاح تحذيرات المتغيرات الظلية في كود معالجة الأخطاء">Fixed shadow variable warnings in error handling code</li>
+                                <li data-translate="حل تعارضات الاستيراد ومشاكل الحزم غير المستخدمة">Resolved import conflicts and unused package issues</li>
+                                <li data-translate="تحسين معالجة المسارات عبر المنصات">Improved cross-platform path handling</li>
+                                <li data-translate="تحسين وضوح رسائل الخطأ وقابليتها للتنفيذ">Enhanced error message clarity and actionability</li>
                             </ul>
                         </div>
                     </div>
                     
                     <div class="cin-accordion-item">
                         <button class="cin-accordion-header" onclick="toggleAccordion(this)">
-                            <span data-translate="dependencies_title">📦 Dependencies</span>
+                            <span data-translate="التبعيات">📦 Dependencies</span>
                             <span class="cin-accordion-icon"></span>
                         </button>
                         <div class="cin-accordion-content">
                             <ul class="cin-list">
-                                <li data-translate="new_archive_zip">New: archive/zip - For framework package extraction</li>
-                                <li data-translate="new_bufio">New: bufio - For enhanced user input handling</li>
-                                <li data-translate="enhanced_http_client">Enhanced: HTTP client with improved timeout management</li>
-                                <li data-translate="enhanced_file_system">Enhanced: File system operations with better error handling</li>
+                                <li data-translate="جديد: archive/zip - لاستخراج حزم الإطار">New: archive/zip - For framework package extraction</li>
+                                <li data-translate="جديد: bufio - لمعالجة محسنة لإدخال المستخدم">New: bufio - For enhanced user input handling</li>
+                                <li data-translate="محسن: عميل HTTP مع إدارة محسنة لانتهاء المهلة الزمنية">Enhanced: HTTP client with improved timeout management</li>
+                                <li data-translate="محسن: عمليات نظام الملفات مع معالجة أفضل للأخطاء">Enhanced: File system operations with better error handling</li>
                             </ul>
                         </div>
                     </div>
                     
                     <div class="cin-accordion-item">
                         <button class="cin-accordion-header" onclick="toggleAccordion(this)">
-                            <span data-translate="performance_improvements_title">🎯 Performance Improvements</span>
+                            <span data-translate="تحسينات الأداء">🎯 Performance Improvements</span>
                             <span class="cin-accordion-icon"></span>
                         </button>
                         <div class="cin-accordion-content">
                             <ul class="cin-list">
-                                <li data-translate="optimized_network_requests">Optimized network requests with connection pooling</li>
-                                <li data-translate="reduced_memory_footprint">Reduced memory footprint during file operations</li>
-                                <li data-translate="faster_configuration_loading">Faster configuration loading and saving</li>
-                                <li data-translate="improved_startup_time">Improved startup time with lazy initialization</li>
+                                <li data-translate="تحسين طلبات الشبكة مع تجميع الاتصالات">Optimized network requests with connection pooling</li>
+                                <li data-translate="تقليل البصمة الذاكرية أثناء عمليات الملفات">Reduced memory footprint during file operations</li>
+                                <li data-translate="تحميل وحفظ التكوين بشكل أسرع">Faster configuration loading and saving</li>
+                                <li data-translate="تحسين وقت البدء مع التهيئة الكسولة">Improved startup time with lazy initialization</li>
                             </ul>
                         </div>
                     </div>
                     
                     <div class="cin-accordion-item">
                         <button class="cin-accordion-header" onclick="toggleAccordion(this)">
-                            <span data-translate="future_roadmap_title">🔮 Future Roadmap</span>
+                            <span data-translate="خارطة الطريق المستقبلية">🔮 Future Roadmap</span>
                             <span class="cin-accordion-icon"></span>
                         </button>
                         <div class="cin-accordion-content">
                             <ul class="cin-list">
-                                <li data-translate="framework_version_rollback">Framework version rollback capabilities</li>
-                                <li data-translate="automated_framework_health">Automated framework health checking</li>
-                                <li data-translate="plugin_system">Plugin system for framework extensions</li>
-                                <li data-translate="advanced_configuration_management">Advanced configuration management tools</li>
+                                <li data-translate="قدرات التراجع عن إصدار الإطار">Framework version rollback capabilities</li>
+                                <li data-translate="فحص صحة الإطار التلقائي">Automated framework health checking</li>
+                                <li data-translate="نظام المكونات الإضافية لتوسيعات الإطار">Plugin system for framework extensions</li>
+                                <li data-translate="أدوات إدارة التكوين المتقدمة">Advanced configuration management tools</li>
                             </ul>
                         </div>
                     </div>
@@ -608,32 +620,37 @@
             <!-- Previous Versions -->
             <div class="cin-card cin-mb-8">
                 <div class="cin-hero-badge cin-mb-4">
-                    <span data-translate="previous_versions_badge">📚 Previous Versions</span>
+                    <span data-translate="الإصدارات السابقة">📚 Previous Versions</span>
                 </div>
                 
-                <h2 class="cin-heading-3 cin-mb-6" data-translate="previous_versions_heading">Previous Versions</h2>
+                <h2 class="cin-heading-3 cin-mb-6" data-translate="الإصدارات السابقة">Previous Versions</h2>
                 
                 <!-- Version 0.1.0-alpha -->
                 <div class="cin-card cin-card-feature">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="version_0_1_0_alpha_title">Version 0.1.0-alpha - Initial Release</h3>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="الإصدار 0.1.0-alpha - الإصدار الأولي">Version 0.1.0-alpha - Initial Release</h3>
                     
                     <div class="cin-alert cin-alert-info cin-mb-4">
-                        <strong data-translate="release_date_label">Release Date:</strong>
-                        <span data-translate="version_0_1_0_alpha_date">2024</span>
+                        <strong data-translate="تاريخ الإصدار:">Release Date:</strong>
+                        <span data-translate="2024">2024</span>
                     </div>
                     
-                    <h4 class="cin-heading-5 cin-mb-4" data-translate="initial_features_heading">Initial Features</h4>
+                    <h4 class="cin-heading-5 cin-mb-4" data-translate="الميزات الأولية">Initial Features</h4>
                     
                     <ul class="cin-list">
-                        <li data-translate="basic_cli_framework">Basic CLI framework with interactive mode</li>
-                        <li data-translate="configuration_management_system">Configuration management system</li>
-                        <li data-translate="error_tracking_diagnostic">Error tracking and diagnostic reporting</li>
-                        <li data-translate="admin_mode_color_output">Admin mode and color output support</li>
-                        <li data-translate="cross_platform_windows_color">Cross-platform Windows color support</li>
+                        <li data-translate="إطار سطر الأوامر الأساسي مع الوضع التفاعلي">Basic CLI framework with interactive mode</li>
+                        <li data-translate="نظام إدارة التكوين">Configuration management system</li>
+                        <li data-translate="تتبع الأخطاء والتقارير التشخيصية">Error tracking and diagnostic reporting</li>
+                        <li data-translate="وضع المدير ودعم الإخراج الملون">Admin mode and color output support</li>
+                        <li data-translate="دعم الألوان عبر المنصات لنظام Windows">Cross-platform Windows color support</li>
                     </ul>
                 </div>
             </div>
         </div>
+                <!-- Footer -->
+        <footer class="cin-text-center cin-py-6 cin-border-t">
+            <div class="cin-text-muted cin-text-sm cin-mb-2" data-translate="© 2025 CIN FRAMEWORK — جميع الحقوق محفوظة">© 2025 CIN FRAMEWORK — All Rights Reserved</div>
+            <div class="cin-text-muted cin-text-sm" data-translate="ترخيص الملكية | أيوب العرجاني | ماوي مان">Proprietary License | Ayoub Alarjani | Mawi Man</div>
+        </footer>
     </main>
     
     <!-- Floating Action Button -->
@@ -641,11 +658,11 @@
         ↑
     </button>
     <script>
-  window.onload = () => {
-    const pageName = location.pathname.split('/').pop().replace('.html', '');
-    window.parent.postMessage({ page: pageName }, '*');
-  };
-</script>
+        window.onload = () => {
+            const pageName = location.pathname.split('/').pop().replace('.html', '');
+            window.parent.postMessage({ page: pageName }, '*');
+        };
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="./assets/js/sidebar-min.js"></script>

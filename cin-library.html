@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./favicon.ico" rel="icon" type="image/x-icon"/>
     <title>CIN Library</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style-min.css">
@@ -10,11 +11,12 @@
 <body>
     <div id="loadingScreen">
         <div class="cin-loading-spinner"></div>
-        <p class="cin-text-lead" data-translate="loading_message">Loading CIN Framework...</p>
+        <p class="cin-text-lead">CIN Framework...</p>
     </div>
     <header class="cin-header">
         <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
-        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40">
+        <a href="./main.html">
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40"></a>
         <div class="cin-language-toggle">
             <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
             <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
@@ -22,8 +24,101 @@
     </header>
     <main class="cin-main">
         <div class="cin-coming-soon cin-fade-in">
+            <!-- Version Badge Component -->
+            <div class="cin-hero-badge">
+                <span data-translate="📚 مكتبة CIN - مجموعة شاملة من المكونات">📚 CIN Library - Comprehensive Component Collection</span>
+            </div>
 
+            <!-- Main Heading Component -->
+            <h1 class="cin-heading-1" data-translate="مكتبة CIN">CIN Library</h1>
+            
+            <!-- Lead Text Component -->
+            <p class="cin-text-lead cin-mb-8" data-translate="مكتبة CIN هي مجموعة شاملة من المكونات والأدوات المساعدة المصممة لتسريع تطوير الويب باستخدام إطار CIN.">
+                CIN Library is a comprehensive collection of components and utilities designed to accelerate web development with the CIN Framework.
+            </p>
+            
+            <!-- Official Website Info Alert -->
+            <div class="cin-alert cin-alert-info cin-mb-8">
+                <strong data-translate="📥 التحميل والتثبيت">📥 Download & Installation</strong><br>
+                <span data-translate="هذا هو الموقع الرسمي لمكتبة CIN، يوفر معلومات شاملة حول المكتبة ومكوناتها.">
+                    This is the official website for the CIN Library, providing comprehensive information about the library and its components.
+                </span><br><br>
+                <strong data-translate="مهم:">Important:</strong>
+                <span data-translate="لتحميل وتثبيت مكتبة CIN، يجب عليك استخدام أداة CIN CLI الرسمية.">
+                    To download and install the CIN Library, you must use the official CIN CLI tool.
+                </span>
+            </div>
+
+            <!-- CLI Section -->
+            <div class="cin-card cin-mb-8">
+                <h3 class="cin-heading-3 cin-mb-4" data-translate="استخدام CIN CLI">Using CIN CLI</h3>
+                <p class="cin-text-body cin-mb-6" data-translate="لتحميل وتثبيت مكتبة CIN، يجب عليك استخدام أداة CIN CLI الرسمية.">
+                    To download and install the CIN Library, you must use the official CIN CLI tool.
+                </p>
+                
+                <!-- CLI Button -->
+                <div class="cin-text-center cin-mb-4">
+                    <a href="cin-cli.html" class="cin-btn cin-btn-primary cin-btn-lg">
+                        <span data-translate="احصل على CIN CLI">Get CIN CLI</span>
+                    </a>
+                </div>
+                
+                <p class="cin-text-body" data-translate="للحصول على تعليمات التثبيت التفصيلية واستخدام CLI، استكشف الوثائق على هذا الموقع.">
+                    For detailed installation instructions and CLI usage, explore the documentation on this website.
+                </p>
+            </div>
+
+            <!-- Library Features Section -->
+            <div class="cin-card cin-mb-8">
+                <h3 class="cin-heading-3 cin-mb-4" data-translate="ميزات المكتبة">Library Features</h3>
+                <div class="cin-grid cin-grid-cols-1 cin-md-grid-cols-2 cin-gap-6">
+                    <div class="cin-card cin-card-feature">
+                        <h4 class="cin-heading-4 cin-mb-3" data-translate="مكونات جاهزة للاستخدام">Ready-to-Use Components</h4>
+                        <p class="cin-text-body" data-translate="مجموعة واسعة من المكونات المبنية مسبقاً لتسريع عملية التطوير.">
+                            A wide range of pre-built components to accelerate development process.
+                        </p>
+                    </div>
+                    <div class="cin-card cin-card-feature">
+                        <h4 class="cin-heading-4 cin-mb-3" data-translate="أدوات مساعدة متقدمة">Advanced Utilities</h4>
+                        <p class="cin-text-body" data-translate="أدوات مساعدة قوية لمعالجة البيانات والتحقق من صحتها وإدارة الحالة.">
+                            Powerful utilities for data processing, validation, and state management.
+                        </p>
+                    </div>
+                    <div class="cin-card cin-card-feature">
+                        <h4 class="cin-heading-4 cin-mb-3" data-translate="تكامل سلس">Seamless Integration</h4>
+                        <p class="cin-text-body" data-translate="تكامل مثالي مع إطار CIN لتجربة تطوير موحدة.">
+                            Perfect integration with CIN Framework for a unified development experience.
+                        </p>
+                    </div>
+                    <div class="cin-card cin-card-feature">
+                        <h4 class="cin-heading-4 cin-mb-3" data-translate="موثقة بالكامل">Fully Documented</h4>
+                        <p class="cin-text-body" data-translate="وثائق شاملة مع أمثلة وأدلة استخدام مفصلة.">
+                            Comprehensive documentation with examples and detailed usage guides.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coming Soon Section -->
+            <div class="cin-card cin-mb-8">
+                <h3 class="cin-heading-3 cin-mb-4" data-translate="قريباً">Coming Soon</h3>
+                <p class="cin-text-body cin-mb-6" data-translate="نحن نعمل بجد لإنجاز مكتبة CIN. ترقبوا المزيد من التحديثات والمكونات الجديدة.">
+                    We are working hard to complete the CIN Library. Stay tuned for more updates and new components.
+                </p>
+                
+                <div class="cin-alert cin-alert-warning">
+                    <strong data-translate="🚧 قيد التطوير">🚧 Under Development</strong><br>
+                    <span data-translate="مكتبة CIN قيد التطوير النشط. سيتم إصدار المزيد من المكونات والميزات قريباً.">
+                        CIN Library is under active development. More components and features will be released soon.
+                    </span>
+                </div>
+            </div>
         </div>
+                <!-- Footer -->
+        <footer class="cin-text-center cin-py-6 cin-border-t">
+            <div class="cin-text-muted cin-text-sm cin-mb-2" data-translate="© 2025 CIN FRAMEWORK — جميع الحقوق محفوظة">© 2025 CIN FRAMEWORK — All Rights Reserved</div>
+            <div class="cin-text-muted cin-text-sm" data-translate="ترخيص الملكية | أيوب العرجاني | ماوي مان">Proprietary License | Ayoub Alarjani | Mawi Man</div>
+        </footer>
     </main>
     <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
         ↑

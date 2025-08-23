@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://www.cin-framework.com/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link href="./favicon.ico" rel="icon" type="image/x-icon"/>
     <title>CIN Framework - JSON Compressor</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style-min.css">
@@ -11,12 +11,12 @@
 <body>
     <div id="loadingScreen">
         <div class="cin-loading-spinner"></div>
-        <p class="cin-text-lead" data-translate="loading_message">Loading CIN Framework...</p>
+        <p class="cin-text-lead">CIN Framework...</p>
     </div>
-    
     <header class="cin-header">
         <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
-        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40">
+        <a href="./main.html">
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40"></a>
         <div class="cin-language-toggle">
             <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
             <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
@@ -27,14 +27,14 @@
         <div class="cin-coming-soon cin-fade-in">
             <!-- Hero Badge Component -->
             <div class="cin-hero-badge">
-                <span>📄 JSON Code Compressor</span>
+                <span data-translate="📄 ضاغط أكواد JSON">📄 JSON Code Compressor</span>
             </div>
 
             <!-- Main Heading Component -->
-            <h1 class="cin-heading-1" data-translate="json_compressor_title">JSON Code Compressor</h1>
+            <h1 class="cin-heading-1" data-translate="ضاغط أكواد JSON">JSON Code Compressor</h1>
             
             <!-- Lead Text Component -->
-            <p class="cin-text-lead cin-mb-8" data-translate="json_description">
+            <p class="cin-text-lead cin-mb-8" data-translate="أداة ضغط JSON متقدمة بحجم إدخال غير محدود وضغط خالي من الأخطاء">
                 Advanced JSON compression tool with unlimited input size and error-free compression
             </p>
             
@@ -43,19 +43,19 @@
                 <div class="cin-grid cin-grid-cols-1 cin-gap-8">
                     <!-- Input Section -->
                     <div>
-                        <h3 class="cin-heading-5 cin-mb-4" data-translate="input_json_title">Input JSON Code</h3>
+                        <h3 class="cin-heading-5 cin-mb-4" data-translate="إدخال كود JSON">Input JSON Code</h3>
                         <div class="cin-code-block">
                             <div class="cin-code-header">
-                                <span class="cin-code-title">Original JSON</span>
+                                <span class="cin-code-title" data-translate="JSON الأصلي">Original JSON</span>
                                 <div class="cin-flex cin-gap-2">
                                     <span id="inputStats" class="cin-text-small">0 characters</span>
-                                    <button class="cin-code-copy" onclick="clearInput()" data-translate="reset_button">Reset</button>
+                                    <button class="cin-code-copy" onclick="clearInput()" data-translate="إعادة تعيين">Reset</button>
                                 </div>
                             </div>
                             <textarea 
                                 id="jsonInput" 
                                 class="cin-code-textarea" 
-                                data-translate-placeholder="input_placeholder"
+                                data-translate-placeholder="الصق كود JSON هنا..."
                                 placeholder="Paste your JSON code here..."
                                 rows="15"
                             ></textarea>
@@ -68,7 +68,7 @@
                             id="compressBtn" 
                             class="cin-btn cin-btn-primary cin-btn-lg" 
                             onclick="compressJSON()" 
-                            data-translate="compress_button"
+                            data-translate="ضغط JSON"
                         >
                             Compress JSON
                         </button>
@@ -76,7 +76,7 @@
                             id="formatBtn" 
                             class="cin-btn cin-btn-secondary cin-btn-lg cin-ml-4" 
                             onclick="formatJSON()"
-                            data-translate="format_button"
+                            data-translate="تنسيق JSON"
                         >
                             Format JSON
                         </button>
@@ -84,20 +84,21 @@
                     
                     <!-- Output Section -->
                     <div>
-                        <h3 class="cin-heading-5 cin-mb-4" data-translate="output_json_title">Compressed JSON Code</h3>
+                        <h3 class="cin-heading-5 cin-mb-4" data-translate="كود JSON المضغوط">Compressed JSON Code</h3>
                         <div class="cin-code-block">
                             <div class="cin-code-header">
-                                <span class="cin-code-title">Compressed JSON</span>
+                                <span class="cin-code-title" data-translate="JSON المضغوط">Compressed JSON</span>
                                 <div class="cin-flex cin-gap-2">
                                     <span id="outputStats" class="cin-text-small">0 characters</span>
                                     <span id="compressionRatio" class="cin-text-small cin-text-success"></span>
-                                    <button id="copyBtn" class="cin-code-copy" onclick="copyCompressed()" data-translate="copy_button" disabled>Copy</button>
+                                    <button id="copyBtn" class="cin-code-copy" onclick="copyCompressed()" data-translate="نسخ" disabled>Copy</button>
                                 </div>
                             </div>
                             <textarea 
                                 id="jsonOutput" 
                                 class="cin-code-textarea" 
                                 placeholder="Compressed JSON will appear here..."
+                                data-translate-placeholder="سيظهر JSON المضغوط هنا..."
                                 rows="15"
                                 readonly
                             ></textarea>
@@ -108,12 +109,17 @@
 
             <!-- Features Info -->
             <div class="cin-alert cin-alert-info">
-                <strong data-translate="features_title">Features:</strong>
-                <span data-translate="json_features">
+                <strong data-translate="الميزات:">Features:</strong>
+                <span data-translate="• حجم إدخال غير محدود • إزالة المسافات والتنسيق • التحقق من صحة JSON • الحفاظ على سلامة البيانات • ضغط خالي من الأخطاء">
                     • Unlimited input size • Removes whitespace and formatting • Validates JSON syntax • Preserves data integrity • Error-free compression
                 </span>
             </div>
         </div>
+                <!-- Footer -->
+        <footer class="cin-text-center cin-py-6 cin-border-t">
+            <div class="cin-text-muted cin-text-sm cin-mb-2" data-translate="© 2025 CIN FRAMEWORK — جميع الحقوق محفوظة">© 2025 CIN FRAMEWORK — All Rights Reserved</div>
+            <div class="cin-text-muted cin-text-sm" data-translate="ترخيص الملكية | أيوب العرجاني | ماوي مان">Proprietary License | Ayoub Alarjani | Mawi Man</div>
+        </footer>
     </main>
 
     <!-- Floating Action Button -->

@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
+    <title>CIN Framework</title>
+=======
+    <link href="./favicon.ico" rel="icon" type="image/x-icon"/>
     <title>CIN Faq</title>
+>>>>>>> Stashed changes
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style-min.css">
 </head>
 <body>
     <div id="loadingScreen">
         <div class="cin-loading-spinner"></div>
-        <p class="cin-text-lead" data-translate="loading_message">Loading CIN Framework...</p>
+        <p class="cin-text-lead">CIN Framework...</p>
     </div>
     <header class="cin-header">
         <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
-        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40">
+        <a href="./main.html">
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40"></a>
         <div class="cin-language-toggle">
             <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
             <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
@@ -24,14 +30,14 @@
         <div class="cin-coming-soon cin-fade-in">
             <!-- Hero Badge Component -->
             <div class="cin-hero-badge">
-                <span data-translate="faq_hero_badge">❓ CIN FRAMEWORK FAQ</span>
+                <span data-translate="❓ الأسئلة الشائعة حول إطار عمل CIN">❓ CIN FRAMEWORK FAQ</span>
             </div>
 
             <!-- Main Heading Component -->
-            <h1 class="cin-heading-1" data-translate="faq_title">Frequently Asked Questions</h1>
+            <h1 class="cin-heading-1" data-translate="الأسئلة الشائعة">Frequently Asked Questions</h1>
             
             <!-- Lead Text Component -->
-            <p class="cin-text-lead cin-mb-8" data-translate="faq_subtitle">
+            <p class="cin-text-lead cin-mb-8" data-translate="اعثر على إجابات للأسئلة الأكثر شيوعاً حول إطار عمل CIN">
                 Find answers to the most common questions about CIN Framework
             </p>
 
@@ -39,79 +45,84 @@
             <div class="cin-grid cin-grid-1 cin-mt-8">
                 <!-- Question 1 -->
                 <div class="cin-card cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q1">1. What is CIN Framework?</h3>
-                    <p class="cin-text-body" data-translate="faq_a1">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="1. ما هو إطار عمل CIN؟">1. What is CIN Framework?</h3>
+                    <p class="cin-text-body" data-translate="إطار عمل CIN هو إطار عمل متقدم مبني على PHP مصمم لتبسيط إنشاء أنظمة ومواقع ويب ديناميكية عالية الأداء، مع التركيز على الاكتفاء الذاتي المحلي والأمان العدواني والمرونة الكاملة للمطورين.">
                         CIN Framework is an advanced PHP-based framework designed to simplify the creation of high-performance, dynamic systems and websites, focusing on local self-sufficiency, aggressive security, and full developer flexibility.
                     </p>
                 </div>
 
                 <!-- Question 2 -->
                 <div class="cin-card cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q2">2. What are the main features of CIN Framework?</h3>
-                    <div class="cin-text-body" data-translate="faq_a2">
-                        <ul class="cin-list">
-                            <li data-translate="faq_feature_1">Superior performance and execution speed</li>
-                            <li data-translate="faq_feature_2">Full support for building complex systems</li>
-                            <li data-translate="faq_feature_3">Aggressive security to protect against vulnerabilities and attacks</li>
-                            <li data-translate="faq_feature_4">Integrated CLI tools for complete project control</li>
-                            <li data-translate="faq_feature_5">Easy management and installation of CIN libraries</li>
-                        </ul>
-                    </div>
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="2. ما هي الميزات الرئيسية لإطار عمل CIN؟">2. What are the main features of CIN Framework?</h3>
+                    <div class="cin-text-body" data-translate="الميزات الرئيسية تشمل:">
+                         <ul class="cin-list">
+                             <li data-translate="أداء فائق وسرعة تنفيذ عالية">Superior performance and execution speed</li>
+                             <li data-translate="دعم كامل لبناء الأنظمة المعقدة">Full support for building complex systems</li>
+                             <li data-translate="أمان عدواني للحماية من الثغرات والهجمات">Aggressive security to protect against vulnerabilities and attacks</li>
+                             <li data-translate="أدوات CLI متكاملة للتحكم الكامل في المشروع">Integrated CLI tools for complete project control</li>
+                             <li data-translate="إدارة وتثبيت سهل لمكتبات CIN">Easy management and installation of CIN libraries</li>
+                         </ul>
+                     </div>
                 </div>
 
                 <!-- Question 3 -->
                 <div class="cin-card cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q3">3. Can CIN Framework be used with other frameworks?</h3>
-                    <p class="cin-text-body" data-translate="faq_a3">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="3. هل يمكن استخدام إطار عمل CIN مع أطر عمل أخرى؟">3. Can CIN Framework be used with other frameworks?</h3>
+                    <p class="cin-text-body" data-translate="نعم، يمكن دمج إطار عمل CIN مع أنظمة وأطر عمل أخرى، لكن قوته الحقيقية تظهر عند استخدامه كمنصة مستقلة.">
                         Yes, CIN Framework can be integrated with other systems and frameworks, but its true power shines when used as a standalone platform.
                     </p>
                 </div>
 
                 <!-- Question 4 -->
                 <div class="cin-card cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q4">4. What is CIN CLI?</h3>
-                    <p class="cin-text-body" data-translate="faq_a4">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="4. ما هو CIN CLI؟">4. What is CIN CLI?</h3>
+                    <p class="cin-text-body" data-translate="CIN CLI هو أداة سطر أوامر مخصصة لإدارة وتثبيت إطار العمل، وتثبيت المكتبات، وإصلاح النظام، وتكوين التطبيقات الجديدة. يتعامل مع جميع الأوامر داخل بيئة CIN.">
                         CIN CLI is a command-line tool dedicated to managing and installing the framework, installing libraries, repairing the system, and configuring new applications. It handles all commands within the CIN environment.
                     </p>
                 </div>
 
                 <!-- Question 5 -->
                 <div class="cin-card cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q5">5. What is CIN Library?</h3>
-                    <p class="cin-text-body" data-translate="faq_a5">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="5. ما هي مكتبة CIN؟">5. What is CIN Library?</h3>
+                    <p class="cin-text-body" data-translate="مكتبة CIN هي مجموعة من المكتبات الجاهزة للاستخدام المصممة خصيصاً للتكامل السلس مع إطار عمل CIN، مما يسرع تطوير المشاريع.">
                         CIN Library is a collection of ready-to-use libraries specifically designed for seamless integration with CIN Framework, accelerating project development.
                     </p>
                 </div>
 
                 <!-- Question 6 -->
                 <div class="cin-card cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q6">6. How can I get started?</h3>
-                    <div class="cin-text-body" data-translate="faq_a6">
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="6. كيف يمكنني البدء؟">6. How can I get started?</h3>
+                    <div class="cin-text-body" data-translate="للبدء، اتبع هذه الخطوات:">
                         <ol class="cin-list">
-                            <li data-translate="faq_step_1">Download CIN CLI from the <a href="https://github.com/cin-framework/cin-cli" target="_blank" class="cin-link" data-translate="releases_page">releases page</a></li>
-                            <li data-translate="faq_step_2">Install the framework using CIN CLI commands</li>
-                            <li data-translate="faq_step_3">Start building your first project</li>
+                            <li data-translate="حمل CIN CLI من صفحة الإصدارات">Download CIN CLI from the <a href="https://github.com/cin-framework/cin-cli" target="_blank" class="cin-link" data-translate="صفحة الإصدارات">releases page</a></li>
+                            <li data-translate="ثبت إطار العمل باستخدام أوامر CIN CLI">Install the framework using CIN CLI commands</li>
+                            <li data-translate="ابدأ في بناء مشروعك الأول">Start building your first project</li>
                         </ol>
                     </div>
                 </div>
 
                 <!-- Question 7 -->
                 <div class="cin-card cin-mb-6">
-                    <h3 class="cin-heading-4 cin-mb-4" data-translate="faq_q7">7. How can I request support or report an issue?</h3>
-                    <p class="cin-text-body" data-translate="faq_a7">
-                        You can contact us via email at <a href="mailto:support@cin-framework.com" class="cin-link">support@cin-framework.com</a> or check our <a href="./reporting_guidelines.html" class="cin-link" data-translate="reporting_guidelines_link">reporting guidelines</a>.
+                    <h3 class="cin-heading-4 cin-mb-4" data-translate="7. كيف يمكنني طلب الدعم أو الإبلاغ عن مشكلة؟">7. How can I request support or report an issue?</h3>
+                    <p class="cin-text-body" data-translate="يمكنك الاتصال بنا عبر البريد الإلكتروني على support@cin-framework.com أو مراجعة إرشادات الإبلاغ الخاصة بنا.">
+                        You can contact us via email at <a href="mailto:support@cin-framework.com" class="cin-link">support@cin-framework.com</a> or check our <a href="./reporting_guidelines.html" class="cin-link" data-translate="إرشادات الإبلاغ">reporting guidelines</a>.
                     </p>
                 </div>
             </div>
 
             <!-- Additional Info Alert -->
             <div class="cin-alert cin-alert-info cin-mt-8">
-                <strong data-translate="faq_info_title">Need More Help?</strong>
-                <span data-translate="faq_info_message">
+                <strong data-translate="تحتاج مساعدة إضافية؟">Need More Help?</strong>
+                <span data-translate="إذا لم تجد الإجابة التي تبحث عنها، لا تتردد في الاتصال بفريق الدعم الخاص بنا على support@cin-framework.com">
                     If you can't find the answer you're looking for, feel free to contact our support team at support@cin-framework.com
                 </span>
             </div>
         </div>
+                <!-- Footer -->
+        <footer class="cin-text-center cin-py-6 cin-border-t">
+            <div class="cin-text-muted cin-text-sm cin-mb-2" data-translate="© 2025 CIN FRAMEWORK — جميع الحقوق محفوظة">© 2025 CIN FRAMEWORK — All Rights Reserved</div>
+            <div class="cin-text-muted cin-text-sm" data-translate="ترخيص الملكية | أيوب العرجاني | ماوي مان">Proprietary License | Ayoub Alarjani | Mawi Man</div>
+        </footer>
     </main>
     <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
         ↑

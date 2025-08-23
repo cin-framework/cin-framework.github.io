@@ -1,4 +1,4 @@
-# **CIN Website**
+# **CIN Framework Website**
 
 <div align="center">
   <img src="https://cin-framework.github.io/.github/assets/img/CIN.svg" alt="CIN Framework Logo" width="200" height="200">
