@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>CIN Framework - Financial Support</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style-min.css">
+</head>
+<body>
+    <div id="loadingScreen">
+        <div class="cin-loading-spinner"></div>
+        <p class="cin-text-lead">CIN Framework...</p>
+    </div>
+    <header class="cin-header">
+        <button class="cin-menu-toggle" onclick="toggleSidebar()">☰</button>
+        <a href="./main.html">
+        <img src="./assets/img/CIN.svg" alt="" srcset="" width="40" height="40"></a>
+        <div class="cin-language-toggle">
+            <button class="cin-lang-btn active" onclick="setLanguage('en')">EN</button>
+            <button class="cin-lang-btn" onclick="setLanguage('ar')">AR</button>
+        </div>
+    </header>
+    <main class="cin-main">
+        <div class="cin-coming-soon cin-fade-in">
+            <!-- Hero Badge Component -->
+            <div class="cin-hero-badge">
+                <span data-translate="💰 الدعم المالي لإطار CIN">💰 CIN FRAMEWORK Financial Support</span>
+            </div>
+
+            <!-- Main Heading Component -->
+            <h1 class="cin-heading-1" data-translate="الدعم المالي">Financial Support</h1>
+            
+            <!-- Current Status Alert -->
+            <div class="cin-alert cin-alert-warning cin-mb-8">
+                <h3 class="cin-heading-4 cin-mb-3" data-translate="⚠️ حالة المشروع الحالية">⚠️ Current Project Status</h3>
+                <p class="cin-text-body" data-translate="إطار عمل CIN متوقف حالياً عن التطوير بسبب نقص الدعم المالي. نحن بحاجة إلى دعمكم لمواصلة بناء وتطوير هذا الإطار المبتكر وأدواته المتقدمة.">
+                    CIN Framework development is currently suspended due to lack of financial support. We need your support to continue building and developing this innovative framework and its advanced tools.
+                </p>
+            </div>
+
+            <!-- Financial Goal -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="الهدف المالي">Financial Goal</h2>
+                <div class="cin-text-center cin-mb-6">
+                    <div class="cin-hero-badge cin-mb-4">
+                        <span data-translate="💵 $1,000 USD">💵 $1,000 USD</span>
+                    </div>
+                    <p class="cin-text-body" data-translate="نحتاج إلى 1000 دولار أمريكي لاستئناف تطوير إطار عمل CIN وأدواته. هذا المبلغ سيمكننا من العودة إلى العمل على المشروع وتقديم المزيد من الميزات والتحسينات.">
+                        We need $1,000 USD to resume CIN Framework development and its tools. This amount will enable us to get back to work on the project and deliver more features and improvements.
+                    </p>
+                </div>
+            </div>
+
+            <!-- What Your Support Enables -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="ما يمكن أن يحققه دعمكم">What Your Support Enables</h2>
+                <div class="cin-grid cin-grid-cols-2 cin-gap-6">
+                    <div class="cin-card">
+                        <h3 class="cin-heading-4 cin-mb-3" data-translate="🚀 استئناف التطوير">🚀 Resume Development</h3>
+                        <p class="cin-text-body" data-translate="العودة إلى تطوير إطار العمل وإضافة ميزات جديدة ومتقدمة.">Return to framework development and add new advanced features.</p>
+                    </div>
+                    <div class="cin-card">
+                        <h3 class="cin-heading-4 cin-mb-3" data-translate="🛠️ تطوير الأدوات">🛠️ Tools Development</h3>
+                        <p class="cin-text-body" data-translate="بناء وتحسين أدوات CIN CLI وأدوات التطوير الأخرى.">Build and improve CIN CLI tools and other development tools.</p>
+                    </div>
+                    <div class="cin-card">
+                        <h3 class="cin-heading-4 cin-mb-3" data-translate="📚 التوثيق">📚 Documentation</h3>
+                        <p class="cin-text-body" data-translate="إنشاء توثيق شامل ودروس تعليمية للمطورين.">Create comprehensive documentation and tutorials for developers.</p>
+                    </div>
+                    <div class="cin-card">
+                        <h3 class="cin-heading-4 cin-mb-3" data-translate="🔒 الأمان">🔒 Security</h3>
+                        <p class="cin-text-body" data-translate="تعزيز الأمان والحماية في جميع مكونات الإطار.">Enhance security and protection in all framework components.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="معلومات الاتصال للدعم">Contact Information for Support</h2>
+                <div class="cin-text-center">
+                    <div class="cin-alert cin-alert-info cin-mb-4">
+                        <h3 class="cin-heading-4 cin-mb-3" data-translate="📞 للتواصل والدعم">📞 For Contact and Support</h3>
+                        <p class="cin-text-body cin-mb-3" data-translate="إذا كنت ترغب في دعم مشروع إطار عمل CIN، يرجى التواصل معنا على الرقم التالي:">
+                            If you would like to support the CIN Framework project, please contact us at the following number:
+                        </p>
+                        <div class="cin-hero-badge">
+                            <span data-translate="📱 +212636608296">📱 +212636608296</span>
+                        </div>
+                    </div>
+                    <p class="cin-text-small" data-translate="نحن نقدر كل دعم ومساهمة في جعل إطار عمل CIN حقيقة واقعة.">
+                        We appreciate every support and contribution in making CIN Framework a reality.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Why CIN Framework Matters -->
+            <div class="cin-card cin-mb-8">
+                <h2 class="cin-heading-3 cin-mb-4" data-translate="لماذا إطار عمل CIN مهم؟">Why CIN Framework Matters?</h2>
+                <div class="cin-text-body">
+                    <p class="cin-mb-4" data-translate="إطار عمل CIN يهدف إلى تقديم حلول تطوير ويب متقدمة ومبتكرة مع التركيز على الأمان والأداء العالي. المشروع يسعى لتوفير أدوات تطوير محلية وآمنة للمطورين العرب والعالميين.">
+                        CIN Framework aims to provide advanced and innovative web development solutions with a focus on security and high performance. The project seeks to provide local and secure development tools for Arab and global developers.
+                    </p>
+                    <ul class="cin-mb-4" style="padding-left: var(--cin-space-6); color: var(--cin-text-secondary);">
+                        <li class="cin-mb-2" data-translate="أداء فائق ومحسن للتطبيقات">Superior and optimized performance for applications</li>
+                        <li class="cin-mb-2" data-translate="أمان عدواني ومتقدم">Aggressive and advanced security</li>
+                        <li class="cin-mb-2" data-translate="دعم متعدد البيئات">Multi-environment support</li>
+                        <li class="cin-mb-2" data-translate="اكتفاء ذاتي محلي">Local self-sufficiency</li>
+                        <li class="cin-mb-2" data-translate="تنفيذ متوازي">Parallel execution</li>
+                        <li class="cin-mb-2" data-translate="هندسة طبقية متقدمة">Advanced layered architecture</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Thank You Message -->
+            <div class="cin-alert cin-alert-success">
+                <h3 class="cin-heading-4 cin-mb-3" data-translate="🙏 شكراً لكم">🙏 Thank You</h3>
+                <p data-translate="نشكركم على اهتمامكم ودعمكم لمشروع إطار عمل CIN. معاً يمكننا بناء مستقبل أفضل لتطوير الويب.">
+                    Thank you for your interest and support for the CIN Framework project. Together we can build a better future for web development.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="cin-text-center cin-py-6 cin-border-t">
+            <div class="cin-text-muted cin-text-sm cin-mb-2" data-translate="© 2025 CIN FRAMEWORK — جميع الحقوق محفوظة">© 2025 CIN FRAMEWORK — All Rights Reserved</div>
+            <div class="cin-text-muted cin-text-sm" data-translate="ترخيص الملكية | أيوب العرجاني | ماوي مان">Proprietary License | Ayoub Alarjani | Mawi Man</div>
+        </footer>
+    </main>
+    <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
+        ↑
+    </button>
+
+    <script src="./assets/js/sidebar-min.js"></script>
+    <script src="./assets/js/script-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
