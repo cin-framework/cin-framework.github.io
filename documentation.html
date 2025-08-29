@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - CIN Framework</title>
+    <meta name="description" content="Complete documentation for CIN Framework - Web 4.0 PHP Framework">
+    <link rel="stylesheet" href="./assets/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="./assets/css/style-min.css">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="cin-loading-screen">
+        <div class="cin-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="cin-header">
+        <div class="cin-container">
+            <div class="cin-header-content">
+                <div class="cin-header-logo">
+                    <a href="main.html">CIN Framework</a>
+                </div>
+                <div class="cin-header-actions">
+                    <button id="language-toggle" class="cin-btn cin-btn-outline" data-translate="العربية">العربية</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="cin-main">
+        <div class="cin-container cin-py-12">
+            <!-- Hero Section -->
+            <section class="cin-text-center cin-mb-12">
+                <div class="cin-hero-badge cin-mb-4">
+                    <span data-translate="التوثيق الرسمي">Official Documentation</span>
+                </div>
+                <h1 class="cin-heading-1 cin-mb-4" data-translate="توثيق CIN Framework">CIN Framework Documentation</h1>
+                <p class="cin-text-lead cin-mb-8 cin-mx-auto" style="max-width: 800px;" data-translate="التوثيق الشامل لإطار عمل CIN - دليلك الكامل للتطوير باستخدام Web 4.0 والهندسة المعمارية الحديثة.">Complete documentation for CIN Framework - Your comprehensive guide to development using Web 4.0 and modern architectural engineering.</p>
+            </section>
+
+            <!-- Table of Contents -->
+            <section class="cin-mb-12">
+                <div class="cin-card">
+                    <div class="cin-card-body">
+                        <h2 class="cin-heading-2 cin-mb-6" data-translate="جدول المحتويات">Table of Contents</h2>
+                        <div class="cin-grid cin-grid-cols-1 cin-md-grid-cols-2 cin-gap-4">
+                            <div>
+                                <h3 class="cin-heading-4 cin-mb-3" data-translate="البداية">Getting Started</h3>
+                                <ul class="cin-list">
+                                    <li><a href="#installation" data-translate="التثبيت">Installation</a></li>
+                                    <li><a href="#configuration" data-translate="الإعداد">Configuration</a></li>
+                                    <li><a href="#first-project" data-translate="المشروع الأول">First Project</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="cin-heading-4 cin-mb-3" data-translate="المفاهيم الأساسية">Core Concepts</h3>
+                                <ul class="cin-list">
+                                    <li><a href="#architecture" data-translate="الهندسة المعمارية">Architecture</a></li>
+                                    <li><a href="#routing" data-translate="التوجيه">Routing</a></li>
+                                    <li><a href="#controllers" data-translate="المتحكمات">Controllers</a></li>
+                                    <li><a href="#views" data-translate="العروض">Views</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="cin-heading-4 cin-mb-3" data-translate="الميزات المتقدمة">Advanced Features</h3>
+                                <ul class="cin-list">
+                                    <li><a href="#security" data-translate="الأمان">Security</a></li>
+                                    <li><a href="#database" data-translate="قاعدة البيانات">Database</a></li>
+                                    <li><a href="#caching" data-translate="التخزين المؤقت">Caching</a></li>
+                                    <li><a href="#api" data-translate="واجهة برمجة التطبيقات">API Development</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="cin-heading-4 cin-mb-3" data-translate="المكتبات والأدوات">Libraries & Tools</h3>
+                                <ul class="cin-list">
+                                    <li><a href="#cin-cli" data-translate="CIN CLI">CIN CLI</a></li>
+                                    <li><a href="#cin-library" data-translate="مكتبة CIN">CIN Library</a></li>
+                                    <li><a href="#dominator" data-translate="DOMinator">DOMinator</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Installation Section -->
+            <section id="installation" class="cin-mb-12">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="التثبيت">Installation</h2>
+                
+                <div class="cin-card cin-mb-6">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="متطلبات النظام">System Requirements</h3>
+                        <ul class="cin-list cin-mb-4">
+                            <li data-translate="PHP 8.0 أو أحدث">PHP 8.0 or higher</li>
+                            <li data-translate="خادم ويب (Apache/Nginx)">Web Server (Apache/Nginx)</li>
+                            <li data-translate="قاعدة بيانات MySQL/PostgreSQL (اختيارية)">MySQL/PostgreSQL Database (Optional)</li>
+                            <li data-translate="Composer (للتبعيات الخارجية)">Composer (for external dependencies)</li>
+                        </ul>
+                        <div class="cin-alert cin-alert-info">
+                            <p data-translate="CIN Framework مصمم للعمل بدون تبعيات خارجية، مما يضمن الاكتفاء الذاتي المحلي.">CIN Framework is designed to work without external dependencies, ensuring local self-sufficiency.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cin-card cin-mb-6">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="التثبيت باستخدام CIN CLI">Installation using CIN CLI</h3>
+                        <div class="cin-code-block cin-mb-4">
+                            <pre><code class="language-bash"># Download CIN CLI from GitHub Releases
+# Place cin-cli executable in your project directory
+
+# Install CIN Framework
+cin install framework
+
+# Verify installation
+cin version</code></pre>
+                        </div>
+                        <p class="cin-text-body" data-translate="هذه هي الطريقة الموصى بها لتثبيت CIN Framework.">This is the recommended method for installing CIN Framework.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Configuration Section -->
+            <section id="configuration" class="cin-mb-12">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="الإعداد">Configuration</h2>
+                
+                <div class="cin-card cin-mb-6">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="ملف الإعداد الأساسي">Basic Configuration File</h3>
+                        <div class="cin-code-block cin-mb-4">
+                            <pre><code class="language-php">&lt;?php
+declare(strict_types=1);
+
+/**
+ * CIN Framework Configuration
+ *
+ * Main configuration file for CIN Framework settings
+ *
+ * @package CIN Framework
+ * @author Ayoub Alarjani (MAWI MAN)
+ * @license Proprietary - All rights reserved to CIN Framework
+ */
+
+return [
+    'app' => [
+        'name' => 'CIN Application',
+        'version' => '2.0.0',
+        'debug' => true,
+        'timezone' => 'UTC',
+    ],
+    'database' => [
+        'host' => 'localhost',
+        'port' => 3306,
+        'name' => 'cin_db',
+        'username' => 'root',
+        'password' => '',
+        'charset' => 'utf8mb4',
+    ],
+    'security' => [
+        'encryption_key' => 'your-secret-key-here',
+        'session_lifetime' => 7200,
+        'csrf_protection' => true,
+    ],
+];</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Architecture Section -->
+            <section id="architecture" class="cin-mb-12">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="الهندسة المعمارية">Architecture</h2>
+                
+                <div class="cin-card cin-mb-6">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="نمط MVC">MVC Pattern</h3>
+                        <p class="cin-text-body cin-mb-4" data-translate="CIN Framework يتبع نمط Model-View-Controller (MVC) مع تحسينات حديثة للأداء والأمان.">CIN Framework follows the Model-View-Controller (MVC) pattern with modern enhancements for performance and security.</p>
+                        
+                        <div class="cin-code-block cin-mb-4">
+                            <pre><code class="language-text">project/
+├── cin/                    # CIN Framework Core
+│   ├── Core/              # Core system files
+│   ├── Config/            # Configuration files
+│   ├── DOMinator/         # DOM manipulation engine
+│   └── Security/          # Security components
+├── app/                   # Application files
+│   ├── Controllers/       # Application controllers
+│   ├── Models/           # Data models
+│   ├── Views/            # View templates
+│   └── Config/           # App configuration
+├── public/               # Public web files
+│   ├── assets/           # CSS, JS, Images
+│   └── index.php         # Entry point
+└── storage/              # Storage and cache
+    ├── cache/            # Cache files
+    └── logs/             # Log files</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security Section -->
+            <section id="security" class="cin-mb-12">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="الأمان العدواني">Aggressive Security</h2>
+                
+                <div class="cin-card cin-mb-6">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="ميزات الأمان المدمجة">Built-in Security Features</h3>
+                        <ul class="cin-list cin-mb-4">
+                            <li data-translate="حماية CSRF تلقائية">Automatic CSRF Protection</li>
+                            <li data-translate="تشفير البيانات الحساسة">Sensitive Data Encryption</li>
+                            <li data-translate="تنظيف المدخلات تلقائياً">Automatic Input Sanitization</li>
+                            <li data-translate="حماية من SQL Injection">SQL Injection Protection</li>
+                            <li data-translate="حماية من XSS">XSS Protection</li>
+                            <li data-translate="إدارة الجلسات الآمنة">Secure Session Management</li>
+                        </ul>
+                        
+                        <div class="cin-alert cin-alert-success">
+                            <p data-translate="CIN Framework يطبق مبدأ 'الأمان أولاً' في جميع مكوناته.">CIN Framework applies the 'Security First' principle in all its components.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DOMinator Section -->
+            <section id="dominator" class="cin-mb-12">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="محرك DOMinator">DOMinator Engine</h2>
+                
+                <div class="cin-card cin-mb-6">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="معالجة DOM المتقدمة">Advanced DOM Processing</h3>
+                        <p class="cin-text-body cin-mb-4" data-translate="DOMinator هو محرك معالجة DOM مطور خصيصاً لـ CIN Framework، يوفر أداءً فائقاً وتحكماً كاملاً.">DOMinator is a DOM processing engine specifically developed for CIN Framework, providing superior performance and complete control.</p>
+                        
+                        <div class="cin-code-block cin-mb-4">
+                            <pre><code class="language-php">&lt;?php
+declare(strict_types=1);
+
+use CIN\DOMinator\DOMProcessor;
+
+// Create DOMinator instance
+$dom = new DOMProcessor();
+
+// Process HTML with advanced features
+$html = $dom->process([
+    'template' => 'user-profile.html',
+    'data' => [
+        'user' => $userData,
+        'settings' => $userSettings
+    ],
+    'security' => [
+        'csrf' => true,
+        'sanitize' => true
+    ]
+]);
+
+echo $html;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- API Development Section -->
+            <section id="api" class="cin-mb-12">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="تطوير واجهات برمجة التطبيقات">API Development</h2>
+                
+                <div class="cin-card cin-mb-6">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="RESTful API">RESTful API</h3>
+                        <div class="cin-code-block cin-mb-4">
+                            <pre><code class="language-php">&lt;?php
+declare(strict_types=1);
+
+/**
+ * CIN Framework API Controller
+ *
+ * Example API controller for RESTful services
+ *
+ * @package CIN Framework
+ * @author Ayoub Alarjani (MAWI MAN)
+ * @license Proprietary - All rights reserved to CIN Framework
+ */
+
+class UserApiController extends CIN\Core\ApiController
+{
+    /**
+     * Get user information
+     */
+    public function getUser(int $userId): array
+    {
+        $user = $this->userModel->findById($userId);
+        
+        return $this->jsonResponse([
+            'status' => 'success',
+            'data' => $user,
+            'timestamp' => time()
+        ]);
+    }
+    
+    /**
+     * Create new user
+     */
+    public function createUser(): array
+    {
+        $data = $this->getJsonInput();
+        $user = $this->userModel->create($data);
+        
+        return $this->jsonResponse([
+            'status' => 'created',
+            'data' => $user,
+            'id' => $user['id']
+        ], 201);
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Best Practices Section -->
+            <section class="cin-mb-12">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="أفضل الممارسات">Best Practices</h2>
+                
+                <div class="cin-card cin-mb-6">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="إرشادات التطوير">Development Guidelines</h3>
+                        <ul class="cin-list cin-mb-4">
+                            <li data-translate="اتبع معايير PSR-12 للكود">Follow PSR-12 coding standards</li>
+                            <li data-translate="استخدم التوثيق PHPDoc لجميع الوظائف">Use PHPDoc documentation for all functions</li>
+                            <li data-translate="طبق مبدأ الاكتفاء الذاتي المحلي">Apply local self-sufficiency principle</li>
+                            <li data-translate="اختبر الكود بانتظام">Test code regularly</li>
+                            <li data-translate="استخدم الأمان العدواني">Implement aggressive security</li>
+                        </ul>
+                        
+                        <div class="cin-alert cin-alert-warning">
+                            <p data-translate="تذكر: CIN Framework يركز على الجودة والأمان قبل السرعة.">Remember: CIN Framework focuses on quality and security before speed.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Support Section -->
+            <section class="cin-mb-12">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="الدعم والمساعدة">Support & Help</h2>
+                
+                <div class="cin-grid cin-grid-cols-1 cin-md-grid-cols-2 cin-gap-6">
+                    <div class="cin-card">
+                        <div class="cin-card-body">
+                            <h3 class="cin-heading-3 cin-mb-4" data-translate="الدعم الفني">Technical Support</h3>
+                            <ul class="cin-list">
+                                <li><a href="mailto:support@cin-framework.com" data-translate="البريد الإلكتروني للدعم">Support Email</a></li>
+                                <li><a href="mailto:dev@cin-framework.com" data-translate="فريق التطوير">Development Team</a></li>
+                                <li><a href="https://github.com/cin-framework" data-translate="GitHub">GitHub Repository</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="cin-card">
+                        <div class="cin-card-body">
+                            <h3 class="cin-heading-3 cin-mb-4" data-translate="الموارد الإضافية">Additional Resources</h3>
+                            <ul class="cin-list">
+                                <li><a href="getting-started.html" data-translate="دليل البدء السريع">Quick Start Guide</a></li>
+                                <li><a href="commands.html" data-translate="مرجع الأوامر">Commands Reference</a></li>
+                                <li><a href="about.html" data-translate="حول CIN Framework">About CIN Framework</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cin-footer">
+        <div class="cin-container">
+            <div class="cin-footer-content">
+                <p data-translate="© 2025 CIN Framework. جميع الحقوق محفوظة لأيوب العرجاني (MAWI MAN).">© 2025 CIN Framework. All rights reserved to Ayoub Alarjani (MAWI MAN).</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/prism.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

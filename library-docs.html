@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="توثيق مكتبة CIN - CIN Framework">CIN Library Documentation - CIN Framework</title>
+    <meta name="description" content="Complete documentation for CIN Library components and utilities">
+    <link rel="stylesheet" href="assets/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="assets/css/style-min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="cin-header">
+        <div class="cin-container">
+            <div class="cin-flex cin-items-center cin-justify-between">
+                <div class="cin-flex cin-items-center">
+                    <img src="assets/images/cin-logo.svg" alt="CIN Framework" class="cin-logo">
+                    <span class="cin-text-lg cin-font-bold cin-ml-3">CIN Framework</span>
+                </div>
+                <nav class="cin-nav">
+                    <a href="main.html" class="cin-nav-link" data-translate="الرئيسية">Home</a>
+                    <a href="about.html" class="cin-nav-link" data-translate="حول">About</a>
+                    <a href="documentation.html" class="cin-nav-link" data-translate="التوثيق">Documentation</a>
+                    <a href="cin-library.html" class="cin-nav-link" data-translate="المكتبة">Library</a>
+                </nav>
+                <button class="cin-btn cin-btn-outline" onclick="toggleLanguage()" data-translate="العربية">العربية</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="cin-hero cin-bg-gradient">
+        <div class="cin-container cin-text-center">
+            <div class="cin-hero-badge cin-mb-4">
+                <span class="cin-badge cin-badge-primary" data-translate="توثيق المكتبة">Library Documentation</span>
+            </div>
+            <h1 class="cin-hero-title cin-mb-6" data-translate="توثيق مكتبة CIN الشامل">CIN Library Complete Documentation</h1>
+            <p class="cin-text-lead cin-mb-8 cin-mx-auto" style="max-width: 800px;" data-translate="دليل شامل لجميع المكونات والأدوات المتاحة في مكتبة CIN مع أمثلة عملية وتعليمات التثبيت.">Complete guide to all components and utilities available in CIN Library with practical examples and installation instructions.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="cin-main">
+        <div class="cin-container">
+            <!-- Installation Section -->
+            <section class="cin-section">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="التثبيت والإعداد">Installation & Setup</h2>
+                <div class="cin-card">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="متطلبات النظام">System Requirements</h3>
+                        <ul class="cin-list cin-mb-6">
+                            <li data-translate="CIN CLI v2.3.2 أو أحدث">CIN CLI v2.3.2 or newer</li>
+                            <li data-translate="CIN Framework v2.0.0 أو أحدث">CIN Framework v2.0.0 or newer</li>
+                            <li data-translate="PHP 8.0 أو أحدث">PHP 8.0 or newer</li>
+                        </ul>
+                        
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="تثبيت المكتبة">Library Installation</h3>
+                        <div class="cin-terminal-output cin-mb-4">
+                            <pre><code class="language-bash"># Install CIN Library using CIN CLI
+cin-cli library install
+
+# Install specific library component
+cin-cli library install component-name
+
+# List available libraries
+cin-cli library list</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Components Section -->
+            <section class="cin-section">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="المكونات المتاحة">Available Components</h2>
+                
+                <!-- UI Components -->
+                <div class="cin-card cin-mb-6">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="مكونات واجهة المستخدم">UI Components</h3>
+                        <div class="cin-grid cin-grid-cols-1 cin-md-grid-cols-2 cin-gap-4">
+                            <div class="cin-card cin-card-feature">
+                                <h4 class="cin-heading-4 cin-mb-2" data-translate="نظام البطاقات">Card System</h4>
+                                <p class="cin-text-small cin-mb-3" data-translate="بطاقات قابلة للتخصيص مع دعم المحتوى المتنوع">Customizable cards with diverse content support</p>
+                                <div class="cin-terminal-output">
+                                    <pre><code class="language-php">&lt;?php
+// Using CIN Card Component
+$card = new CIN\Library\UI\Card();
+$card->setTitle('Card Title')
+     ->setContent('Card content here')
+     ->render();</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="cin-card cin-card-feature">
+                                <h4 class="cin-heading-4 cin-mb-2" data-translate="نظام النماذج">Form System</h4>
+                                <p class="cin-text-small cin-mb-3" data-translate="نماذج متقدمة مع التحقق التلقائي والحماية">Advanced forms with automatic validation and security</p>
+                                <div class="cin-terminal-output">
+                                    <pre><code class="language-php">&lt;?php
+// Using CIN Form Component
+$form = new CIN\Library\UI\Form();
+$form->addField('email', 'email')
+     ->addValidation('required|email')
+     ->render();</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Utility Components -->
+                <div class="cin-card cin-mb-6">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="الأدوات المساعدة">Utility Components</h3>
+                        <div class="cin-grid cin-grid-cols-1 cin-md-grid-cols-2 cin-gap-4">
+                            <div class="cin-card cin-card-feature">
+                                <h4 class="cin-heading-4 cin-mb-2" data-translate="معالج البيانات">Data Processor</h4>
+                                <p class="cin-text-small cin-mb-3" data-translate="معالجة وتنسيق البيانات بطرق متقدمة">Advanced data processing and formatting</p>
+                                <div class="cin-terminal-output">
+                                    <pre><code class="language-php">&lt;?php
+// Using Data Processor
+$processor = new CIN\Library\Utils\DataProcessor();
+$result = $processor->process($data)
+                   ->validate()
+                   ->format();</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="cin-card cin-card-feature">
+                                <h4 class="cin-heading-4 cin-mb-2" data-translate="مدير الذاكرة المؤقتة">Cache Manager</h4>
+                                <p class="cin-text-small cin-mb-3" data-translate="إدارة متقدمة للذاكرة المؤقتة مع دعم متعدد المستويات">Advanced cache management with multi-level support</p>
+                                <div class="cin-terminal-output">
+                                    <pre><code class="language-php">&lt;?php
+// Using Cache Manager
+$cache = new CIN\Library\Utils\CacheManager();
+$cache->set('key', $data, 3600)
+      ->get('key')
+      ->clear();</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- API Reference -->
+            <section class="cin-section">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="مرجع واجهة البرمجة">API Reference</h2>
+                <div class="cin-card">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="الفئات الأساسية">Core Classes</h3>
+                        <div class="cin-accordion" id="api-accordion">
+                            <div class="cin-accordion-item">
+                                <h4 class="cin-accordion-header">
+                                    <button class="cin-accordion-button" data-translate="CIN\Library\Core\Component">CIN\Library\Core\Component</button>
+                                </h4>
+                                <div class="cin-accordion-content">
+                                    <p data-translate="الفئة الأساسية لجميع مكونات المكتبة">Base class for all library components</p>
+                                    <div class="cin-terminal-output">
+                                        <pre><code class="language-php">&lt;?php
+abstract class Component {
+    public function render(): string;
+    public function setConfig(array $config): self;
+    public function getConfig(): array;
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Examples Section -->
+            <section class="cin-section">
+                <h2 class="cin-heading-2 cin-mb-6" data-translate="أمثلة عملية">Practical Examples</h2>
+                <div class="cin-card">
+                    <div class="cin-card-body">
+                        <h3 class="cin-heading-3 cin-mb-4" data-translate="مثال شامل">Complete Example</h3>
+                        <div class="cin-terminal-output">
+                            <pre><code class="language-php">&lt;?php
+declare(strict_types=1);
+
+use CIN\Library\UI\Card;
+use CIN\Library\UI\Form;
+use CIN\Library\Utils\DataProcessor;
+
+// Create a complete page with library components
+$processor = new DataProcessor();
+$userData = $processor->process($_POST)->validate();
+
+$form = new Form();
+$form->addField('name', 'text')
+     ->addField('email', 'email')
+     ->addValidation('required|email');
+
+$card = new Card();
+$card->setTitle('User Registration')
+     ->setContent($form->render())
+     ->addClass('registration-card');
+
+echo $card->render();</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cin-footer">
+        <div class="cin-container cin-text-center">
+            <p data-translate="© 2025 CIN Framework. جميع الحقوق محفوظة لأيوب العرجاني (MAWI MAN)">© 2025 CIN Framework. All rights reserved to Ayoub Alarjani (MAWI MAN)</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/prism.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

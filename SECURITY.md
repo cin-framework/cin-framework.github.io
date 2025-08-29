@@ -35,7 +35,7 @@ We provide security updates for the following versions:
 | Component | Version | Security Status | Support Level |
 |-----------|---------|-----------------|---------------|
 | CIN Framework Core | Latest | ✅ **Fully Secure** | Active Security Updates |
-| CIN CLI | v2.2.0+ | ✅ **Fully Secure** | Active Security Updates |
+| CIN CLI | v2.3.2+ | ✅ **Fully Secure** | Active Security Updates |
 | CIN Library | Latest | ✅ **Fully Secure** | Active Security Updates |
 | Legacy Versions | < Latest | ❌ **Deprecated** | No Security Support |
 
