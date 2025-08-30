@@ -1,0 +1,45 @@
+# Configuration file for GitHub Issue Templates
+# This file customizes the issue creation experience for CIN Framework
+
+blank_issues_enabled: false
+
+contact_links:
+  - name: 🌐 CIN Framework Official Website
+    url: https://www.cin-framework.com
+    about: Visit our official website for comprehensive documentation and resources
+    
+  - name: 📚 Documentation & Getting Started
+    url: https://www.cin-framework.com/getting-started.html
+    about: Complete documentation and step-by-step guides for CIN Framework
+    
+  - name: 💬 Community Support & Discussions
+    url: https://github.com/cin-framework/cin-framework/discussions
+    about: Join our community discussions for questions, ideas, and general support
+    
+  - name: 🔒 Security Vulnerabilities
+    url: https://www.cin-framework.com/reporting_guidelines.html
+    about: Report security vulnerabilities privately following our security guidelines
+    
+  - name: 📧 Direct Contact
+    url: mailto:support@cin-framework.com
+    about: Contact our support team directly for urgent matters or private inquiries
+    
+  - name: 🛠️ CIN CLI Support
+    url: https://www.cin-framework.com/cin-cli.html
+    about: Specific support and documentation for CIN CLI tool
+    
+  - name: 📦 CIN Library Documentation
+    url: https://www.cin-framework.com/cin-library.html
+    about: Documentation and examples for CIN Library components
+    
+  - name: 💰 Financial Support
+    url: https://www.cin-framework.com/financial-support.html
+    about: Support CIN Framework development through financial contributions
+    
+  - name: ❓ Frequently Asked Questions
+    url: https://www.cin-framework.com/faq.html
+    about: Find answers to common questions about CIN Framework
+    
+  - name: 🏢 About CIN Framework
+    url: https://www.cin-framework.com/about.html
+    about: Learn more about CIN Framework, our mission, and the team behind it
