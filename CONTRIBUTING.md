@@ -188,13 +188,13 @@ If you have questions about contributing:
 
 ## Legal Information
 
-**Copyright © 2025-08-21 CIN FRAMEWORK. All Rights Reserved.**
+**Copyright ©CIN FRAMEWORK. All Rights Reserved.**
 
 Developed by Ayoub Alarjani (Mawi Man) | Official Website: [www.cin-framework.com](https://www.cin-framework.com)
 
 By contributing to CIN Framework, you agree that your contributions will be licensed under the same proprietary license as the project. All contributions become part of the CIN Framework ecosystem and are subject to our licensing terms.
 
-This contributing guide is governed by the laws of Morocco and is effective as of 2025-08-21.
+This contributing guide is governed by the laws of Morocco and is effective as of 2025.
 
 ---
 
