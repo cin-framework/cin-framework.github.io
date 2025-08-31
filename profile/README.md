@@ -88,5 +88,4 @@ Built with performance and simplicity in mind, CIN Framework offers a unified ap
 
 <div align="center">
   <p><strong>© CIN FRAMEWORK</strong> — All Rights Reserved</p>
-  <p><strong>Proprietary License</strong> | <strong>Ayoub Alarjani</strong> | <strong>Mawi Man</strong></p>
 </div>
