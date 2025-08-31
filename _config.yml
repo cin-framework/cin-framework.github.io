@@ -5,7 +5,7 @@
 title: "CIN Framework"
 description: "CIN FRAMEWORK – WEB 4 – POWERED BY LOCAL SELF-SUFFICIENCY AND AGGRESSIVE SECURITY"
 url: "https://cin-framework.github.io"
-baseurl: "/cin-framework"
+baseurl: "/.github"
 
 # Build settings
 markdown: kramdown
@@ -17,10 +17,6 @@ exclude:
   - LICENSE
   - .gitignore
   - .github/workflows/
-  - cin-cli/
-  - cin-framework/
-  - cin-library/
-  - .1.NO_EDITE_NO_DELETE/
 
 # Include files that start with underscore
 include:
