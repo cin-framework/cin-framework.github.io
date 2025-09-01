@@ -1,7 +1,7 @@
 <div align="center">
   <h1>🚀 <strong>CIN FRAMEWORK</strong></h1>
   <p><em>Modern Web Development Made Simple</em></p>
-  <img src="../assets/img/2025-08-29/CIN.svg" alt="CIN Framework" width="100%">
+  <img src="./CIN.svg" alt="CIN Framework" width="100%">
   <hr>
 </div>
 
@@ -19,7 +19,7 @@ Built with performance and simplicity in mind, CIN Framework offers a unified ap
 
 ### **CIN CLI**
 
-  <img src="../assets/img/2025-08-29/repository-open-graph-template/repository-open-graph-template-CIN-CLI.png" alt="CIN CLI" width="50%" style="border-radius: 15px;">
+  <img src="./repository-open-graph-template-CIN-CLI.png" alt="CIN CLI" width="50%" style="border-radius: 15px;">
 
 **Command-line interface for project management and installation**
 
@@ -29,7 +29,7 @@ Built with performance and simplicity in mind, CIN Framework offers a unified ap
 
 ### **CIN Framework**
 
-  <img src="../assets/img/2025-08-29/repository-open-graph-template/repository-open-graph-template-CIN-FRAMEWORK.png" alt="CIN FRAMEWORK" width="50%" style="border-radius: 15px;">
+  <img src="./repository-open-graph-template-CIN-FRAMEWORK.png" alt="CIN FRAMEWORK" width="50%" style="border-radius: 15px;">
 
 **Core framework with essential components and architecture**
 
@@ -39,7 +39,7 @@ Built with performance and simplicity in mind, CIN Framework offers a unified ap
 
 ### 📚 **CIN Library**
 
-  <img src="../assets/img/2025-08-29/repository-open-graph-template/repository-open-graph-template-CIN-LIBRARY.png" alt="CIN FRAMEWORK" width="50%" style="border-radius: 15px;">
+  <img src="./repository-open-graph-template-CIN-LIBRARY.png" alt="CIN FRAMEWORK" width="50%" style="border-radius: 15px;">
 
 **Extended components and utility libraries**
 
@@ -53,11 +53,11 @@ Built with performance and simplicity in mind, CIN Framework offers a unified ap
 
 <div align="center">
   <p>
-    <img src="../assets/img/2025-08-29/usa.png" alt="English" width="20" height="15" style="margin-right: 5px; vertical-align: middle;">
+    <img src="./usa.png" alt="English" width="20" height="15" style="margin-right: 5px; vertical-align: middle;">
     Visit our official website for comprehensive documentation, tutorials, and guides.
   </p>
   <p>
-    <img src="../assets/img/2025-08-29/morocco.png" alt="العربية" width="20" height="15" style="margin-right: 5px; vertical-align: middle;">
+    <img src="./morocco.png" alt="العربية" width="20" height="15" style="margin-right: 5px; vertical-align: middle;">
     قم بزيارة موقعنا الرسمي للحصول على التوثيق الشامل والدروس والأدلة.
   </p>
   
