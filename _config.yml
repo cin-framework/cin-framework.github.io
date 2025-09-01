@@ -1,0 +1,55 @@
+# CIN Framework GitHub Pages Configuration
+title: "CIN Framework"
+description: "CIN FRAMEWORK – WEB 4 – POWERED BY LOCAL SELF-SUFFICIENCY AND AGGRESSIVE SECURITY"
+author: "Ayoub Alarjani (Mawi Man)"
+email: "mawi@cin-framework.com"
+
+# Site settings
+url: "https://cin-framework.github.io/.github"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - workflows/
+
+# Include files
+include:
+  - web
+
+# SEO settings
+seo:
+  name: "CIN Framework"
+  type: "Organization"
+  links:
+    - "https://www.cin-framework.com"
+    - "https://www.mawiman.com"
+
+# Social links
+social:
+  name: "CIN Framework"
+  links:
+    - "https://github.com/cin-framework"
+    - "https://www.cin-framework.com"
+
+# Contact information
+contact:
+  email: "contact@cin-framework.com"
+  support: "support@cin-framework.com"
