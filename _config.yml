@@ -34,6 +34,9 @@ exclude:
 include:
   - web
 
+# Source directory
+source: web
+
 # SEO settings
 seo:
   name: "CIN Framework"

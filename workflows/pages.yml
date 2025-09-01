@@ -26,20 +26,11 @@ jobs:
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          # Configure Jekyll to use web folder as source
-          generator_config_file: _config.yml
-      
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./web
-          destination: ./_site
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './_site'
+          path: './.github/web'
       
       - name: Deploy to GitHub Pages
         id: deployment
