@@ -1,7 +1,7 @@
 <div align="center">
   <h1>🚀 <strong>CIN FRAMEWORK</strong></h1>
   <p><em>Modern Web Development Made Simple</em></p>
-  <img src="./CIN.svg" alt="CIN Framework" width="100%">
+  <img src="./CIN-BG.svg" alt="CIN Framework" width="100%">
   <hr>
 </div>
 
