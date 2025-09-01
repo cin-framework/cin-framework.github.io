@@ -107,7 +107,7 @@
             const moonLight = new THREE.PointLight(0xf0f0ff, 0.5, 300);
             scene.add(moonLight);
             const moonTextureLoader = new THREE.TextureLoader();
-            const moonTexture = moonTextureLoader.load('https://www.realtimerendering.com/erich/udacity/exercises/textures/planets/earth_clouds_1024.png');
+            const moonTexture = moonTextureLoader.load('./assets/img/3D/earth_clouds_1024.png');
             const moon = new THREE.Mesh(
                 new THREE.SphereGeometry(10, 32, 32),
                 new THREE.MeshStandardMaterial({
@@ -126,7 +126,7 @@
                 {
                     textureWidth: 1024,
                     textureHeight: 1024,
-                    waterNormals: new THREE.TextureLoader().load('https://threejs.org/examples/textures/waternormals.jpg', function(texture) {
+                    waterNormals: new THREE.TextureLoader().load('./assets/img/3D/waternormals.jpg', function(texture) {
                         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
                         texture.repeat.set(10, 10);
                     }),
@@ -155,7 +155,7 @@
             scene.add(oceanFloor);
 
             // النجوم والغيوم
-            const cloudTexture = new THREE.TextureLoader().load('https://threejs.org/examples/textures/sprites/cloud.png');
+            const cloudTexture = new THREE.TextureLoader().load('./assets/img/3D/earth_clouds_1024.png');
             const cloudGeometry = new THREE.BufferGeometry();
             const cloudCount = 100;
             const cloudPositions = new Float32Array(cloudCount * 3);
