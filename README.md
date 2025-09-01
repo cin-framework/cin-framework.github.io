@@ -1,7 +1,7 @@
 <div align="center">
   <h1>🚀 <strong>CIN FRAMEWORK</strong></h1>
   <p><em>Modern Web Development Made Simple</em></p>
-  <img src="./profile/CIN-BG.svg" alt="CIN Framework" width="100%">
+  <img src="./web/assets/img/cin/CIN-BNR.svg" alt="CIN Framework" width="100%">
   <hr>
 </div>
 
@@ -19,7 +19,7 @@ Built with performance and simplicity in mind, CIN Framework offers a unified ap
 
 ### **CIN CLI**
 
-  <img src="./profile/repository-open-graph-template-CIN-CLI.png" alt="CIN CLI" width="50%" style="border-radius: 15px;">
+  <img src="./web/assets/img/repository-open-graph-template/repository-open-graph-template-CIN-CLI.png" alt="CIN CLI" width="50%" style="border-radius: 15px;">
 
 **Command-line interface for project management and installation**
 
@@ -29,7 +29,7 @@ Built with performance and simplicity in mind, CIN Framework offers a unified ap
 
 ### **CIN Framework**
 
-  <img src="./profile/repository-open-graph-template-CIN-FRAMEWORK.png" alt="CIN FRAMEWORK" width="50%" style="border-radius: 15px;">
+  <img src="./web/assets/img/repository-open-graph-template/repository-open-graph-template-CIN-CLI.png" alt="CIN FRAMEWORK" width="50%" style="border-radius: 15px;">
 
 **Core framework with essential components and architecture**
 
@@ -39,7 +39,7 @@ Built with performance and simplicity in mind, CIN Framework offers a unified ap
 
 ### 📚 **CIN Library**
 
-  <img src="./profile/repository-open-graph-template-CIN-LIBRARY.png" alt="CIN FRAMEWORK" width="50%" style="border-radius: 15px;">
+  <img src="./web/assets/img/repository-open-graph-template/repository-open-graph-template-CIN-LIBRARY.png" alt="CIN FRAMEWORK" width="50%" style="border-radius: 15px;">
 
 **Extended components and utility libraries**
 
