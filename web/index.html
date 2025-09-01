@@ -1,1 +1,468 @@
-<!DOCTYPE html><html lang="ar"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="favicon.ico" type="image/x-icon"><meta name="description" content="CIN FRAMEWORK - SOON"><meta name="keywords" content="CIN, FRAMEWORK, SOON"><title>CIN FRAMEWORK - SOON</title><style>body{ margin: 0; overflow: hidden; background-color: #000c1c; font-family: sans-serif; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh} canvas{ display: block} .info-text{ position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-size: 1.5rem; color: #ffffff; text-shadow: 0 0 10px rgba(0, 0, 0, 0.5)} </style></head><body><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script><script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/objects/Water.js"></script><script>window.onload=function(){ const scene=new THREE.Scene(); const camera=new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 4000); const renderer=new THREE.WebGLRenderer({ antialias: true}); renderer.setSize(window.innerWidth, window.innerHeight); renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap; document.body.appendChild(renderer.domElement); scene.background=new THREE.Color(0x000c1c); scene.fog=new THREE.Fog(0x000c1c, 100, 800); const ambientLight=new THREE.AmbientLight(0x404040, 5); scene.add(ambientLight); const sunLight=new THREE.DirectionalLight(0xffffff, 1); sunLight.castShadow=true; sunLight.shadow.mapSize.width=2048; sunLight.shadow.mapSize.height=2048; sunLight.shadow.camera.near=1; sunLight.shadow.camera.far=100; scene.add(sunLight); const sun=new THREE.Mesh( new THREE.SphereGeometry(20, 32, 32), new THREE.MeshBasicMaterial({ color: 0xfff0c0, emissive: 0xfff0c0}) ); scene.add(sun); const moonLight=new THREE.PointLight(0xf0f0ff, 0.5, 300); scene.add(moonLight); const moonTextureLoader=new THREE.TextureLoader(); const moonTexture=moonTextureLoader.load('https://www.realtimerendering.com/erich/udacity/exercises/textures/planets/earth_clouds_1024.png'); const moon=new THREE.Mesh( new THREE.SphereGeometry(10, 32, 32), new THREE.MeshStandardMaterial({ map: moonTexture, color: 0xffffff, emissive: 0xffffff, emissiveIntensity: 0.5}) ); scene.add(moon); const sunGlowLight=new THREE.PointLight(0xfff0c0, 5000, 200); scene.add(sunGlowLight); const waterGeometry=new THREE.PlaneGeometry(2000, 2000); const water=new THREE.Water( waterGeometry,{ textureWidth: 1024, textureHeight: 1024, waterNormals: new THREE.TextureLoader().load('https://threejs.org/examples/textures/waternormals.jpg', function(texture){ texture.wrapS=texture.wrapT=THREE.RepeatWrapping; texture.repeat.set(10, 10)}), alpha: 1.0, sunDirection: sunLight.position.clone().normalize(), sunColor: 0xffffff, waterColor: 0x001e0f, distortionScale: 3.7, fog: scene.fog !==undefined, side: THREE.DoubleSide} ); water.rotation.x=-Math.PI / 2; water.position.y=-5; scene.add(water); const oceanFloorGeometry=new THREE.PlaneGeometry(2000, 2000); const oceanFloorMaterial=new THREE.MeshStandardMaterial({ color: 0x00000a, metalness: 0, roughness: 1}); const oceanFloor=new THREE.Mesh(oceanFloorGeometry, oceanFloorMaterial); oceanFloor.rotation.x=-Math.PI / 2; oceanFloor.position.y=-200; oceanFloor.receiveShadow=true; scene.add(oceanFloor); const cloudTexture=new THREE.TextureLoader().load('https://threejs.org/examples/textures/sprites/cloud.png'); const cloudGeometry=new THREE.BufferGeometry(); const cloudCount=100; const cloudPositions=new Float32Array(cloudCount * 3); for (let i=0; i < cloudCount * 3; i +=3){ cloudPositions[i]=(Math.random() - 0.5) * 800; cloudPositions[i + 1]=100 + Math.random() * 50; cloudPositions[i + 2]=(Math.random() - 0.5) * 800} cloudGeometry.setAttribute('position', new THREE.BufferAttribute(cloudPositions, 3)); const cloudMaterial=new THREE.PointsMaterial({ size: 50, map: cloudTexture, transparent: true, blending: THREE.AdditiveBlending}); const clouds=new THREE.Points(cloudGeometry, cloudMaterial); scene.add(clouds); const starGeometry=new THREE.BufferGeometry(); const starCount=20000; const starPositions=new Float32Array(starCount * 3); for (let i=0; i < starCount * 3; i +=3){ starPositions[i]=(Math.random() - 0.5) * 800; starPositions[i + 1]=Math.random() * 800; starPositions[i + 2]=(Math.random() - 0.5) * 800} starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3)); const starMaterial=new THREE.PointsMaterial({ color: 0xffffff, size: 0.2, transparent: true, opacity: 0.8}); const starField=new THREE.Points(starGeometry, starMaterial); scene.add(starField); let textMesh; let arabicTextMesh; let countdownGroup; function calculateCountdown(){ const targetDate=new Date('2025-10-01T12:00:00'); const now=new Date(); const diff=targetDate - now; if (diff <=0){ return{ days: 0, hours: 0, minutes: 0, seconds: 0, expired: true}} const days=Math.floor(diff / (1000 * 60 * 60 * 24)); const hours=Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); const minutes=Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)); const seconds=Math.floor((diff % (1000 * 60)) / 1000); return{ days, hours, minutes, seconds, expired: false}} const fontLoader=new THREE.FontLoader(); fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function(font){ const textGeometry=new THREE.TextGeometry('CIN FRAMEWORK - SOON',{ font: font, size: 6, height: 1, curveSegments: 12, bevelEnabled: true, bevelThickness: 0.2, bevelSize: 0.2, bevelOffset: 0, bevelSegments: 5}); textGeometry.center(); const textMaterial=new THREE.MeshPhongMaterial({ color: 0x00aaff, emissive: 0x0055ff, specular: 0x00aaff}); textMesh=new THREE.Mesh(textGeometry, textMaterial); textMesh.castShadow=true; textMesh.position.y=-10; scene.add(textMesh); const arabicTextGeometry=new THREE.TextGeometry('CIN framework launching soon',{ font: font, size: 4, height: 0.8, curveSegments: 12, bevelEnabled: true, bevelThickness: 0.15, bevelSize: 0.15, bevelOffset: 0, bevelSegments: 5}); arabicTextGeometry.center(); const arabicTextMaterial=new THREE.MeshPhongMaterial({ color: 0xff6600, emissive: 0xff3300, specular: 0xff6600}); arabicTextMesh=new THREE.Mesh(arabicTextGeometry, arabicTextMaterial); arabicTextMesh.castShadow=true; arabicTextMesh.position.y=5; scene.add(arabicTextMesh); countdownGroup=new THREE.Group(); scene.add(countdownGroup); function updateCountdown(){ while(countdownGroup.children.length >0){ countdownGroup.remove(countdownGroup.children[0])} const countdown=calculateCountdown(); if (countdown.expired){ const expiredGeometry=new THREE.TextGeometry('Times up!',{ font: font, size: 3, height: 0.5, curveSegments: 12, bevelEnabled: true, bevelThickness: 0.1, bevelSize: 0.1, bevelOffset: 0, bevelSegments: 5}); expiredGeometry.center(); const expiredMaterial=new THREE.MeshPhongMaterial({ color: 0xff0000, emissive: 0x660000, specular: 0xff0000}); const expiredMesh=new THREE.Mesh(expiredGeometry, expiredMaterial); expiredMesh.position.y=15; countdownGroup.add(expiredMesh)} else{ const elements=[{ value: countdown.days, label: 'day', position: -30},{ value: countdown.hours, label: 'hour', position: -10},{ value: countdown.minutes, label: 'minute', position: 10},{ value: countdown.seconds, label: 'second', position: 30} ]; elements.forEach((element, index)=>{ const numberGeometry=new THREE.TextGeometry(element.value.toString().padStart(2, '0'),{ font: font, size: 4, height: 1, curveSegments: 12, bevelEnabled: true, bevelThickness: 0.2, bevelSize: 0.2, bevelOffset: 0, bevelSegments: 5}); numberGeometry.center(); const numberMaterial=new THREE.MeshPhongMaterial({ color: 0x00ff88, emissive: 0x004422, specular: 0x00ff88}); const numberMesh=new THREE.Mesh(numberGeometry, numberMaterial); numberMesh.position.set(element.position, 20, 0); numberMesh.castShadow=true; countdownGroup.add(numberMesh); const labelGeometry=new THREE.TextGeometry(element.label,{ font: font, size: 1.5, height: 0.3, curveSegments: 12, bevelEnabled: true, bevelThickness: 0.05, bevelSize: 0.05, bevelOffset: 0, bevelSegments: 3}); labelGeometry.center(); const labelMaterial=new THREE.MeshPhongMaterial({ color: 0xaaaaaa, emissive: 0x333333, specular: 0xaaaaaa}); const labelMesh=new THREE.Mesh(labelGeometry, labelMaterial); labelMesh.position.set(element.position, 15, 0); labelMesh.castShadow=true; countdownGroup.add(labelMesh)})}} setInterval(updateCountdown, 1000); updateCountdown()}); camera.position.z=150; camera.position.y=5; const controls=new THREE.PointerLockControls(camera, document.body); document.body.addEventListener('click', function(){ controls.lock()}); const velocity=new THREE.Vector3(); let moveForward=false; let moveBackward=false; let moveLeft=false; let moveRight=false; let movementSpeed=40.0; document.addEventListener('keydown', (event)=>{ switch (event.code){ case 'ArrowUp': moveForward=true; break; case 'ArrowDown': moveBackward=true; break; case 'ArrowLeft': moveLeft=true; break; case 'ArrowRight': moveRight=true; break}}); document.addEventListener('keyup', (event)=>{ switch (event.code){ case 'ArrowUp': moveForward=false; break; case 'ArrowDown': moveBackward=false; break; case 'ArrowLeft': moveLeft=false; break; case 'ArrowRight': moveRight=false; break}}); document.addEventListener('wheel', (event)=>{ if (controls.isLocked){ if (event.deltaY >0){ movementSpeed=Math.max(10, movementSpeed - 5)} else if (event.deltaY < 0){ movementSpeed=Math.min(1000, movementSpeed + 5)}}}); let prevTime=performance.now(); let isUnderwater=false; const WORLD_BOUNDS=400; const animate=function(time){ requestAnimationFrame(animate); const delta=(time - prevTime) / 1000; velocity.x -=velocity.x * 10.0 * delta; velocity.z -=velocity.z * 10.0 * delta; if (moveForward) velocity.z -=movementSpeed * delta; if (moveBackward) velocity.z +=movementSpeed * delta; if (moveLeft) velocity.x -=movementSpeed * delta; if (moveRight) velocity.x +=movementSpeed * delta; controls.moveForward(-velocity.z * delta); controls.moveRight(velocity.x * delta); if (camera.position.x >WORLD_BOUNDS) camera.position.x=WORLD_BOUNDS; if (camera.position.x < -WORLD_BOUNDS) camera.position.x=-WORLD_BOUNDS; if (camera.position.z >WORLD_BOUNDS) camera.position.z=WORLD_BOUNDS; if (camera.position.z < -WORLD_BOUNDS) camera.position.z=-WORLD_BOUNDS; prevTime=time; const globalTime=Date.now() * 0.001; if (textMesh){ textMesh.position.y=-10 + Math.sin(globalTime * 0.5) * 1; const hue=(globalTime * 0.05) % 1; textMesh.material.color.setHSL(hue, 1, 0.5); textMesh.material.emissive.setHSL(hue, 1, 0.3)} if (arabicTextMesh){ arabicTextMesh.position.y=5 + Math.sin(globalTime * 0.3 + Math.PI) * 0.8; const hue=((globalTime * 0.08) + 0.1) % 1; arabicTextMesh.material.color.setHSL(hue, 1, 0.6); arabicTextMesh.material.emissive.setHSL(hue, 1, 0.4); arabicTextMesh.rotation.y=Math.sin(globalTime * 0.2) * 0.1} if (countdownGroup){ countdownGroup.position.y=25 + Math.sin(globalTime * 0.4) * 2; countdownGroup.rotation.y=Math.sin(globalTime * 0.15) * 0.05; countdownGroup.children.forEach((child, index)=>{ if (child.isMesh){ child.rotation.x=Math.sin(globalTime * 0.5 + index * 0.5) * 0.1; child.position.z=Math.sin(globalTime * 0.3 + index * 0.8) * 2}})} const orbitRadius=400; const orbitSpeed=0.1; const angle=(globalTime * orbitSpeed) % (Math.PI * 2); sun.position.x=Math.sin(angle) * orbitRadius; sun.position.y=Math.cos(angle) * orbitRadius; sun.position.z=Math.sin(angle) * 100; moon.position.x=-Math.sin(angle) * orbitRadius; moon.position.y=-Math.cos(angle) * orbitRadius; moon.position.z=-Math.sin(angle) * 100; const sunY=sun.position.y; sunLight.position.copy(sun.position); sunGlowLight.position.copy(sun.position); moonLight.position.copy(moon.position); let dayFactor=Math.max(0, sunY / orbitRadius); if (sunY < 0){ dayFactor=0} sunLight.intensity=dayFactor * 20; sunGlowLight.intensity=dayFactor * 5000; moonLight.intensity=(1 - dayFactor) * 0.5; const dawnColor=new THREE.Color(0xff8800); const dayColor=new THREE.Color(0x4682b4); const duskColor=new THREE.Color(0xaa3300); const nightColor=new THREE.Color(0x000c1c); const lerpedColor=new THREE.Color(); if (dayFactor >0.9){ lerpedColor.copy(dayColor)} else if (dayFactor >0.6){ lerpedColor.copy(duskColor).lerp(dayColor, (dayFactor - 0.6) / 0.3)} else if (dayFactor >0.1){ lerpedColor.copy(nightColor).lerp(duskColor, (dayFactor - 0.1) / 0.5)} else{ lerpedColor.copy(nightColor)} scene.background=lerpedColor; scene.fog.color=lerpedColor; if (camera.position.y < -5 && !isUnderwater){ isUnderwater=true; scene.background.set(0x000005); scene.fog.color.set(0x000005); ambientLight.intensity=0.5; water.material.uniforms.distortionScale.value=8; sun.visible=false; moon.visible=false; sunLight.intensity=0; sunGlowLight.intensity=0; moonLight.intensity=0} else if (camera.position.y >=-5 && isUnderwater){ isUnderwater=false; scene.background.set(lerpedColor); scene.fog.color.set(lerpedColor); ambientLight.intensity=5; water.material.uniforms.distortionScale.value=3.7; sun.visible=true; moon.visible=true; sunLight.intensity=dayFactor * 20; sunGlowLight.intensity=dayFactor * 5000; moonLight.intensity=(1 - dayFactor) * 0.5} starField.rotation.y +=0.001; starField.material.opacity=1 - dayFactor; clouds.material.opacity=dayFactor; clouds.rotation.y +=0.0005; water.material.uniforms[ 'time' ].value +=1.0 / 60.0; water.material.uniforms.sunDirection.value.copy(sunLight.position).normalize(); renderer.render(scene, camera)}; window.addEventListener('resize', ()=>{ camera.aspect=window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight)}); animate(performance.now())}; </script></body></html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIN FRAMEWORK - Coming Soon! / إطار عمل CIN - قريباًّ</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div id="content-wrapper" class="content-wrapper">
+         <div class="content-inner">
+             <!-- Coming Soon Content -->
+             <div class="cin-coming-soon cin-fade-in">
+            <!-- Hero Badge Component -->
+            <div class="cin-hero-badge">
+                <span data-translate="status_badge">🚀 Framework in Development</span>
+            </div>
+
+            <!-- Main Heading Component -->
+            <h1 class="cin-heading-1" data-translate="!قريباً">Coming Soon!</h1>
+            
+            <!-- Lead Text Component -->
+            <p class="cin-text-lead cin-mb-8" data-translate="سيتم إطلاق CIN Framework رسمياً في 2025-10-01">
+                The CIN Framework will be officially launched on 2025-10-01.
+            </p>
+            
+            <!-- Framework Logo Display -->
+            <div class="cin-heading-3 cin-mb-4" data-translate="logo">CIN Framework</div>
+            <p class="cin-tagline" data-translate="tagline">
+                CIN FRAMEWORK – WEB 4 – POWERED BY LOCAL SELF-SUFFICIENCY AND AGGRESSIVE SECURITY
+            </p>
+            
+            <!-- Email Subscription Component -->
+            <div class="cin-subscription">
+                <h3 class="cin-heading-5 cin-text-center cin-mb-8" data-translate="استعد — CIN FRAMEWORK قادم قريبًا!">
+                    Get ready — CIN FRAMEWORK is coming soon!
+                </h3>
+                <form class="cin-input-group cin-max-w-md cin-mx-auto" onsubmit="handleEmailSubmit(event)">
+                    <input 
+                        type="email" 
+                        class="cin-input" 
+                        data-translate-placeholder="أدخل بريدك الإلكتروني"
+                        placeholder="Enter your email address" 
+                        required
+                    >
+                    <button type="submit" class="cin-btn cin-btn-primary" data-translate="أخبرني عند الإطلاق">
+                        Notify me when it launches.
+                    </button>
+                </form>
+                <!-- Custom message box for subscription -->
+                <div id="subscriptionMessage" style="display: none; margin-top: var(--cin-space-4);" class="cin-alert cin-alert-info"></div>
+            </div>
+
+            <!-- Info Alert Component -->
+            <div class="cin-alert cin-alert-info">
+                <strong data-translate="حالة التطوير:">Development status:</strong>
+                <span data-translate="CIN Framework قيد التطوير النشط. انضم إلى قائمتنا البريدية لتكون أول من يعلم عند الإطلاق!">
+                    The CIN Framework is under active development. Join our mailing list to be the first to know when it launches!
+                </span>
+            </div>
+
+
+
+
+</div>
+         </div>
+     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/objects/Water.js"></script>
+    <script src="https://threejs.org/examples/js/loaders/FontLoader.js"></script>
+    <script src="https://threejs.org/examples/js/geometries/TextGeometry.js"></script>
+    <script>
+        window.onload = function() {
+            // إعداد المشهد، الكاميرا، والمُقدّم (renderer)
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 4000);
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            document.body.appendChild(renderer.domElement);
+
+            // تحديد موضع الكاميرا الأولي
+            camera.position.z = 130;
+            camera.position.y = 5;
+
+            // الضباب والإضاءة
+            scene.background = new THREE.Color(0x000c1c);
+            scene.fog = new THREE.Fog(0x000c1c, 100, 800);
+            const ambientLight = new THREE.AmbientLight(0x404040, 5);
+            scene.add(ambientLight);
+            const sunLight = new THREE.DirectionalLight(0xffffff, 1);
+            sunLight.castShadow = true;
+            sunLight.shadow.mapSize.width = 2048;
+            sunLight.shadow.mapSize.height = 2048;
+            sunLight.shadow.camera.near = 1;
+            sunLight.shadow.camera.far = 100;
+            scene.add(sunLight);
+            const sun = new THREE.Mesh(
+                new THREE.SphereGeometry(20, 32, 32),
+                new THREE.MeshBasicMaterial({ color: 0xfff0c0, emissive: 0xfff0c0 })
+            );
+            scene.add(sun);
+            const sunGlowLight = new THREE.PointLight(0xfff0c0, 5000, 200);
+            scene.add(sunGlowLight);
+            const moonLight = new THREE.PointLight(0xf0f0ff, 0.5, 300);
+            scene.add(moonLight);
+            const moonTextureLoader = new THREE.TextureLoader();
+            const moonTexture = moonTextureLoader.load('https://www.realtimerendering.com/erich/udacity/exercises/textures/planets/earth_clouds_1024.png');
+            const moon = new THREE.Mesh(
+                new THREE.SphereGeometry(10, 32, 32),
+                new THREE.MeshStandardMaterial({
+                    map: moonTexture,
+                    color: 0xffffff,
+                    emissive: 0xffffff,
+                    emissiveIntensity: 0.5
+                })
+            );
+            scene.add(moon);
+            
+            // الماء وقاع المحيط
+            const waterGeometry = new THREE.PlaneGeometry(2000, 2000);
+            const water = new THREE.Water(
+                waterGeometry,
+                {
+                    textureWidth: 1024,
+                    textureHeight: 1024,
+                    waterNormals: new THREE.TextureLoader().load('https://threejs.org/examples/textures/waternormals.jpg', function(texture) {
+                        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+                        texture.repeat.set(10, 10);
+                    }),
+                    alpha: 1.0,
+                    sunDirection: sunLight.position.clone().normalize(),
+                    sunColor: 0xffffff,
+                    waterColor: 0x001e0f,
+                    distortionScale: 3.7,
+                    fog: scene.fog !== undefined,
+                    side: THREE.DoubleSide
+                }
+            );
+            water.rotation.x = -Math.PI / 2;
+            water.position.y = -5;
+            scene.add(water);
+            const oceanFloorGeometry = new THREE.PlaneGeometry(2000, 2000);
+            const oceanFloorMaterial = new THREE.MeshStandardMaterial({
+                color: 0x00000a,
+                metalness: 0,
+                roughness: 1
+            });
+            const oceanFloor = new THREE.Mesh(oceanFloorGeometry, oceanFloorMaterial);
+            oceanFloor.rotation.x = -Math.PI / 2;
+            oceanFloor.position.y = -200;
+            oceanFloor.receiveShadow = true;
+            scene.add(oceanFloor);
+
+            // النجوم والغيوم
+            const cloudTexture = new THREE.TextureLoader().load('https://threejs.org/examples/textures/sprites/cloud.png');
+            const cloudGeometry = new THREE.BufferGeometry();
+            const cloudCount = 100;
+            const cloudPositions = new Float32Array(cloudCount * 3);
+            for (let i = 0; i < cloudCount * 3; i += 3) {
+                cloudPositions[i] = (Math.random() - 0.5) * 800;
+                cloudPositions[i + 1] = 100 + Math.random() * 50;
+                cloudPositions[i + 2] = (Math.random() - 0.5) * 800;
+            }
+            cloudGeometry.setAttribute('position', new THREE.BufferAttribute(cloudPositions, 3));
+            const cloudMaterial = new THREE.PointsMaterial({
+                size: 50,
+                map: cloudTexture,
+                transparent: true,
+                blending: THREE.AdditiveBlending
+            });
+            const clouds = new THREE.Points(cloudGeometry, cloudMaterial);
+            scene.add(clouds);
+            const starGeometry = new THREE.BufferGeometry();
+            const starCount = 20000;
+            const starPositions = new Float32Array(starCount * 3);
+            for (let i = 0; i < starCount * 3; i += 3) {
+                starPositions[i] = (Math.random() - 0.5) * 800;
+                starPositions[i + 1] = Math.random() * 800;
+                starPositions[i + 2] = (Math.random() - 0.5) * 800;
+            }
+            starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+            const starMaterial = new THREE.PointsMaterial({
+                color: 0xffffff,
+                size: 0.2,
+                transparent: true,
+                opacity: 0.8
+            });
+            const starField = new THREE.Points(starGeometry, starMaterial);
+            scene.add(starField);
+
+            // إنشاء النص ثلاثي الأبعاد
+            let mainTextMesh;
+            let loadedFont;
+            const fontLoader = new THREE.FontLoader();
+            fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function(font) {
+                loadedFont = font;
+                const geometry = new THREE.TextGeometry('CIN FRAMEWORK', {
+                    font: loadedFont,
+                    size: 8,
+                    height: 1,
+                    curveSegments: 12,
+                    bevelEnabled: true,
+                    bevelThickness: 0.5,
+                    bevelSize: 0.5,
+                    bevelOffset: 0,
+                    bevelSegments: 5
+                });
+                geometry.center();
+                const material = new THREE.MeshPhongMaterial({
+                    color: 0x00aaff,
+                    emissive: 0x0055ff,
+                    specular: 0x00aaff
+                });
+                mainTextMesh = new THREE.Mesh(geometry, material);
+                mainTextMesh.position.y = 20; // وضع النص فوق الماء
+                scene.add(mainTextMesh);
+            });
+            
+            // متغيرات حالة الغوص
+            const contentWrapper = document.getElementById('content-wrapper');
+        const contentInner = contentWrapper.querySelector('.content-inner');
+            let isUnderwater = false;
+            
+            // حلقة الرسوم المتحركة
+            const animate = function(time) {
+                requestAnimationFrame(animate);
+                const globalTime = Date.now() * 0.001;
+
+                // تحديث لون النص ثلاثي الأبعاد وجعله يطفو
+                if (mainTextMesh) {
+                    const hue = (globalTime * 0.05) % 1;
+                    mainTextMesh.material.color.setHSL(hue, 1, 0.5);
+                    mainTextMesh.material.emissive.setHSL(hue, 1, 0.5);
+
+                    // إضافة حركة طفو واقعية
+                    mainTextMesh.position.y = 20 + Math.sin(globalTime) * 0.5;
+                    mainTextMesh.rotation.y += 0.005;
+                }
+                
+                // دورة الليل والنهار
+                const orbitRadius = 400;
+                const orbitSpeed = 0.1;
+                const angle = (globalTime * orbitSpeed) % (Math.PI * 2);
+                
+                sun.position.x = Math.sin(angle) * orbitRadius;
+                sun.position.y = Math.cos(angle) * orbitRadius;
+                sun.position.z = Math.sin(angle) * 100;
+                
+                moon.position.x = -Math.sin(angle) * orbitRadius;
+                moon.position.y = -Math.cos(angle) * orbitRadius;
+                moon.position.z = -Math.sin(angle) * 100;
+
+                const sunY = sun.position.y;
+                sunLight.position.copy(sun.position);
+                sunGlowLight.position.copy(sun.position);
+                moonLight.position.copy(moon.position);
+
+                let dayFactor = Math.max(0, sunY / orbitRadius);
+                if (sunY < 0) {
+                    dayFactor = 0;
+                }
+
+                sunLight.intensity = dayFactor * 20;
+                sunGlowLight.intensity = dayFactor * 5000;
+                moonLight.intensity = (1 - dayFactor) * 0.5;
+
+                const dayColor = new THREE.Color(0x4682b4);
+                const nightColor = new THREE.Color(0x000c1c);
+                const lerpedColor = new THREE.Color();
+                lerpedColor.copy(nightColor).lerp(dayColor, dayFactor);
+                
+                if (!isUnderwater) {
+                    scene.background = lerpedColor;
+                    scene.fog.color = lerpedColor;
+                }
+                
+                starField.rotation.y += 0.001;
+                starField.material.opacity = 1 - dayFactor;
+                clouds.material.opacity = dayFactor;
+                clouds.rotation.y += 0.0005;
+                
+                water.material.uniforms[ 'time' ].value += 1.0 / 60.0;
+                water.material.uniforms.sunDirection.value.copy(sunLight.position).normalize();
+                
+                renderer.render(scene, camera);
+            };
+
+            // وظيفة موحدة للتعامل مع التمرير واللمس
+            const scrollSpeed = 0.1;
+            function handleScroll(deltaY) {
+                camera.position.y -= deltaY * scrollSpeed;
+                camera.position.y = Math.min(5, Math.max(-100, camera.position.y));
+
+                // تم حذف كود إظهار الكروت بناءً على العمق - العناصر تظهر مباشرة
+
+                // الانتقال إلى وضع تحت الماء مع تأثير الغوص التدريجي
+                const belowWater = camera.position.y < -5;
+                const divingProgress = Math.max(0, Math.min(1, (-camera.position.y + 5) / 10)); // تقدم الغوص من 0 إلى 1
+                
+                if (belowWater !== isUnderwater) {
+                    isUnderwater = belowWater;
+                    if (isUnderwater) {
+                        scene.background.set(0x000005);
+                        scene.fog.color.set(0x000005);
+                        ambientLight.intensity = 0.5;
+                        water.material.uniforms.distortionScale.value = 8;
+                        sun.visible = false;
+                        moon.visible = false;
+                        sunLight.intensity = 0;
+                        sunGlowLight.intensity = 0;
+                        moonLight.intensity = 0;
+                        if (mainTextMesh) mainTextMesh.visible = false;
+                        contentWrapper.style.display = 'flex';
+                        
+                        // تطبيق تأثير الغوص التدريجي على العناصر
+                        const cards = contentWrapper.querySelectorAll('.underwater-card');
+                        cards.forEach((card, index) => {
+                            card.style.transform = `translateY(${100 - (divingProgress * 100)}px)`;
+                            card.style.opacity = divingProgress;
+                            card.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
+                        });
+                    } else {
+                        const dayColor = new THREE.Color(0x4682b4);
+                        const nightColor = new THREE.Color(0x000c1c);
+                        const lerpedColor = new THREE.Color();
+                        const dayFactor = Math.max(0, sun.position.y / 400);
+                        lerpedColor.copy(nightColor).lerp(dayColor, dayFactor);
+                        
+                        scene.background.set(lerpedColor);
+                        scene.fog.color.set(lerpedColor);
+                        ambientLight.intensity = 5;
+                        water.material.uniforms.distortionScale.value = 3.7;
+                        sun.visible = true;
+                        moon.visible = true;
+                        sunLight.intensity = dayFactor * 20;
+                        sunGlowLight.intensity = dayFactor * 5000;
+                        moonLight.intensity = (1 - dayFactor) * 0.5;
+                        if (mainTextMesh) mainTextMesh.visible = true;
+                        contentWrapper.style.display = 'none';
+                    }
+                }
+                
+                // تحديث تأثير الغوص أثناء الحركة
+                if (isUnderwater) {
+                    const cards = contentWrapper.querySelectorAll('.underwater-card');
+                    cards.forEach((card, index) => {
+                        const cardDepth = -15 - (index * 20); // عمق كل كارت
+                        const cardProgress = Math.max(0, Math.min(1, (-camera.position.y - cardDepth + 10) / 15));
+                        
+                        card.style.transform = `translateY(${50 - (cardProgress * 50)}px)`;
+                        card.style.opacity = cardProgress;
+                    });
+                }
+            }
+
+            // التحكم في الكاميرا والغوص باستخدام عجلة الماوس
+            window.addEventListener('wheel', (event) => {
+                handleScroll(event.deltaY);
+            });
+            
+            // متغيرات التحكم باللمس
+            let startY = 0;
+
+            // التحكم باللمس لأجهزة الهاتف
+            window.addEventListener('touchstart', (event) => {
+                startY = event.touches[0].clientY;
+            });
+
+            window.addEventListener('touchmove', (event) => {
+                // منع التمرير الافتراضي للمتصفح
+                event.preventDefault();
+                const deltaY = startY - event.touches[0].clientY;
+                handleScroll(deltaY);
+                startY = event.touches[0].clientY;
+            }, { passive: false }); // { passive: false } لإتاحة استخدام preventDefault()
+            
+            // إضافة دعم التمرير باللمس المحسن للعنصر content-wrapper
+            let touchStartY = 0;
+            let lastTouchY = 0;
+            let touchVelocity = 0;
+            let isScrolling = false;
+            let animationId = null;
+            
+            contentInner.addEventListener('touchstart', (event) => {
+                touchStartY = event.touches[0].clientY;
+                lastTouchY = touchStartY;
+                touchVelocity = 0;
+                isScrolling = true;
+                
+                // إيقاف أي تحريك سابق
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                    animationId = null;
+                }
+            }, { passive: true });
+            
+            contentInner.addEventListener('touchmove', (event) => {
+                if (isScrolling) {
+                    const touchCurrentY = event.touches[0].clientY;
+                    const deltaY = lastTouchY - touchCurrentY;
+                    
+                    // حساب السرعة للحصول على تمرير أكثر سلاسة
+                    touchVelocity = deltaY * 2.5; // زيادة الحساسية
+                    
+                    // التمرير داخل العنصر مع تطبيق السرعة
+                    contentInner.scrollTop += touchVelocity;
+                    lastTouchY = touchCurrentY;
+                }
+            }, { passive: true });
+            
+            contentInner.addEventListener('touchend', () => {
+                isScrolling = false;
+                
+                // إضافة تأثير الاستمرارية (momentum) بعد رفع الإصبع
+                if (Math.abs(touchVelocity) > 5) {
+                    const momentum = () => {
+                        touchVelocity *= 0.95; // تقليل السرعة تدريجياً
+                        contentInner.scrollTop += touchVelocity;
+                        
+                        if (Math.abs(touchVelocity) > 1) {
+                            animationId = requestAnimationFrame(momentum);
+                        } else {
+                            animationId = null;
+                        }
+                    };
+                    animationId = requestAnimationFrame(momentum);
+                }
+            }, { passive: true });
+            
+            // معالجة تغيير حجم النافذة
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+
+            animate(performance.now());
+        };
+
+        // Email subscription handler
+        function handleEmailSubmit(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            const messageBox = document.getElementById('subscriptionMessage');
+            
+            // Simple email validation
+            if (email && email.includes('@')) {
+                messageBox.innerHTML = '<strong>شكراً لك!</strong> تم تسجيل بريدك الإلكتروني بنجاح. سنتواصل معك عند إطلاق CIN Framework.';
+                messageBox.className = 'cin-alert cin-alert-success';
+                messageBox.style.display = 'block';
+                event.target.reset();
+            } else {
+                messageBox.innerHTML = '<strong>خطأ:</strong> يرجى إدخال بريد إلكتروني صحيح.';
+                messageBox.className = 'cin-alert cin-alert-error';
+                messageBox.style.display = 'block';
+            }
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
