@@ -67,7 +67,7 @@
             </div>
         </div>
     </div>
-    <button class="cin-btn-fab" onclick="scrollToTop()" title="Scroll to top">
+    <button class="cin-btn-fab" id="surfaceBtn" title="العودة لسطح الماء">
         <span class="material-symbols-rounded">keyboard_double_arrow_up</span>
     </button>
     <script src="./assets/js/script.js"></script>
@@ -194,6 +194,106 @@
             
             const glowingBugs = [];
             const bugCount = 30;
+            
+            const fishes = [];
+            const fishCount = 15;
+            
+            for (let i = 0; i < fishCount; i++) {
+                const fishGroup = new THREE.Group();
+                
+                const fishBodyGeometry = new THREE.CylinderGeometry(0.3, 0.8, 3, 8);
+                const fishBodyMaterial = new THREE.MeshStandardMaterial({
+                    color: new THREE.Color().setHSL(Math.random() * 0.6 + 0.1, 0.8, 0.6),
+                    metalness: 0.3,
+                    roughness: 0.4,
+                    transparent: true,
+                    opacity: 0.9
+                });
+                const fishBody = new THREE.Mesh(fishBodyGeometry, fishBodyMaterial);
+                fishBody.rotation.z = Math.PI / 2;
+                
+                const fishTailGeometry = new THREE.ConeGeometry(0.8, 1.5, 6);
+                const fishTailMaterial = new THREE.MeshStandardMaterial({
+                    color: fishBodyMaterial.color.clone().multiplyScalar(0.8),
+                    metalness: 0.2,
+                    roughness: 0.5,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                const fishTail = new THREE.Mesh(fishTailGeometry, fishTailMaterial);
+                fishTail.position.set(-2, 0, 0);
+                fishTail.rotation.z = Math.PI / 2;
+                
+                const finGeometry = new THREE.PlaneGeometry(0.8, 0.4);
+                const finMaterial = new THREE.MeshStandardMaterial({
+                    color: fishBodyMaterial.color.clone().multiplyScalar(0.7),
+                    transparent: true,
+                    opacity: 0.7,
+                    side: THREE.DoubleSide
+                });
+                
+                const topFin = new THREE.Mesh(finGeometry, finMaterial);
+                topFin.position.set(0, 0.8, 0);
+                topFin.rotation.x = Math.PI / 6;
+                
+                const bottomFin = new THREE.Mesh(finGeometry, finMaterial);
+                bottomFin.position.set(0, -0.8, 0);
+                bottomFin.rotation.x = -Math.PI / 6;
+                
+                const sideFin1 = new THREE.Mesh(finGeometry, finMaterial);
+                sideFin1.position.set(0.5, 0, 0.6);
+                sideFin1.rotation.y = Math.PI / 4;
+                
+                const sideFin2 = new THREE.Mesh(finGeometry, finMaterial);
+                sideFin2.position.set(0.5, 0, -0.6);
+                sideFin2.rotation.y = -Math.PI / 4;
+                
+                fishGroup.add(fishBody);
+                fishGroup.add(fishTail);
+                fishGroup.add(topFin);
+                fishGroup.add(bottomFin);
+                fishGroup.add(sideFin1);
+                fishGroup.add(sideFin2);
+                
+                const fish = fishGroup;
+                
+                fish.position.set(
+                    (Math.random() - 0.5) * 300,
+                    -10 - Math.random() * 80,
+                    (Math.random() - 0.5) * 300
+                );
+                
+                fish.userData = {
+                    velocity: new THREE.Vector3(
+                        (Math.random() - 0.5) * 0.3,
+                        (Math.random() - 0.5) * 0.1,
+                        (Math.random() - 0.5) * 0.3
+                    ),
+                    swimSpeed: Math.random() * 0.02 + 0.01,
+                    swimTime: Math.random() * Math.PI * 2,
+                    originalY: fish.position.y,
+                    jumpCooldown: 0,
+                    isJumping: false,
+                    jumpVelocity: 0,
+                    jumpHeight: 0,
+                    jumpPhase: 'ascending',
+                    isHeadUp: false,
+                    headUpTime: 0,
+                    headCooldown: 0,
+                    targetY: fish.position.y,
+                    tailSwim: Math.random() * Math.PI * 2,
+                    finSwim: Math.random() * Math.PI * 2,
+                    body: fishBody,
+                    tail: fishTail,
+                    topFin: topFin,
+                    bottomFin: bottomFin,
+                    sideFin1: sideFin1,
+                    sideFin2: sideFin2
+                };
+                
+                fishes.push(fish);
+                scene.add(fish);
+            }
             
             for (let i = 0; i < bugCount; i++) {
                 const bugGeometry = new THREE.SphereGeometry(0.5, 8, 6);
@@ -515,6 +615,164 @@
                 starField.rotation.y += 0.001;
                 starField.material.opacity = 1 - dayFactor;
                 
+                fishes.forEach((fish, index) => {
+                    const userData = fish.userData;
+                    
+                    userData.swimTime += userData.swimSpeed;
+                    
+                    userData.tailSwim += 0.15;
+                    userData.tail.rotation.y = Math.sin(userData.tailSwim) * 0.3;
+                    
+                    userData.finSwim += 0.1;
+                    userData.topFin.rotation.z = Math.sin(userData.finSwim) * 0.2;
+                    userData.bottomFin.rotation.z = -Math.sin(userData.finSwim) * 0.2;
+                    userData.sideFin1.rotation.x = Math.sin(userData.finSwim * 0.8) * 0.15;
+                    userData.sideFin2.rotation.x = -Math.sin(userData.finSwim * 0.8) * 0.15;
+                    
+                    userData.body.position.y = Math.sin(userData.swimTime * 2) * 0.1;
+                    
+                    fish.position.add(userData.velocity);
+                    fish.position.y = userData.originalY + Math.sin(userData.swimTime) * 2;
+                    
+                    if (Math.random() < 0.005) {
+                        userData.velocity.x += (Math.random() - 0.5) * 0.02;
+                        userData.velocity.z += (Math.random() - 0.5) * 0.02;
+                        userData.velocity.normalize().multiplyScalar(0.1);
+                    }
+                    
+                    if (!userData.isHeadUp && userData.headCooldown <= 0 && Math.random() < 0.001) {
+                        userData.isHeadUp = true;
+                        userData.headUpTime = 60 + Math.random() * 40;
+                        userData.headCooldown = 400 + Math.random() * 300;
+                        userData.targetY = -2;
+                    }
+                    
+                    if (userData.isHeadUp) {
+                        fish.position.y = THREE.MathUtils.lerp(fish.position.y, userData.targetY, 0.05);
+                        userData.headUpTime--;
+                        
+                        if (userData.headUpTime <= 0) {
+                            userData.isHeadUp = false;
+                            userData.targetY = userData.originalY;
+                        }
+                    } else {
+                        if (fish.position.y > userData.originalY) {
+                            fish.position.y = THREE.MathUtils.lerp(fish.position.y, userData.originalY + Math.sin(userData.swimTime) * 2, 0.03);
+                        }
+                        userData.headCooldown--;
+                    }
+                    
+                    if (!userData.isJumping && !userData.isHeadUp && userData.jumpCooldown <= 0 && Math.random() < 0.0002) {
+                        userData.isJumping = true;
+                        userData.jumpVelocity = 0.8 + Math.random() * 0.4;
+                        userData.jumpHeight = fish.position.y;
+                        userData.jumpCooldown = 500 + Math.random() * 400;
+                        userData.jumpPhase = 'ascending';
+                        
+                        const createRealisticRipple = (x, z, intensity = 1) => {
+                            for (let r = 0; r < 3; r++) {
+                                const ripple = new THREE.Mesh(
+                                    new THREE.RingGeometry(0.2 + r * 0.3, 0.5 + r * 0.4, 16),
+                                    new THREE.MeshBasicMaterial({
+                                        color: 0x4a90e2,
+                                        transparent: true,
+                                        opacity: 0.4 - r * 0.1,
+                                        side: THREE.DoubleSide
+                                    })
+                                );
+                                ripple.position.set(x, -4.9, z);
+                                ripple.rotation.x = -Math.PI / 2;
+                                scene.add(ripple);
+                                
+                                const delay = r * 100;
+                                setTimeout(() => {
+                                    const rippleAnimation = () => {
+                                        ripple.scale.multiplyScalar(1.02);
+                                        ripple.material.opacity *= 0.98;
+                                        if (ripple.material.opacity > 0.01 && ripple.scale.x < 8) {
+                                            requestAnimationFrame(rippleAnimation);
+                                        } else {
+                                            scene.remove(ripple);
+                                        }
+                                    };
+                                    rippleAnimation();
+                                }, delay);
+                            }
+                        };
+                        
+                        createRealisticRipple(fish.position.x, fish.position.z);
+                    }
+                    
+                    if (userData.isJumping) {
+                        if (userData.jumpPhase === 'ascending') {
+                            fish.position.y += userData.jumpVelocity;
+                            userData.jumpVelocity -= 0.02;
+                            
+                            fish.rotation.x = -Math.PI / 6;
+                            
+                            if (userData.jumpVelocity <= 0) {
+                                userData.jumpPhase = 'descending';
+                            }
+                        } else if (userData.jumpPhase === 'descending') {
+                            fish.position.y += userData.jumpVelocity;
+                            userData.jumpVelocity -= 0.02;
+                            
+                            fish.rotation.x = Math.PI / 6;
+                            
+                            if (fish.position.y <= userData.originalY) {
+                                userData.isJumping = false;
+                                fish.position.y = userData.originalY;
+                                fish.rotation.x = 0;
+                                
+                                const createSplashRipple = (x, z) => {
+                                    for (let r = 0; r < 2; r++) {
+                                        const splash = new THREE.Mesh(
+                                            new THREE.RingGeometry(0.1 + r * 0.2, 0.4 + r * 0.3, 12),
+                                            new THREE.MeshBasicMaterial({
+                                                color: 0xffffff,
+                                                transparent: true,
+                                                opacity: 0.6 - r * 0.2,
+                                                side: THREE.DoubleSide
+                                            })
+                                        );
+                                        splash.position.set(x, -4.9, z);
+                                        splash.rotation.x = -Math.PI / 2;
+                                        scene.add(splash);
+                                        
+                                        const splashAnimation = () => {
+                                            splash.scale.multiplyScalar(1.05);
+                                            splash.material.opacity *= 0.94;
+                                            if (splash.material.opacity > 0.01 && splash.scale.x < 6) {
+                                                requestAnimationFrame(splashAnimation);
+                                            } else {
+                                                scene.remove(splash);
+                                            }
+                                        };
+                                        splashAnimation();
+                                    }
+                                };
+                                
+                                createSplashRipple(fish.position.x, fish.position.z);
+                            }
+                        }
+                    } else {
+                        userData.jumpCooldown--;
+                    }
+                    
+                    if (!userData.isJumping) {
+                        const direction = userData.velocity.clone().normalize();
+                        fish.lookAt(fish.position.clone().add(direction));
+                    }
+                    
+                    if (Math.abs(fish.position.x) > 400 || Math.abs(fish.position.z) > 400) {
+                        fish.position.set(
+                            (Math.random() - 0.5) * 300,
+                            userData.originalY,
+                            (Math.random() - 0.5) * 300
+                        );
+                    }
+                });
+                
                 glowingBugs.forEach(bug => {
                     bug.userData.time += bug.userData.speed;
                     
@@ -755,6 +1013,29 @@
                 renderer.render(scene, camera);
             };
 
+            // وظيفة لتحديث أيقونة الزر بناءً على موقع الكاميرا
+            function updateSurfaceButtonIcon() {
+                const surfaceBtn = document.getElementById('surfaceBtn');
+                const iconElement = surfaceBtn.querySelector('.material-symbols-rounded');
+                
+                if (camera.position.y > 5) {
+                    // فوق سطح الماء - يشير للأسفل للغوص
+                    iconElement.textContent = 'keyboard_double_arrow_down';
+                    surfaceBtn.title = 'الغوص في الأعماق';
+                    cameraLevel = 2;
+                } else if (camera.position.y > -40) {
+                    // عمق متوسط - يشير للأعلى للصعود
+                    iconElement.textContent = 'keyboard_double_arrow_up';
+                    surfaceBtn.title = 'الصعود للسطح';
+                    cameraLevel = 1;
+                } else {
+                    // أعماق البحر - يشير للأعلى للصعود
+                    iconElement.textContent = 'keyboard_double_arrow_up';
+                    surfaceBtn.title = 'العودة للعمق المتوسط';
+                    cameraLevel = 0;
+                }
+            }
+
             const scrollSpeed = 0.1;
             function handleScroll(deltaY) {
                 camera.position.y -= deltaY * scrollSpeed;
@@ -762,6 +1043,9 @@
 
                 const belowWater = camera.position.y < -5;
                 const divingProgress = Math.max(0, Math.min(1, (-camera.position.y + 5) / 10));
+                
+                // تحديث أيقونة الزر تلقائياً عند التحرك
+                updateSurfaceButtonIcon();
                 
                 if (belowWater !== isUnderwater) {
                     isUnderwater = belowWater;
@@ -889,6 +1173,95 @@
             });
 
             animate(performance.now());
+            
+            // متغير لتتبع حالة الكاميرا (0: قعر البحر، 1: عمق متوسط، 2: سطح الماء)
+            let cameraLevel = 1;
+            
+            // تحديث أيقونة الزر عند بدء التشغيل
+            updateSurfaceButtonIcon();
+            
+            // إضافة وظيفة زر التنقل بين المستويات
+            document.getElementById('surfaceBtn').addEventListener('click', function() {
+                const contentWrapper = document.getElementById('content-wrapper');
+                let targetY;
+                
+                // تحديد الهدف بناءً على الموقع الحالي للكاميرا (ديناميكي)
+                if (camera.position.y > 5) {
+                    // من السطح إلى العمق المتوسط
+                    targetY = -30;
+                } else if (camera.position.y > -40) {
+                    // من العمق المتوسط إلى السطح
+                    targetY = 10;
+                    // إخفاء المحتوى عند الصعود للسطح
+                    contentWrapper.style.display = 'none';
+                } else {
+                    // من قعر البحر إلى العمق المتوسط
+                    targetY = -30;
+                }
+                
+                const animationDuration = 2000;
+                const startY = camera.position.y;
+                const startTime = Date.now();
+                
+                const cameraAnimation = () => {
+                    const elapsed = Date.now() - startTime;
+                    const progress = Math.min(elapsed / animationDuration, 1);
+                    
+                    // استخدام easing function للحركة السلسة
+                    const easeProgress = 1 - Math.pow(1 - progress, 3);
+                    
+                    camera.position.y = startY + (targetY - startY) * easeProgress;
+                    
+                    // تحديث الأيقونة تلقائياً أثناء الحركة
+                    updateSurfaceButtonIcon();
+                    
+                    // تحديث حالة isUnderwater أثناء الحركة
+                    const belowWater = camera.position.y < -5;
+                    if (belowWater !== isUnderwater) {
+                        isUnderwater = belowWater;
+                        if (isUnderwater) {
+                            scene.background.set(0x000005);
+                            scene.fog.color.set(0x000005);
+                            ambientLight.intensity = 0.5;
+                            water.material.uniforms.distortionScale.value = 8;
+                            sun.visible = false;
+                            moon.visible = false;
+                            sunLight.intensity = 0;
+                            sunGlowLight.intensity = 0;
+                            moonLight.intensity = 0;
+                            if (mainTextMesh) mainTextMesh.visible = false;
+                        } else {
+                            const dayColor = new THREE.Color(0x4682b4);
+                            const nightColor = new THREE.Color(0x000c1c);
+                            const lerpedColor = new THREE.Color();
+                            const dayFactor = Math.max(0, sun.position.y / 400);
+                            lerpedColor.copy(nightColor).lerp(dayColor, dayFactor);
+                            
+                            scene.background.set(lerpedColor);
+                            scene.fog.color.set(lerpedColor);
+                            ambientLight.intensity = 5;
+                            water.material.uniforms.distortionScale.value = 3.7;
+                            sun.visible = true;
+                            moon.visible = true;
+                            sunLight.intensity = dayFactor * 20;
+                            sunGlowLight.intensity = dayFactor * 5000;
+                            moonLight.intensity = (1 - dayFactor) * 0.5;
+                            if (mainTextMesh) mainTextMesh.visible = true;
+                        }
+                    }
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(cameraAnimation);
+                    } else {
+                        // إظهار المحتوى عند الوصول للأعماق
+                        if (camera.position.y < 5) {
+                            contentWrapper.style.display = 'flex';
+                        }
+                    }
+                };
+                
+                cameraAnimation();
+            });
         };
 
         function handleEmailSubmit(event) {
