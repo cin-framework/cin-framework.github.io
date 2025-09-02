@@ -785,7 +785,7 @@ body{
 }
 *{
     scrollbar-width:thin;
-    scrollbar-color: #33415500 #33415500;
+    scrollbar-color: var(--cin-primary-light) #00000000;
 }
 .cin-btn-success{
     background:var(--cin-success);
@@ -2204,8 +2204,6 @@ body{
             text-align: center;
             scrollbar-width: thin;
             scrollbar-color: none;
-            padding-top: 100px;
-            padding-bottom: 100px;
         }
         
         .content-inner::-webkit-scrollbar {
